@@ -32,4 +32,23 @@ router.get('/', (req, res) => {
         })
 })
 
+// @desc add a new comment
+// @route PUT /blogposts/:id
+router.put('/:id', (req, res) => {
+    const blogID = req.params.id;
+    BlogPost.findByIdAndUpdate(blogID, 
+        {$push : {
+            'comments' : req.body
+        }})
+        .exec()
+        .then(doc => {
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            res.status(500).json({error: err});
+        })
+})
+
+// @desc update the number of likes
+
 module.exports = router;

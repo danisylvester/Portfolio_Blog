@@ -7,10 +7,7 @@ const blogPostSchema = new Schema({
   body:   String,
   comments: [{ body: String, date: Date }],
   date: { type: Date, default: Date.now },
-  hidden: Boolean,
-  meta: {
-    votes: Number,
-  }
+  likes: Number
 });
 
 const BlogPost = mongoose.model('BlogPost', blogPostSchema);
