@@ -26,10 +26,21 @@ mongoose.connection.once('open', () => {
 });
 
 // Passing resources to AdminBro
-const adminBroOptions = {
-  resources: [BlogPost]
+const blogPostResourceOptions = {
+  properties: {
+    body: {
+      type: 'richtext',
+      custom: {
+        modules: {
+          toolbar: [['bold', 'italic'], ['link', 'image']]
+        }
+      }
+    }
+  }
 };
-const adminBro = new AdminBro(adminBroOptions);
+const adminBro = new AdminBro({
+  resources: [{ resource: BlogPost, options: blogPostResourceOptions }]
+});
 const router = AdminBroExpress.buildRouter(adminBro);
 
 app.use(adminBro.options.rootPath, router);
