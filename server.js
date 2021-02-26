@@ -99,7 +99,7 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
 app.use(adminBro.options.rootPath, router);
 
 app.use(bodyParser.json());
-app.use('/blogposts', blogPostsRoutes);
+app.use('/blogposts', blogPostsRoutes); //Custom middleware to change number of likes and add comments
 
 app.listen(PORT, () => {
   console.log(`running on port: ${PORT}`);
