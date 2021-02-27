@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
+import landing, { Landing } from './components/Landing';
 
 const App = () => {
   return (
-    <div className="test">
-      Hello!! This is React Session from Scratch
-    </div>
+    <Router>
+      <Route 
+        path = '/' exact
+        component = {Landing}
+      />
+    </Router>
   );
 };
 

@@ -28,6 +28,7 @@
     "mongoose": "^5.11.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "style-loader": "^2.0.0",
     "tslib": "^2.1.0"
   },

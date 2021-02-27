@@ -1,3 +1,18 @@
-.test{
-    color:Red;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//Global style variables
+$customBlue: #3AAFA9;
+$customRed: #FF3D33;
+$customBlack: #17252A;
+$headingFont: 'Montserrat Subrayada', sans-serif;
+$textFont: 'Montserrat', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+html {
+    scroll-behavior: smooth;
+ }
