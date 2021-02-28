@@ -1,0 +1,34 @@
+@use '../App.scss';
+
+.helloWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+} 
+// setting both divs to be on one row, so they'll overlap
+.gridOneHello, .gridTwoHelloColor{
+    grid-row: 1/2;
+}
+.gridOneHello {
+    font-family: App.$headingFont;
+    font-size: 65px;
+    grid-column: 1/-1;
+    z-index: 1;
+    @include App.centerDiv;
+}
+.gridTwoHelloColor{
+    background-color: App.$customBlue;
+    grid-column: 1/3;
+}
+
+@media(min-width: 425px){
+    .gridOneHello{
+        font-size: 85px;
+    }
+}
+@media(min-width: 768px){
+    .gridOneHello{
+        font-size: 100px;
+    }
+}
