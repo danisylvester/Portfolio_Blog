@@ -1,5 +1,5 @@
 import React from 'react'
-import './hello.scss';
+import styles from './hello.module.scss';
 
 export const Hello = () => {
     const helloOne = '\<Hello';
@@ -7,15 +7,15 @@ export const Hello = () => {
     const helloThree = '/\>;';
     return (
 
-        <div className="helloWrapper">
-            <div className="gridOneHello">
+        <div className={styles.helloWrapper}>
+            <div className={styles.gridOneHello}>
                 <div className="helloChild">
                     {helloOne} <br></br>
                     {helloTwo} <br></br>
                     {helloThree}
                 </div>
+            <div className={styles.gridTwoColor}></div>
             </div>
-            <div className="gridTwoColor"></div>
         </div>
     )
 }

@@ -2,7 +2,7 @@
   "name": "blog_portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "node server.js",
     "nodemon": "nodemon server.js",
@@ -41,6 +41,7 @@
     "nodemon": "^2.0.7",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
+    "styled-components": "^5.2.1",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
