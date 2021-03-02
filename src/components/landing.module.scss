@@ -11,11 +11,11 @@
 .leftPane{
     position:fixed;
     height:100vh;   
-    width:0vw;
+    width:100vw;
     top:0px;
     left:0px;
-    z-index:1;
-    background-color:white;
+    z-index:-1;
+    background-color:red;
     font-size:50px;
     transition:2s;
     overflow-x: hidden;
@@ -27,13 +27,10 @@
     top:0px;
     width:100vw;
     right:0px;
-    z-index:-1;
+    z-index:1;
+    background-color: white;
 }
 
-.goRight{
-    width:100vw;
-    transition-duration: 2500ms;
-}
 .everythingElse{
     position:relative;
     background-color:black;
@@ -69,27 +66,28 @@
 
 @media(min-width: 425px){
     .gridOneHello{
-        font-size: 85px;
+        font-size: 95px;
     }
 }
 @media(min-width: 768px){
     .gridOneHello{
-        font-size: 175px;
+        font-size: 140px;
     }
 }
+
 
 // About styles
 .aboutColor{
     height: 100%;
     width: 100%;
-    background-color: App.$customBlue;
+    // background-color: App.$customBlue;
 }
 
-.moveHelloColorRight{
-    transform: translateX(90vw);
-    transition-duration: 2500ms;
-}
-.moveHelloTextRight{
+.movePanelRight{
     transform: translateX(100vw);
-    transition-duration: 3000ms;
+    transition-duration: 2000ms;
+}
+.movePanelLeft{
+    transform: translateX(0vw);
+    transition-duration: 2000ms;
 }

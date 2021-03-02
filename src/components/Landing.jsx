@@ -4,10 +4,6 @@ import styles from './landing.module.scss';
 
 
 export const Landing = () => {
-    //Using intersection observer to detect when right panel is on the screen
-    const ref = useRef();
-    const onScreen = useOnScreen(ref);
-
     //Detect when y axis scroll is greater than 0
     const [isScrolled, setScroll] = useState(false);
     useEffect( () => {
@@ -26,23 +22,20 @@ export const Landing = () => {
 
     return (    
         <div>
-            <div className={`${styles.leftPane} ${isScrolled ? styles.goRight : styles}`}>
+            <div className={`${styles.leftPane}`}>
                 <div className={styles.aboutColor}></div>
             </div>
 
-            <div 
-                ref={ref}
-                className={`${styles.rightPane}`}
-            >
+            <div className={`${styles.rightPane}  ${isScrolled ? styles.movePanelRight : styles.movePanelLeft}`}>
                 <div className={styles.helloWrapper}>
-                    <div className={`${styles.gridOneHello} ${isScrolled ? styles.moveHelloTextRight : styles}`}>
+                    <div className={`${styles.gridOneHello}`}>
                         <div className="helloChild">
                             {helloOne} <br></br>
                             {helloTwo} <br></br>
                             {helloThree}
                         </div>
                      </div>
-                <div className={`${styles.gridTwoHelloColor} ${isScrolled ? styles.moveHelloColorRight : styles}`}></div>
+                <div className={styles.gridTwoHelloColor}></div>
                 </div>
             </div>
 
