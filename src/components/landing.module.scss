@@ -1,6 +1,5 @@
 @use '../App.scss';
 
-
 .spacer{
     position:relative;
     height:200vh;
@@ -11,12 +10,12 @@
 
 .leftPane{
     position:fixed;
-    height:200vh;   
+    height:100vh;   
     width:0vw;
     top:0px;
     left:0px;
     z-index:1;
-    background-color:cyan;
+    background-color:white;
     font-size:50px;
     transition:1s;
     padding-top:40vh;
@@ -25,12 +24,11 @@
 
 .rightPane{
     position:fixed;
-    height:200vh;
+    height:100vh;
     top:0px;
     width:100vw;
     right:0px;
     z-index:-1;
-    background-color:green;
 }
 
 .goRight{
@@ -45,7 +43,40 @@
 }
 
 
+.helloWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+}
+// setting both divs to be on one row, so they'll overlap
+.gridOneHello, .gridTwoHelloColor{
+    grid-row: 1/2;
+}
+.gridOneHello {
+    height: 100%;
+    font-family: App.$headingFont;
+    font-size: 65px;
+    grid-column: 1/-1;
+    z-index: 1;
+    @include App.centerDiv;
+}
+.gridTwoHelloColor{
+    background-color: App.$customBlue;
+    grid-column: 1/3;
+    height: 100%;
+}
 
+@media(min-width: 425px){
+    .gridOneHello{
+        font-size: 85px;
+    }
+}
+@media(min-width: 768px){
+    .gridOneHello{
+        font-size: 100px;
+    }
+}
 
 
 
