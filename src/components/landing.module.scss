@@ -1,18 +1,87 @@
 @use '../App.scss';
 
+
+.spacer{
+    position:relative;
+    height:200vh;
+    min-height:400px;
+    background-color:white;
+    z-index:-10;
+}
+
+.leftPane{
+    position:fixed;
+    height:200vh;   
+    width:0vw;
+    top:0px;
+    left:0px;
+    z-index:1;
+    background-color:cyan;
+    font-size:50px;
+    transition:1s;
+    padding-top:40vh;
+    overflow-x: hidden;
+}
+
+.rightPane{
+    position:fixed;
+    height:200vh;
+    top:0px;
+    width:100vw;
+    right:0px;
+    z-index:-1;
+    background-color:green;
+}
+
+.goRight{
+    width:100vw;
+    padding-left:40vw;
+}
+.everythingElse{
+    position:relative;
+    background-color:black;
+    height:1000rem;
+    z-index:100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .wrapper {
-    height: 100vh;
     background-color: white;
 }
+
 .aboutOuterWrapper{
-    position: relative;
+    position: fixed;
+    top:0px;
 }
 .aboutWrapper{
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    position: absolute;
+
 }
 .gridTwoAboutText, .gridOneColor {
     grid-row: 1/2;
@@ -37,4 +106,8 @@
     font-size: 40px;
     font-weight: 500;
     margin-top: 1rem;
+}
+.placeholder{
+    background-color:green;
+    height:1000rem;
 }
