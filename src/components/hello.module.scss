@@ -1,13 +1,13 @@
 @use '../App.scss';
 
-.helloWrapper {
+.wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    height: 100%;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
 } 
 // setting both divs to be on one row, so they'll overlap
-.gridOneHello, .gridTwoHelloColor{
+.gridOneHello, .gridTwoColor{
     grid-row: 1/2;
 }
 .gridOneHello {
@@ -18,7 +18,7 @@
     z-index: 1;
     @include App.centerDiv;
 }
-.gridTwoHelloColor{
+.gridTwoColor{
     background-color: App.$customBlue;
     grid-column: 1/3;
     height: 100%;

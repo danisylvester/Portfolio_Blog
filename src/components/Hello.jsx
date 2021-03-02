@@ -6,16 +6,15 @@ export const Hello = () => {
     const helloTwo = 'World';
     const helloThree = '/\>;';
     return (
-
-        <div className={styles.helloWrapper}>
+        <div className={styles.wrapper}>
             <div className={styles.gridOneHello}>
-                <div className="helloChild">
+                <div>
                     {helloOne} <br></br>
                     {helloTwo} <br></br>
                     {helloThree}
                 </div>
-            <div className={styles.gridTwoColor}></div>
             </div>
+            <div className={styles.gridTwoColor}></div>
         </div>
     )
 }

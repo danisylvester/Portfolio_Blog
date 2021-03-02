@@ -1,19 +1,20 @@
 @use '../App.scss';
 
-.landingWrapper {
+.wrapper {
     height: 100vh;
     background-color: white;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    width: 100%;
+}
+.aboutOuterWrapper{
+    position: relative;
 }
 .aboutWrapper{
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    height: 100%;
-    width: 100%;
+    position: absolute;
 }
-.gridTwoAboutText, .gridOneAboutColor {
+.gridTwoAboutText, .gridOneColor {
     grid-row: 1/2;
 }
 .gridTwoAboutText {
@@ -21,7 +22,7 @@
     z-index: 1;
     display: flex;
 }
-.gridOneAboutColor {
+.gridOneColor {
     background-color: App.$customBlue;
     grid-column: 2/-1;
 }
