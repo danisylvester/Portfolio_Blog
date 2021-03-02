@@ -32,7 +32,7 @@
 
 .goRight{
     width:100vw;
-    transition-duration: 4000ms;
+    transition-duration: 2500ms;
 }
 .everythingElse{
     position:relative;
@@ -86,10 +86,10 @@
 }
 
 .moveHelloColorRight{
-    transform: translateX(1500px);
-    transition-duration: 3700ms;
+    transform: translateX(90vw);
+    transition-duration: 2500ms;
 }
 .moveHelloTextRight{
-    transform: translateX(1500px);
-    transition-duration: 3400ms;
+    transform: translateX(100vw);
+    transition-duration: 3000ms;
 }
