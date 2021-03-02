@@ -16,7 +16,7 @@ export const useOnScreen = (ref, rootMargin = '0px') => {
     );
     if (ref.current) {
       observer.observe(ref.current);
-      console.log('observed')
+      console.log('observing')
     }
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
