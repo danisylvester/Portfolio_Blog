@@ -17,8 +17,7 @@
     z-index:1;
     background-color:white;
     font-size:50px;
-    transition:1s;
-    padding-top:40vh;
+    transition:2s;
     overflow-x: hidden;
 }
 
@@ -33,7 +32,7 @@
 
 .goRight{
     width:100vw;
-    padding-left:40vw;
+    transition-duration: 4000ms;
 }
 .everythingElse{
     position:relative;
@@ -43,13 +42,14 @@
 }
 
 
+// Hello styles
+// setting both divs to be on one row, so they'll overlap
 .helloWrapper{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 100%;
     width: 100%;
 }
-// setting both divs to be on one row, so they'll overlap
 .gridOneHello, .gridTwoHelloColor{
     grid-row: 1/2;
 }
@@ -74,71 +74,22 @@
 }
 @media(min-width: 768px){
     .gridOneHello{
-        font-size: 100px;
+        font-size: 175px;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.wrapper {
-    background-color: white;
-}
-
-.aboutOuterWrapper{
-    position: fixed;
-    top:0px;
-}
-.aboutWrapper{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-
-}
-.gridTwoAboutText, .gridOneColor {
-    grid-row: 1/2;
-}
-.gridTwoAboutText {
-    grid-column: 3/10;
-    z-index: 1;
-    display: flex;
-}
-.gridOneColor {
+// About styles
+.aboutColor{
+    height: 100%;
+    width: 100%;
     background-color: App.$customBlue;
-    grid-column: 2/-1;
 }
-.innerAboutText{
-    margin: auto;
+
+.moveHelloColorRight{
+    transform: translateX(1500px);
+    transition-duration: 3700ms;
 }
-.aboutHeading {
-    font-family: App.$headingFont;
-    font-size: 65px;
-}
-.aboutParagraph {
-    font-size: 40px;
-    font-weight: 500;
-    margin-top: 1rem;
-}
-.placeholder{
-    background-color:green;
-    height:1000rem;
+.moveHelloTextRight{
+    transform: translateX(1500px);
+    transition-duration: 3400ms;
 }
