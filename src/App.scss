@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
@@ -8,8 +8,8 @@ $customRed: #FF3D33;
 $customBlack: #17252A;
 $headingFont: 'Montserrat Subrayada', sans-serif;
 $textFont: 'Montserrat', sans-serif;
-$subHeadingSize: 60px;
-$fontSize: 25px;
+$headingSize: 45px;
+$textSize: 30px;
 
 //Global mixins
 @mixin centerDiv {
@@ -17,6 +17,11 @@ $fontSize: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@mixin heading {
+  font-family: $headingFont;
+  font-size: $headingSize;
+  font-weight: 400;
 }
 
 * {

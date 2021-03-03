@@ -37,7 +37,7 @@ export const Landing = () => {
                     </div>
                     <div className={styles.gridThreeImg}>
                         <div className={styles.centerImg}>
-                            <img className={styles.ladyImg} src='/src/assets/ladyReading.jpg'></img>
+                            <img className={styles.ladyImg} src='/src/assets/ladyReading.png'></img>
                         </div>
                     </div>
                 </div>

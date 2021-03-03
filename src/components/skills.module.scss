@@ -1,15 +1,15 @@
 @use '../App.scss';
 
 .skillsGrid{
-    height: 120vh;
+    height: 100vh;
     width: 100vw;
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     overflow:hidden;
 }
 .gridTwoText, .gridThreeSVG{
-    grid-row: 2/3;
+    grid-row: 1/3;
 }
 .gridOnePolygons{
     grid-row: 1/4;
@@ -23,30 +23,29 @@
 .gridThreeSVG{
     grid-column: 6/-1;
 }
-.polygonWrapper{
-    margin-top:10%;
-}
+
 .polygonImg{
-    width: 800px;
+    width: 600px;
 }
 .textWrapper{
     @include App.centerDiv;
     height: 100%;
     width: 100%;
+    padding-left: 5rem;
 }
 .textWrapper h3{
-    font-family: App.$headingFont;
-    font-size: App.$subHeadingSize;
+    @include App.heading;
     margin-bottom: 3rem;
 }
 .textWrapper p{
-    font-size: App.$fontSize;
+    font-size: App.$textSize;
     margin-top: 2rem;
 }
 .skillsImg{
-    width: 600px;
+    width: 650px;
 }
 .skillsImgWrapper{
     height: 100%;
     @include App.centerDiv;
+    padding-top: 4rem;
 }

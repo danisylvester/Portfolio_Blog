@@ -49,6 +49,7 @@
     height: 100%;
     font-family: App.$headingFont;
     font-size: 65px;
+    font-weight: 900;
     grid-column: 1/-1;
     z-index: 1;
     @include App.centerDiv;
@@ -95,7 +96,7 @@
     height: 100vh;
 }
 .ladyImg{
-    width: 550px;
+    width: 450px;
 }
 .centerImg{
     height: 100%;
@@ -106,8 +107,7 @@
     @include App.centerDiv;
 }
 .aboutHeading{
-    font-family: App.$headingFont;
-    font-size: 70px;
+    @include App.heading;
 }
 .aboutParagraph{
     margin-top: 2rem;
