@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef } from 'react';
-import {useOnScreen} from './use-on-screen';
 import styles from './landing.module.scss';
+import Skills from './Skills.jsx';
 
 
 export const Landing = () => {
@@ -53,7 +53,7 @@ export const Landing = () => {
             
             <div className={styles.spacer}></div>
 
-            <div className={styles.everythingElse}></div>
+            <Skills></Skills>
         </div>
     )
 }

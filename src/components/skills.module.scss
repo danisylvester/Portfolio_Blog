@@ -1,0 +1,49 @@
+@use '../App.scss';
+
+.skillsGrid{
+    height: 120vh;
+    width: 100vw;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    overflow:hidden;
+}
+.gridOnePolygons, .gridTwoText, .gridThreeSVG{
+    grid-row: 1/2;
+}
+.gridOnePolygons{
+    grid-column: 1/5;
+}
+.gridTwoText{
+    grid-column: 2/6;
+}
+.gridThreeSVG{
+    grid-column: 6/-1;
+}
+.polygonWrapper{
+    padding-top:4rem;
+}
+.polygonImg{
+    width: 700px;
+}
+.textWrapper{
+    @include App.centerDiv;
+    height: 100%;
+    width: 100%;
+}
+.textWrapper h3{
+    font-family: App.$headingFont;
+    font-size: App.$subHeadingSize;
+    margin-bottom: 3rem;
+}
+.textWrapper p{
+    font-size: App.$fontSize;
+    margin-top: 2rem;
+}
+.skillsImg{
+    width: 600px;
+}
+.skillsImgWrapper{
+    height: 100%;
+    @include App.centerDiv;
+}

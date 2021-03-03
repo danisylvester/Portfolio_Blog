@@ -16,7 +16,6 @@
     left:0px;
     z-index:-1;
     background-color:white;
-    font-size:50px;
     overflow-x: hidden;
 }
 
@@ -28,13 +27,6 @@
     right:0px;
     z-index:1;
     background-color: white;
-}
-
-.everythingElse{
-    position:relative;
-    background-color:black;
-    height:1000rem;
-    z-index:100;
 }
 
 
@@ -84,7 +76,7 @@
     grid-row: 1/2;
 }
 .gridOneAboutColor{
-    grid-column: 2/-1;
+    grid-column: 1/-1;
     height: 100vh;
     background-color: App.$customBlue;
 }
@@ -92,6 +84,7 @@
     grid-column: 3/10;
     height: 100vh;
     z-index: 1;
+    font-size:35px;
 }
 .aboutTextWrapper{
     height: 100vh;
@@ -99,11 +92,12 @@
 }
 .aboutHeading{
     font-family: App.$headingFont;
-    font-size: 80px;
+    font-size: 70px;
 }
 .aboutParagraph{
     margin-top: 2rem;
     width: 85%;
+    font-size: 28px;
 }
 
 
