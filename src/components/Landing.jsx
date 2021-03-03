@@ -35,12 +35,17 @@ export const Landing = () => {
                             </div>
                         </div>
                     </div>
+                    <div className={styles.gridThreeImg}>
+                        <div className={styles.centerImg}>
+                            <img className={styles.ladyImg} src='/src/assets/ladyReading.jpg'></img>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div className={`${styles.rightPane}  ${isScrolled ? styles.moveHelloPanelRight : styles.moveHelloPanelLeft}`}>
                 <div className={styles.helloGrid}>
-                    <div className={`${styles.gridOneHello}`}>
+                    <div className={`${styles.gridOneHello} ${isScrolled ? styles.moveHelloTextRight : styles.moveHelloTextLeft}`}>
                         <div className="helloChild">
                             {helloOne} <br></br>
                             {helloTwo} <br></br>

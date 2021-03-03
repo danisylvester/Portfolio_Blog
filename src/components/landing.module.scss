@@ -7,6 +7,10 @@
     background-color:white;
     z-index:-10;
 }
+.leftPane, .rightPane{
+    border-top: 5vw solid white;
+    border-bottom: 5vw solid white;
+}
 
 .leftPane{
     position:fixed;
@@ -72,22 +76,33 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
-.gridOneAboutColor, .gridTwoAboutText {
+.gridOneAboutColor, .gridTwoAboutText, .gridThreeImg {
     grid-row: 1/2;
 }
 .gridOneAboutColor{
-    grid-column: 1/-1;
+    grid-column: 10/-1;
     height: 100vh;
     background-color: App.$customBlue;
 }
 .gridTwoAboutText{
-    grid-column: 3/10;
+    grid-column: 5/10;
     height: 100vh;
     z-index: 1;
     font-size:35px;
 }
-.aboutTextWrapper{
+.gridThreeImg{
+    grid-column: 1/5;
     height: 100vh;
+}
+.ladyImg{
+    width: 550px;
+}
+.centerImg{
+    height: 100%;
+    @include App.centerDiv;
+}
+.aboutTextWrapper{
+    height: 75vh;
     @include App.centerDiv;
 }
 .aboutHeading{
@@ -113,6 +128,19 @@
     transition-timing-function: ease-out;
     transition-duration: 1000ms;
 }
+.moveHelloTextRight{
+    transform: translateX(100vw);
+    transition-timing-function: ease-in;
+    transition-duration: 1000ms;
+    transition-delay: 100ms;
+}
+.moveHelloTextLeft{
+    transform: translateX(0vw);
+    transition-timing-function: ease-out;
+    transition-duration: 1000ms;
+}
+
+
 .hideHeader{
     opacity: 0;
     transition-duration: 100ms;
