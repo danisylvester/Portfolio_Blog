@@ -40,13 +40,13 @@ const Skills = () => {
             <div className={styles.gridButtons}>
                 <div className={styles.btnsWrapper}>
                     <div className={styles.leftBtn}>
-                        <Link className={styles.link}>
+                        <Link to='/blogposts' className={styles.link}>
                             <img className={styles.arrowImg} src='/src/assets/leftArrow.jpg'></img>
                             Tech Blog
                         </Link>
                     </div>
                     <div className={styles.rightBtn}>
-                        <Link className={styles.link}>
+                        <Link to='/blogposts' className={styles.link}>
                             Projects
                             <img className={styles.arrowImg} src='/src/assets/rightArrow.jpg'></img>
                         </Link>
