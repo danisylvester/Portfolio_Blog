@@ -1,5 +1,6 @@
 @use '../App.scss';
 
+//GRID LEVEL
 .gridWrapper{
     height: 100vh;
     width: 100vw;
@@ -13,19 +14,19 @@
     height: 100vh;
 }
 .gridTwoImg{
-    grid-column: 5/-1;
+    grid-column: 6/-1;
     height: 100vh;
 }
-.gridOneText, .gridTwoImg{
+.gridSquare{
+    grid-column: 1/4;
+}
+.gridOneText, .gridTwoImg, .gridSquare{
     grid-row: 1/2;
 }
-.computerWrapper{
-    height: 100%;
-    background: url('../assets/homeShape.jpg') no-repeat top right;
-    background-size: 85% 100%;
 
-    @include App.centerDiv;
-}
+//INNER GRID
+
+//Grid One Text Styling
 .textWrapper{
     height: 87%;
     padding-left: 4rem;
@@ -37,4 +38,25 @@
 }
 .text{
     font-size: 35px;
+}
+
+//Grid Two Computer Styling
+.computerWrapper{
+    height: 100%;
+    background: url('../assets/homeShape.jpg') no-repeat top right;
+    background-size: 85% 100%;
+    @include App.centerDiv;
+}
+.computerImg{
+    width: 500px;
+}
+
+
+// Grid Square Styling
+.squareWrapper{
+    padding-top: 5rem;
+    padding-left: 4rem;
+}
+.squareImg{
+    width: 350px;
 }

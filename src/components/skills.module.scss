@@ -1,37 +1,47 @@
 @use '../App.scss';
-
+//-----GRID LEVEL STYLES------
 .skillsGrid{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: white;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(14, 1fr);
     overflow:hidden;
 }
-.gridTwoText, .gridThreeSVG{
+.gridOnePolygons{
     grid-row: 1/3;
 }
-.gridOnePolygons{
-    grid-row: 1/4;
+.gridTwoText, .gridThreeSVG{
+    grid-row: 2/3;
 }
+.gridButtons{
+    grid-row: 4/5;
+    grid-column: 4/12;
+}
+
 .gridOnePolygons{
     grid-column: 1/5;
 }
 .gridTwoText{
-    grid-column: 2/6;
+    grid-column: 2/7;
 }
 .gridThreeSVG{
-    grid-column: 6/-1;
+    grid-column: 8/-1;
 }
 
+//-----INNER GRID STYLES------
+
+//Polygon Styles
 .polygonImg{
     width: 600px;
 }
+
+//Text Styles
 .textWrapper{
     @include App.centerDiv;
     height: 100%;
     width: 100%;
-    padding-left: 5rem;
+    padding-top: 25%;
 }
 .textWrapper h3{
     @include App.heading;
@@ -41,11 +51,34 @@
     font-size: App.$textSize;
     margin-top: 2rem;
 }
+
+//Skills Image styles
 .skillsImg{
     width: 650px;
 }
 .skillsImgWrapper{
     height: 100%;
     @include App.centerDiv;
-    padding-top: 4rem;
+    padding-top: 27%;
+}
+
+//Button styles
+.btnsWrapper{
+    margin-top: 22%;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.leftBtn, .rightBtn{
+    @include App.heading;
+    color: App.$customBlack;
+    font-size: 35px;
+}
+.link {
+    text-decoration: none;
+    color: App.$customBlack;
+}
+.arrowImg{
+    width: 75px;
 }

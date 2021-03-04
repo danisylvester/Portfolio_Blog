@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styles from './skills.module.scss';
 
 const Skills = () => {
@@ -34,6 +35,22 @@ const Skills = () => {
             <div className={styles.gridThreeSVG}>
                 <div className={styles.skillsImgWrapper}>
                     <img className={styles.skillsImg} src='/src/assets/skillsLady.png'></img>
+                </div>
+            </div>
+            <div className={styles.gridButtons}>
+                <div className={styles.btnsWrapper}>
+                    <div className={styles.leftBtn}>
+                        <Link className={styles.link}>
+                            <img className={styles.arrowImg} src='/src/assets/leftArrow.jpg'></img>
+                            Tech Blog
+                        </Link>
+                    </div>
+                    <div className={styles.rightBtn}>
+                        <Link className={styles.link}>
+                            Projects
+                            <img className={styles.arrowImg} src='/src/assets/rightArrow.jpg'></img>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

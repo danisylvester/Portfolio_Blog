@@ -6,6 +6,11 @@ export const Home = () => {
     return (
     <div>
         <div className={styles.gridWrapper}>
+            <div className={styles.gridSquare}>
+                <div className={styles.squareWrapper}>
+                    <img className={styles.squareImg} src='/src/assets/square.png'></img>
+                </div>
+            </div>
             <div className={styles.gridOneText}>
                     <div className={styles.textWrapper}>
                         <div>
