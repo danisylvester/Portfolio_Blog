@@ -2,39 +2,72 @@
 //-----GRID LEVEL STYLES------
 .skillsGrid{
     min-height: 100vh;
-    width: 100vw;
+    max-width: 100vw;
     background-color: white;
     display: grid;
     grid-template-columns: repeat(14, 1fr);
     overflow:hidden;
-    row-gap: 23vh;
 }
-.gridOnePolygons{
-    grid-row: 1/3;
-}
-.gridTwoText, .gridThreeSVG{
-    grid-row: 2/3;
+.gridOnePolygons, .gridTwoText{
+    grid-row: 1/2;
 }
 .gridButtons{
+    grid-column: 1/-1;
     grid-row: 3/4;
-    grid-column: 4/12;
 }
-
 .gridOnePolygons{
-    grid-column: 1/5;
+    grid-column: 1/-1;
 }
 .gridTwoText{
-    grid-column: 2/7;
+    grid-column: 2/14;
 }
-.gridThreeSVG{
-    grid-column: 8/-1;
+.gridThreeImg{
+    grid-column: 2/14;
+    grid-row: 2/3;
+}
+@media(min-width: 320px){
+    .gridButtons{
+        grid-column: 2/14;
+    }
+}
+@media(min-width: 768px){
+    .skillsGrid{
+        row-gap: 19vh;
+    }
+    .gridOnePolygons{
+        grid-row: 1/4;
+        grid-column: 1/5;
+    }
+    .gridTwoText, .gridThreeImg{
+        grid-row: 2/3;
+    }
+    .gridTwoText{
+        grid-column: 2/8;
+    }
+    .gridThreeImg{
+        grid-column: 8/-1;
+    }
+}
+@media(min-width: 850px){
+    .gridButtons{
+        grid-column: 3/13;
+    }
+    .skillsGrid{
+        row-gap: 23vh;
+    }
+}
+
+@media(min-width: 1500px){
+    .gridButtons{
+        grid-column: 4/12;
+    }
 }
 
 //-----INNER GRID STYLES------
 
 //Polygon Styles
 .polygonImg{
-    width: 650px;
+    width: 700px;
 }
 
 //Text Styles
@@ -45,38 +78,127 @@
 }
 .textWrapper h3{
     @include App.heading;
-    margin-bottom: 3rem;
+    font-size: 35px;
 }
 .textWrapper p{
-    font-size: App.$textSize;
-    margin-top: 2rem;
+    font-size: 22px;
+    margin-top: 1.5rem;
+}
+@media(min-width: 1000px){
+    .textWrapper h3{
+        font-size: 42px;
+        margin-bottom: 3rem;
+    }
+}
+@media(min-width: 1400px){
+    .textWrapper h3{
+        font-size: 48px;
+    }
+    .textWrapper p{
+        font-size: 25px;
+    }
+}
+
+@media(min-width: 1800px){
+
+    .textWrapper p{
+        font-size: App.$textSize;
+        margin-top: 2rem;
+    }
 }
 
 //Skills Image styles
 .skillsImg{
-    width: 650px;
+    width: 100%;
 }
 .skillsImgWrapper{
     height: 100%;
     @include App.centerDiv;
 }
+@media(min-width: 550px){
+    .skillsImg{
+        width: 500px;
+    }
+}
+@media(min-width: 768px){
+    .skillsImg{
+        width: 90%;
+    }
+    
+}
+@media(min-width: 1450px){
+    .skillsImg{
+        width: 650px;
+    }
+}
 
 //Button styles
 .btnsWrapper{
+    margin-top: 5rem;
     margin-bottom: 5rem;
     display: flex;
     justify-content: space-between;
     align-content: center;
+    padding: 0.25rem;
 }
 .leftBtn, .rightBtn{
     @include App.heading;
     color: App.$customBlack;
-    font-size: 35px;
+    font-size: 17px;
 }
 .link {
     text-decoration: none;
     color: App.$customBlack;
 }
 .arrowImg{
-    width: 75px;
+    width: 22px;
+}
+@media(min-width: 360px){
+    .leftBtn, .rightBtn{
+        font-size: 19px;
+    }
+    .btnsWrapper{
+        padding: 0;
+    }
+    .arrowImg{
+        width: 24px;
+    }
+}
+@media(min-width: 375px){
+    .leftBtn, .rightBtn{
+        font-size: 21px;
+    }
+    .arrowImg{
+        width: 26px;
+    }
+}
+@media(min-width: 575px){
+    .leftBtn, .rightBtn{
+        font-size: 25px;
+    }
+    .arrowImg{
+        width: 30px;
+    }
+    .btnsWrapper{
+        margin-top: 9rem;
+    }
+}
+@media(min-width: 768px){
+    .leftBtn, .rightBtn{
+        font-size: 27px;
+    }
+    .arrowImg{
+        width: 32px;
+    }
+    .btnsWrapper{
+        margin-top: 0;
+    }
+}
+@media(min-width: 1400px){
+    .leftBtn, .rightBtn{
+        font-size: 30px;
+    }
+    .arrowImg{
+        width: 40px;
+    }
 }

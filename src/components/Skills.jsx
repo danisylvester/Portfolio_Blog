@@ -32,7 +32,7 @@ const Skills = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.gridThreeSVG}>
+            <div className={styles.gridThreeImg}>
                 <div className={styles.skillsImgWrapper}>
                     <img className={styles.skillsImg} src='/src/assets/skillsLady.png'></img>
                 </div>
@@ -46,7 +46,7 @@ const Skills = () => {
                         </Link>
                     </div>
                     <div className={styles.rightBtn}>
-                        <Link to='/blogposts' className={styles.link}>
+                        <Link to='/projects' className={styles.link}>
                             Projects
                             <img className={styles.arrowImg} src='/src/assets/rightArrow.jpg'></img>
                         </Link>
