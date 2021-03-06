@@ -1,13 +1,26 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import styles from './skills.module.scss';
 
 export const Skills = () => {
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return() => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <div className={styles.skillsGrid}>
             <div className={styles.gridOnePolygons}>
                 <div className={styles.polygonWrapper}>
-                    <img className={styles.polygonImg} src='/src/assets/polygon.png'></img>
+                    <img 
+                        className={styles.polygonImg} 
+                        src='/src/assets/polygon.png'
+                        style={{ transform : `translateY(${offsetY * 0.25}px)`}} 
+                    ></img>
                 </div>
             </div>
             <div className={styles.gridTwoText}>
@@ -34,7 +47,10 @@ export const Skills = () => {
             </div>
             <div className={styles.gridThreeImg}>
                 <div className={styles.skillsImgWrapper}>
-                    <img className={styles.skillsImg} src='/src/assets/skillsLady.png'></img>
+                    <img 
+                        className={styles.skillsImg} 
+                        src='/src/assets/skillsLady.png'
+                    ></img>
                 </div>
             </div>
             <div className={styles.gridButtons}>

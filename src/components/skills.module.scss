@@ -20,10 +20,12 @@
 }
 .gridTwoText{
     grid-column: 2/14;
+    z-index: 1;
 }
 .gridThreeImg{
     grid-column: 2/14;
     grid-row: 2/3;
+    z-index: 1;
 }
 @media(min-width: 320px){
     .gridButtons{

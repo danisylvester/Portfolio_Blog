@@ -1,22 +1,35 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
 import {Skills} from './Skills.jsx';
 
 export const Home = () => {
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return() => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
     <div>
         <div className={styles.gridWrapper}>
             <div className={styles.gridSquare}>
                 <div className={styles.squareWrapper}>
-                    <img className={styles.squareImg} src='/src/assets/square.png'></img>
+                    <img 
+                        className={styles.squareImg} 
+                        style={{ transform : `translateY(${offsetY * 0.5}px)`}} 
+                        src='/src/assets/square.png'
+                    ></img>
                 </div>
             </div>
             <div className={styles.gridOneText}>
                     <div className={styles.textWrapper}>
                         <div>
-                            <div className={styles.heading}>
-                                <h2>Hello,</h2>
-                                <h2>I am Dani <br></br>Sylvester</h2>
+                            <div className={styles.headingWrapper}>
+                                <h2 className={styles.heading}>Hello,</h2>
+                                <h2 className={styles.heading}>I am Dani <br></br>Sylvester</h2>
                             </div>
                             <p className={styles.text}>I'm a website developer with a passion for creative problem solving and 
                                 building beautiful things for the web.
@@ -26,7 +39,11 @@ export const Home = () => {
             </div>
             <div className={styles.gridTwoImg}>
                     <div className={styles.computerWrapper}>
-                        <img className={styles.computerImg} src='/src/assets/computer.png'></img>
+                        <img 
+                            className={styles.computerImg}
+                            style={{ transform : `translateY(-${offsetY * 0.7}px)`}} 
+                            src='/src/assets/computer.png'
+                        ></img>
                     </div>
             </div>
         </div>
