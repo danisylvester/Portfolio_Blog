@@ -1,0 +1,32 @@
+@use '../App.scss';
+
+
+@media(min-width: 768px){
+    .navWrapper{
+        width: 100%;
+        justify-content:space-evenly;
+        position: absolute;
+    }
+}
+
+.inactive {
+    color: App.$navy;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.inactive:hover{
+    text-decoration: none;
+    color: App.$darkPurple;
+    font-weight: 900;
+}
+.active {
+    text-decoration: none;
+    color: #4441BF;
+    font-weight: 900;
+}
+
+.logoStyle{
+    font-family: App.$textFont;
+    color: App.$navy;
+    font-weight: 900;
+}

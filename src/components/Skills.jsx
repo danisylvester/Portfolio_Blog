@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './skills.module.scss';
 
-const Skills = () => {
+export const Skills = () => {
     return (
         <div className={styles.skillsGrid}>
             <div className={styles.gridOnePolygons}>
@@ -58,4 +58,3 @@ const Skills = () => {
     )
 }
 
-export default Skills

@@ -56,7 +56,8 @@
     @include App.centerDiv;
 }
 .heading{
-    @include App.heading;
+    font-family: App.$headingFont;
+    font-weight: 900;
     margin-bottom: 2rem;
     font-size: 27px;
 }
@@ -69,7 +70,6 @@
         @include App.centerDiv;
     }
     .heading{
-        @include App.heading;
         margin-bottom: 1rem;
         font-size: 32px;
     }
@@ -109,8 +109,8 @@
 }
 @media(min-width: 1700px){
     .heading{
-        @include App.heading;
         margin-bottom: 4rem;
+        font-size: 40px;
     }
     .textWrapper{
         padding-left: 4rem;

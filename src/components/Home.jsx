@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './home.module.scss';
-import Skills from './Skills.jsx';
+import {Skills} from './Skills.jsx';
 
 export const Home = () => {
     return (
@@ -30,7 +30,6 @@ export const Home = () => {
                     </div>
             </div>
         </div>
-
         <Skills></Skills>
     </div>
     )
