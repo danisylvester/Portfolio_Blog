@@ -34,7 +34,7 @@
         grid-row: 1/2;
     }
     .gridTwoImg{
-        grid-column: 6/-1;
+        grid-column: 5/-1;
         height: 100vh;
         grid-row: 1/2;
     }
@@ -83,19 +83,22 @@
 }
 @media(min-width: 768px){
     .textWrapper{
-        height: 87%;
+        height: 100%;
     }
     .headingWrapper{
         margin-bottom: 2rem;
     }
     .heading{
-        font-size: 48px;
+        font-size: 45px;
     }
     .text{
-        font-size: 25px;
+        font-size: 24px;
     }
 }
 @media(min-width: 1024px){
+    .textWrapper{
+        padding-bottom: 4rem;
+    }
     .headingWrapper{
         margin-bottom: 2rem;
     }
@@ -137,9 +140,8 @@
     @include App.centerDiv;
 }
 .computerImg{
-    width: 300px;
-    padding-bottom: 6rem;
-    padding-left: 1.5rem;
+    width: 350px;
+    padding-left: 3rem;
     display: none;
 }
 @media(min-width: 768px){
@@ -152,7 +154,7 @@
 }
 @media(min-width: 900px){
     .computerImg{
-        width:350px
+        width:375px
     }
     .computerWrapper{
         background-size: 90% 77%;
@@ -160,7 +162,7 @@
 }
 @media(min-width: 1020px){
     .computerImg{
-        width:375px
+        width:420px
     }
     .computerWrapper{
         background-size: 88% 80%;
@@ -171,13 +173,13 @@
         background-size: 86% 93%;
     }
     .computerImg{
-        width: 425px;
+        width: 450px;
         padding-bottom: 0;
     }
 }
 @media(min-width: 1600px){
     .computerImg{
-        width: 475px;
+        width: 500px;
     }
     .computerWrapper{
         background-size: 86% 100%;

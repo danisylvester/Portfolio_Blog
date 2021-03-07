@@ -19,7 +19,7 @@ export const Home = () => {
                 <div className={styles.squareWrapper}>
                     <img 
                         className={styles.squareImg} 
-                        style={{ transform : `translateY(${offsetY * 0.5}px)`}} 
+                        style={{ transform : `translateY(${offsetY * 0.8}px)`}}
                         src='/src/assets/square.png'
                     ></img>
                 </div>
@@ -37,7 +37,7 @@ export const Home = () => {
                         </div>
                     </div>
             </div>
-            <div className={styles.gridTwoImg}>
+            <div className={styles.gridTwoImg} style={{ transform : `translateY(${offsetY * 0.1}px)`}}>
                     <div className={styles.computerWrapper}>
                         <img 
                             className={styles.computerImg}

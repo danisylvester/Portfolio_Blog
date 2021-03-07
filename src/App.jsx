@@ -12,13 +12,14 @@ const App = () => {
   return (
       <Router>
         <Menu></Menu>
-        <Switch>
+        <Projects></Projects>
+        {/* <Switch>
           <Route exact path='/' component={Home}></Route>
           <Route path='/skills' component={Skills}></Route>
           <Route path='/projects' component={Projects}></Route>
           <Route path='/blogposts' component={Blog}></Route>
           <Route path='/contact' component={Contact}></Route>
-        </Switch>
+        </Switch> */}
       </Router>
   );
 };
