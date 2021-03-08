@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './projects.module.scss';
+import { ProjectContent } from './ProjectContent.jsx';
 
 export const Projects = () => {
     return (
@@ -20,6 +21,7 @@ export const Projects = () => {
                     </div>
                 </div>
             </div>
+            <ProjectContent></ProjectContent>
         </div>
     )
 }
