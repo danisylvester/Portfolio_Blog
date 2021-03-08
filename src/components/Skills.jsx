@@ -13,9 +13,9 @@ export const Skills = () => {
     }, []);
 
     return (
-        <div className={styles.skillsGrid}>
+        <div className={styles.skillsGrid} id='skills'>
             <div className={styles.gridOnePolygons}>
-                <div className={styles.polygonWrapper}>
+                <div className={styles.polygonWrapper} >
                     <img 
                         className={styles.polygonImg} 
                         src='/src/assets/polygon.png'
@@ -23,10 +23,10 @@ export const Skills = () => {
                     ></img>
                 </div>
             </div>
-            <div className={styles.gridTwoText}>
-                <div className={styles.textWrapper}>
+            <div className={styles.gridTwoText} >
+                <div className={styles.textWrapper} >
                     <div>
-                        <h3>
+                        <h3 >
                             My<br></br>
                             Favorite<br></br>
                             Tech

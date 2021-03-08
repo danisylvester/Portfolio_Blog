@@ -10,6 +10,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.$/,
+        exclude: [
+          './adminPortal/'
+        ]
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
