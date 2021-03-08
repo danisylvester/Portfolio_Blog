@@ -1,0 +1,154 @@
+@use '../../App.scss';
+// Main Grid STYLES
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100vw;
+    height: 100vh;
+}
+.gridLine, .gridContent{
+    grid-row: 1/2;
+}
+.gridLine{
+    grid-column: 1/2;
+}
+.gridContent{
+    grid-column: 2/-1;
+}
+@media(min-width: 768px){
+    .gridLine{
+        grid-column: 1/3;
+    }
+    .gridContent{
+        grid-column: 3/-1;
+    }
+}
+
+// CHILD GRID STYLES
+.gridProject{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gridTextWrapper{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    padding-top: 1rem;
+}
+.gridImgWrapper{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+.gridButtonsWrapper{
+    grid-row: 3/4;
+    grid-column: 1/-1;
+}
+
+@media(min-width: 768px){
+    .gridTextWrapper, .gridImgWrapper{
+        grid-row: 1/2;
+    }
+    .gridTextWrapper{
+        grid-column: 2/4;
+    }
+    .gridImgWrapper{
+        grid-column: 4/-1;
+    }
+    .gridButtonsWrapper{
+        grid-column: 4/-1;
+    }
+}
+
+//INNER MAIN STYLES
+// Line
+.line {
+	border-right: 1px solid #30353b;
+	padding-top:5px;
+	padding-bottom: 5px;
+	margin: 40px auto 0;
+	height: 100%;
+	position: relative;
+}
+
+//INNER CHILD STYLES
+
+// Circle
+/* Container around content */
+.circle {
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+  }
+  
+  /* The circles on the timeline */
+  .circle::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    background-color: App.$lightPurple;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  @media(min-width: 768px){
+    .circle::after{
+        width: 25px;
+        height: 25px;
+        left: -12px;
+        top: 15px;
+    }
+  }
+
+// Project image
+.gridImgWrapper{
+    overflow: hidden;
+}
+.projectImg{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+@media(min-width: 1400px){
+    .projectImg{
+        float: right;
+        width: 600px;
+    }
+}
+
+// Text
+.header{
+    @include App.heading;
+    font-size: 30px;
+}
+.textParagraph{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+}
+@media(min-width: 375px){
+    .header{
+        font-size: 34px;
+    }
+}
+
+//Buttons
+.buttonWrapper{
+    display: inline-block;
+    width: 50%;
+    @include App.heading;
+    font-size: 17px;
+}
+.buttonWrapper a{
+    color: App.$darkPurple;
+}
+@media(min-width: 768px){
+    .buttonWrapper{
+        margin-top: 1rem;
+    }
+}

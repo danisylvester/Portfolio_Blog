@@ -1,4 +1,4 @@
-@use '../App.scss';
+@use '../../App.scss';
 
 //GRID LEVEL
 .gridWrapper{
@@ -135,7 +135,7 @@
 //Grid Two Computer Styling
 .computerWrapper{
     height: 100%;
-    background: url('../assets/homeShape.jpg') no-repeat top right;
+    background: url('../../assets/homeShape.jpg') no-repeat top right;
     background-size: 100% 80%;
     @include App.centerDiv;
 }

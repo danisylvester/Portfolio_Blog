@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './projects.module.scss';
-import { ProjectContent } from './ProjectContent.jsx';
+import { ProjectContent } from '../ProjectContent/ProjectContent.jsx';
 
 export const Projects = () => {
     return (

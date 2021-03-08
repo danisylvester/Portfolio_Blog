@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
-import {Skills} from './Skills.jsx';
+import {Skills} from '../Skills/Skills.jsx';
 
 export const Home = () => {
     const [offsetY, setOffsetY] = useState(0);

@@ -12,7 +12,7 @@ module.exports = {
       {
         test: /\.$/,
         exclude: [
-          './adminPortal/'
+          'C:/Users/Dani/source/repos/portfolio-blog-adminbro/adminPortal'
         ]
       },
       {
