@@ -17,10 +17,10 @@
 }
 @media(min-width: 768px){
     .gridLine{
-        grid-column: 1/3;
+        grid-column: 1/2;
     }
     .gridContent{
-        grid-column: 3/-1;
+        grid-column: 2/-1;
     }
 }
 
@@ -45,21 +45,36 @@
     grid-row: 3/4;
     grid-column: 1/-1;
 }
+@media(min-width: 425px){
+ .gridProject{
+     padding: 0rem 2rem;
+ }   
+}
+@media(min-width: 500px){
+ .gridProject{
+     padding: 0rem 2rem 0rem 3rem;
+ }   
+}
 
 @media(min-width: 768px){
-    .gridTextWrapper, .gridImgWrapper{
+    .gridProject{
+        padding: 0;
+    }
+    .gridTextWrapper, .gridImgWrapper, .gridButtonsWrapper{
         grid-row: 1/2;
     }
     .gridTextWrapper{
         grid-column: 2/4;
+        padding-top: 0rem;
     }
     .gridImgWrapper{
         grid-column: 4/-1;
     }
     .gridButtonsWrapper{
-        grid-column: 4/-1;
+        grid-column: 5/-1;
     }
 }
+
 
 //INNER MAIN STYLES
 // Line
@@ -114,26 +129,44 @@
     max-width: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
-@media(min-width: 1400px){
+@media(min-width: 768px){
     .projectImg{
         float: right;
+    }
+}
+@media(min-width: 1150px){
+    .projectImg{
+        max-width: unset;
+        width: 550px;
+    }
+}
+
+@media(min-width: 1250px){
+    .projectImg{
         width: 600px;
     }
 }
+
 
 // Text
 .header{
     @include App.heading;
     font-size: 30px;
 }
-.textParagraph{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 0.5rem;
-}
+
 @media(min-width: 375px){
     .header{
         font-size: 34px;
+    }
+}
+@media(min-width: 540px){
+    .textParagraph{
+        padding: 1rem 0rem;
+    }
+}
+@media(min-width: 768px){
+    .textParagraph{
+        padding: 0rem;
     }
 }
 
@@ -143,12 +176,24 @@
     width: 50%;
     @include App.heading;
     font-size: 17px;
+    text-align: center;
 }
 .buttonWrapper a{
     color: App.$darkPurple;
 }
 @media(min-width: 768px){
-    .buttonWrapper{
-        margin-top: 1rem;
+    .buttonWrapper{ 
+        height: 100%;
+        padding-top: 85%;     
+    }
+}
+@media(min-width: 1024px){
+    .buttonWrapper{ 
+        padding-top: 75%;     
+    }
+}
+@media(min-width: 1250px){
+    .buttonWrapper{ 
+        padding-top: 70%;     
     }
 }
