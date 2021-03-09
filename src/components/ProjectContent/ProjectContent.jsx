@@ -1,12 +1,27 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './projectContent.module.scss';
 
 export const ProjectContent = () => {
+    const [offsetY, setOffsetY] = useState(0);
+    const handleScroll = () => setOffsetY(window.pageYOffset);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return() => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
         <div>
             <div className={styles.grid}>
                 <div className={styles.gridLine}>
                     <div className={styles.line}></div>
+                </div>
+                <div className={styles.gridBkgImg}>
+                    <img 
+                        className={styles.purpleBkgImg} 
+                        style={{ transform : `translateY(${offsetY * 0.6}px)`}} 
+                        src='src/assets/purpleOrgShape.png'
+                    ></img>
                 </div>
                 <div className={styles.gridContent}>
                     <div className={styles.circle}></div>
