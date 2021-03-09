@@ -9,6 +9,7 @@
     grid-template-columns: repeat(12, 1fr);
     overflow:hidden;
     grid-template-rows: 15vh 85vh;
+    padding-top: 1.5rem;
 }
 .gridOneText, .gridSquare{
     grid-row: 2/3;
@@ -29,6 +30,7 @@
     .gridWrapper{
         grid-template-rows: auto;
         min-height: 100vh;
+        padding-top: 0rem;
     }
     .gridOneText, .gridSquare, .gridTwoImg{
         grid-row: 1/2;
@@ -46,6 +48,9 @@
 @media(min-width: 1200px){
     .gridOneText{
         grid-column: 2/7;
+    }
+    .gridWrapper{
+        padding-top: 1.5rem;
     }
 }
 

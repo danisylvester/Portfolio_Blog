@@ -26,7 +26,7 @@ export const Menu = () => {
                   className={styles.inactive}
                   activeClassName={styles.active}
                   exact={true}
-                >
+                  >
                   Home
                 </NavLink>
               </Nav.Item>

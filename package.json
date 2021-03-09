@@ -15,7 +15,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.6.0",
     "cookie-parser": "^1.4.5",
@@ -25,6 +24,7 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.11.15",
     "react": "^17.0.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -39,6 +39,7 @@
     "html-webpack-plugin": "^5.2.0",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
+    "react-scroll": "^1.8.2",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "styled-components": "^5.2.1",

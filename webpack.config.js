@@ -5,7 +5,13 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, '/dist'),
+    publicPath: '/dist',
     filename: 'bundle.js',
+  },
+  devServer: {
+    historyApiFallback: {
+      index: '/dist/index.html'
+    }
   },
   module: {
     rules: [

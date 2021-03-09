@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import styles from './skills.module.scss';
+import { Element } from 'react-scroll'
 
 export const Skills = () => {
     const [offsetY, setOffsetY] = useState(0);
@@ -13,7 +14,7 @@ export const Skills = () => {
     }, []);
 
     return (
-        <div className={styles.skillsGrid} id='skills'>
+        <div className={styles.skillsGrid}>
             <div className={styles.gridOnePolygons}>
                 <div className={styles.polygonWrapper} >
                     <img 
@@ -69,7 +70,6 @@ export const Skills = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

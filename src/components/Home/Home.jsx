@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
 import {Skills} from '../Skills/Skills.jsx';
+import { Element } from 'react-scroll'
+
 
 export const Home = () => {
     const [offsetY, setOffsetY] = useState(0);
@@ -47,7 +49,13 @@ export const Home = () => {
                     </div>
             </div>
         </div>
-        <Skills></Skills>
+        <React.Fragment>
+            <Element>
+                <Skills></Skills>
+            </Element>
+
+        </React.Fragment>
+        
     </div>
     )
 }
