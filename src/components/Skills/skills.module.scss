@@ -64,6 +64,12 @@
     .gridButtons{
         grid-column: 4/12;
     }
+    .gridTwoText{
+        padding-left: 5rem;
+    }
+    .skillsGrid{
+        row-gap: 18vh;
+    }
 }
 
 //-----INNER GRID STYLES------
@@ -129,11 +135,14 @@
         width: 90%;
     }
 }
-@media(min-width: 1450px){
+@media(min-width: 1200px){
     .skillsImg{
-        width: 650px;
+        margin-top: 5rem;
+        width: 85%;
+        max-width: 575px;
     }
 }
+
 
 //Button styles
 .btnsWrapper{
