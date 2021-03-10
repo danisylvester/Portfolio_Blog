@@ -1,4 +1,4 @@
-const BlogPost = require('../models/blogPost');
+const BlogPost = require('../adminPortal/models/blogPost');
 const express = require('express');
 const { json } = require('express');
 const mongoose = require('mongoose');
