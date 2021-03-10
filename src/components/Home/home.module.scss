@@ -56,6 +56,32 @@
 
 //INNER GRID
 
+//Typewriting effect
+
+/* Animation */
+.typewriterText{
+    border-right: 4px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 6ch;
+    letter-spacing: 1.5px;
+    animation: type 5000ms steps(6),
+    blink-caret 1500ms step-end 4;
+   
+  }
+  @keyframes type{
+    0% {width: 0ch;}
+    25%, 30%, 35%{width:6ch;}
+    50%, 60%{width: 0ch;}
+    80%, 90%, 100%{width:6ch;}
+  }
+ 
+  @keyframes blink-caret {
+    0% { border-color: orange }
+    85%, 90%, 100% { border-color: transparent; }
+  }
+ 
+  
 //Grid One Text Styling
 .textWrapper{
     padding-top: 4rem;

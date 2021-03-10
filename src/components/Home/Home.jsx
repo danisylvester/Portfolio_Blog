@@ -5,6 +5,7 @@ import { Element } from 'react-scroll'
 
 
 export const Home = () => {
+    // Parallax scrolling effect
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -30,7 +31,7 @@ export const Home = () => {
                     <div className={styles.textWrapper}>
                         <div>
                             <div className={styles.headingWrapper}>
-                                <h2 className={styles.heading}>Hello,</h2>
+                                <h2 className={`${styles.heading} ${styles.typewriterText}`}>Hello,</h2>
                                 <h2 className={styles.heading}>I am Dani <br></br>Sylvester</h2>
                             </div>
                             <p className={styles.text}>I'm a website developer with a passion for creative problem solving and 
@@ -49,12 +50,9 @@ export const Home = () => {
                     </div>
             </div>
         </div>
-        <React.Fragment>
-            <Element>
+        <div id='skills'>
                 <Skills></Skills>
-            </Element>
-
-        </React.Fragment>
+        </div>
         
     </div>
     )
