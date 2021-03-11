@@ -4,14 +4,15 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const path = require('path');
 const blogPostsRoutes = require('./routes/blogPosts');
+const contactFormRoutes = require('./routes/contact');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
 //DB connection
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true, //to use Mongoose's new string parser and avoid deprecation warning of old url parser.
-  useUnifiedTopology:true //to use Monggose's new topology engine and avoid deprecation warning of old topology engine.
+  useNewUrlParser: true, //use Mongoose's new string parser and avoid deprecation warning of old url parser.
+  useUnifiedTopology:true //use Monggose's new topology engine and avoid deprecation warning of old topology engine.
 });
 mongoose.connection.once('open', () => {
   console.log('db is connected');
@@ -19,15 +20,20 @@ mongoose.connection.once('open', () => {
   console.log('Error', err);
 });
 
-
 app.listen(PORT, () => {
   console.log(`running on port: ${PORT}`);
 });
 
-//temporary
-app.get('/',(req,res) =>{
-  res.send('hello');
-});
+//Data parsing
+app.use(express.urlencoded({
+  extended: false
+}))
+app.use(express.json());
 
-//MIDDLEWARE to change number of likes and add comments
-app.use('/blogposts', blogPostsRoutes); 
+
+app.get('/',(req,res) =>{
+  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+// Middleware
+app.use('/api/blogposts', blogPostsRoutes); 
+app.use('/api/contact', contactFormRoutes);
