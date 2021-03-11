@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import styles from './contactForm.module.scss'
+import Form from 'react-bootstrap/Form'
+import { Button } from 'bootstrap';
+import { Col } from 'react-bootstrap';
 
 export class ContactForm extends Component {
     constructor(props) {
@@ -42,35 +45,32 @@ export class ContactForm extends Component {
     render() {
         return (
             <div className={styles.formWrapper}>
-                <h4>Send me a message</h4>
-                <h4>hello {this.state.firstName}</h4>
-                <form onSubmit={this.handleSubmit}>
-                    <div className={styles.inputField}>
-                        <label>
-                            First Name:
-                        </label>
-                            <input type='text' name='firstName' onChange={this.handleChange} />
-                    </div>
-                    <div className={styles.inputField}>
-                        <label>
-                            Last Name:
-                        </label>
-                            <input type='text' name='lastName' onChange={this.handleChange} />
-                    </div>
-                    <div className={styles.inputField}>
-                        <label>
-                            Email:
-                        </label>
-                            <input type='email' name='email' onChange={this.handleChange} />
-                    </div>
-                    <div className={styles.inputField}>
-                        <label>
-                            Message:
-                        </label>
-                            <input type='text' name='msg' onChange={this.handleChange} />
-                    </div>
+                <h4>Please say hello!</h4>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Row>
+                        <Col sm={12} md={6}>
+                            <Form.Group controlId='firstNameGroup'>
+                                <Form.Label>First Name:</Form.Label>
+                                <Form.Control type='text' name='firstName' onChange={this.handleChange} />
+                            </Form.Group>
+                        </Col>
+                        <Col sm={12} md={6}>
+                            <Form.Group controlId='lastNameGroup'>
+                                <Form.Label>Last Name:</Form.Label>
+                                    <Form.Control type='text' name='lastName' onChange={this.handleChange} />
+                            </Form.Group>
+                        </Col>
+                    </Form.Row>
+                    <Form.Group controlId='emailGroup'>
+                        <Form.Label>Email:</Form.Label>
+                            <Form.Control type='email' name='email' onChange={this.handleChange} />
+                    </Form.Group>
+                    <Form.Group controlId='messageGroup'>
+                        <Form.Label>Message:</Form.Label>
+                            <Form.Control as="textarea" rows={3} type='text' name='msg' onChange={this.handleChange} />
+                    </Form.Group>
                     <input type="submit" value="Submit" />
-                </form>
+                </Form>
             </div>
         )
     }

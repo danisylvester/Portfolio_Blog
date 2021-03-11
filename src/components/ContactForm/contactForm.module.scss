@@ -1,7 +1,12 @@
 @use '../../App.scss';
 
 .formWrapper{
-    width: 500px;
-    height: 500px;
-    border: solid 3px orange;
+    padding: 5rem 1rem;
+    max-width: 425px;
+}
+@media(min-width: 768px){
+    .formWrapper{
+        max-width: unset;
+        width: 100%;
+    }
 }
