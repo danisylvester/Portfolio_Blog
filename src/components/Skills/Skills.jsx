@@ -20,7 +20,7 @@ export const Skills = () => {
                     <img 
                         className={styles.polygonImg} 
                         src='/src/assets/polygon.png'
-                        style={{ transform : `translateY(${offsetY * 0.1}px)`}} 
+                        style={{ transform : `translateY(${offsetY * 0.25}px)`}} 
                     ></img>
                 </div>
             </div>

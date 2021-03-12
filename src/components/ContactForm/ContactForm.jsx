@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styles from './contactForm.module.scss'
 import Form from 'react-bootstrap/Form'
-import { Button } from 'bootstrap';
 import { Col } from 'react-bootstrap';
 
 export class ContactForm extends Component {
@@ -45,7 +44,6 @@ export class ContactForm extends Component {
     render() {
         return (
             <div className={styles.formWrapper}>
-                <h4>Please say hello!</h4>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Row>
                         <Col sm={12} md={6}>
@@ -69,7 +67,7 @@ export class ContactForm extends Component {
                         <Form.Label>Message:</Form.Label>
                             <Form.Control as="textarea" rows={3} type='text' name='msg' onChange={this.handleChange} />
                     </Form.Group>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" className={styles.submitBtn} />
                 </Form>
             </div>
         )

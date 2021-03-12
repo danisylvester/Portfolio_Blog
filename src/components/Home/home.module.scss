@@ -29,8 +29,9 @@
 @media(min-width: 768px){
     .gridWrapper{
         grid-template-rows: auto;
+        height: auto;
         min-height: 100vh;
-        padding-top: 0rem;
+        padding-top: 1rem;
     }
     .gridOneText, .gridSquare, .gridTwoImg{
         grid-row: 1/2;
@@ -45,13 +46,16 @@
         height: 100vh;
     }
 }
+@media(min-width: 1024px){
+    .gridWrapper{
+        padding-top: 1rem;
+    }
+}
 @media(min-width: 1200px){
     .gridOneText{
         grid-column: 2/7;
     }
-    .gridWrapper{
-        padding-top: 1.5rem;
-    }
+
 }
 
 //INNER GRID

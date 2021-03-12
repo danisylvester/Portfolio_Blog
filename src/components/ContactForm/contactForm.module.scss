@@ -1,12 +1,8 @@
 @use '../../App.scss';
 
-.formWrapper{
-    padding: 5rem 1rem;
-    max-width: 425px;
-}
-@media(min-width: 768px){
-    .formWrapper{
-        max-width: unset;
-        width: 100%;
-    }
+.submitBtn{
+    color: white;
+    background-color: App.$darkPurple;
+    border-radius: 10%;
+    padding: 2px;
 }
