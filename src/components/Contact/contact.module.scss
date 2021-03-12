@@ -1,1 +1,99 @@
 @use '../../App.scss';
+
+.bkg{
+    min-height: 100vh;
+    width: 100vw;
+    background: url('../../assets/contactShape.png') no-repeat top center;
+    background-size: 100% 100%;
+    @include App.centerDiv;
+    padding: 6rem 1rem;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    overflow:hidden;
+    width: 95%;
+    max-width: 950px;
+    height: 75%;
+    background-color: white;
+    box-shadow: 0 0 .25em .25em rgba(0, 0, 0, 0.25);
+    border-radius: 60px 0px;
+}
+.gridLeftInfo{
+    grid-column: 1/-1;
+    width: 100%;
+    padding: 3rem 1rem 1rem 1rem;
+
+}
+.gridRightForm{
+    grid-column: 1/-1;
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
+
+@media(min-width: 768px){
+    .gridLeftInfo, .gridRightForm{
+        padding: 3rem 2rem;
+    }
+    .gridLeftInfo{
+        grid-column: 1/7;
+    }
+    .gridRightForm{
+        grid-column: 7/-1;
+    }
+}
+
+//INNER GRID STYLES
+
+//Icon images
+.iconImg{
+    width: 35px;
+}
+.iconsWrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+@media(min-width: 375px){
+    .iconImg{
+        width: 40px;
+    }
+}
+@media(min-width: 768px){
+    .iconImg{
+        width: 46px;
+    }
+    .iconsWrapper{
+        display: block;
+        padding-top: 1rem;
+    }
+    .iconContainer{
+        margin-top: 1rem;
+    }
+}
+
+//Text
+.leftHeading{
+    @include App.heading;
+    font-size: App.$subHeadingSize * 0.7;
+}
+.paragraphWrapper{
+    margin: 1rem 0rem 1.5rem 0rem;
+}
+.leftParagraph{
+    margin-top: 0.25rem;
+}
+
+@media(min-width: 768px){
+    .paragraphWrapper{
+        font-size: App.$textSize * 0.85;
+    }
+    .leftHeading{
+        font-size: App.$subHeadingSize * 0.8;
+    }
+}
+@media(min-width: 1750px){
+    .leftHeading{
+        font-size: App.$subHeadingSize * 0.8;
+    }
+}
