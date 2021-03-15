@@ -1,4 +1,4 @@
-const BlogPost = require('../adminPortal/models/blogPost');
+const BlogPost = require('../models/blogPost');
 const express = require('express');
 const { json } = require('express');
 const mongoose = require('mongoose');
@@ -22,6 +22,7 @@ router.get('/:id', (req, res) => {
 // @desc GET ALL BLOG POSTS
 // @route GET /blogposts
 router.get('/', (req, res) => {
+    console.log('here')
     BlogPost.find()
         .exec()
         .then(doc => {

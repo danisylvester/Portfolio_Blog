@@ -6,8 +6,7 @@ const AdminBroExpress = require('@admin-bro/express');
 const AdminBroMongoose = require('@admin-bro/mongoose');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv').config();
-const blogPostsRoutes = require('./routes/blogPosts');
-const BlogPost = require('./models/blogPost');
+const BlogPost = require('./models/blogPost.js');
 const User = require('./models/user');
 
 const app = express();
