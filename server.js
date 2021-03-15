@@ -5,6 +5,7 @@ const dotenv = require('dotenv').config();
 const path = require('path');
 const blogPostsRoutes = require('./routes/blogPosts');
 const contactFormRoutes = require('./routes/contact');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -29,6 +30,7 @@ app.use(express.urlencoded({
   extended: false
 }))
 app.use(express.json());
+app.use(cors());
 
 
 app.get('/',(req,res) =>{
