@@ -23,19 +23,30 @@ export class ContactForm extends Component {
     
     async handleSubmit(event) {
         event.preventDefault(); // prevents page refresh
-        const subject = `Website Message from ${firstName} ${lastName}`;
-        
-        alert(`${state.firstName}, thank you for your message! I'll be in contact with you soon.`);
 
+        const _email = event.target.email.value;
+        const _subject = `Website Message from ${event.target.firstName.value} ${event.target.lastName.value}`;
+        const _msg = event.target.msg.value;
+        
         try{
-            await fetch('/api/contact', {
+            
+            var data = {
+                email: _email,
+                subject: _subject,
+                msg : _msg
+            }
+        
+            fetch('http://localhost:5001/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: JSON.stringify(this.state.email, subject, this.state.msg)
+                body: JSON.stringify(data)
             });
+            
+            alert(`${event.target.firstName.value}, thank you for your message! I'll be in contact with you soon.`);
             this.setState({ firstName: '', lastName: '', email: '', msg: ''}); //reset inputs to empty
+        
         } catch(err) {
             throw err;
         }
