@@ -65,18 +65,24 @@
     overflow: hidden;
     width: 6ch;
     letter-spacing: 1.5px;
-    animation: type 5000ms steps(6),
-    blink-caret 1500ms step-end 4;
+    animation: type 2000ms steps(6) 500ms,
+    blink-caret 1200ms step-end 4;
   }
   @keyframes type{
-    0% {width: 0ch;}
-    25%, 30%, 35%{width:6ch;}
-    50%, 60%{width: 0ch;}
-    80%, 90%, 100%{width:6ch;}
+    0% {
+        width: 0ch;
+    }
+    90%, 100%{
+        width:6ch;
+    }
   }
   @keyframes blink-caret {
-    0% { border-color: orange }
-    85%, 90%, 100% { border-color: transparent; }
+    0% { 
+        border-color: orange 
+    }
+    85%, 90%, 100% { 
+        border-color: transparent; 
+    }
   }
  
   
