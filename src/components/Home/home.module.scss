@@ -31,7 +31,7 @@
         grid-template-rows: auto;
         height: auto;
         min-height: 100vh;
-        padding-top: 1rem;
+        padding-top: 56px;
     }
     .gridOneText, .gridSquare, .gridTwoImg{
         grid-row: 1/2;
@@ -46,11 +46,7 @@
         height: 100vh;
     }
 }
-@media(min-width: 1024px){
-    .gridWrapper{
-        padding-top: 1rem;
-    }
-}
+
 @media(min-width: 1200px){
     .gridOneText{
         grid-column: 2/7;
@@ -62,7 +58,7 @@
 
 //Typewriting effect
 
-/* Animation */
+/* Hello Typewriter Animation */
 .typewriterText{
     border-right: 4px solid transparent;
     white-space: nowrap;
@@ -71,7 +67,6 @@
     letter-spacing: 1.5px;
     animation: type 5000ms steps(6),
     blink-caret 1500ms step-end 4;
-   
   }
   @keyframes type{
     0% {width: 0ch;}
@@ -79,7 +74,6 @@
     50%, 60%{width: 0ch;}
     80%, 90%, 100%{width:6ch;}
   }
- 
   @keyframes blink-caret {
     0% { border-color: orange }
     85%, 90%, 100% { border-color: transparent; }
@@ -185,6 +179,7 @@
     }
     .computerImg{
         display: block;
+        animation: slideIn 1000ms;
     }
 }
 @media(min-width: 900px){
@@ -220,6 +215,16 @@
         background-size: 86% 100%;
     }
 }
+// Computer Slide In Animation
+@keyframes slideIn {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 
 // Grid Square Styling
 .squareWrapper{
