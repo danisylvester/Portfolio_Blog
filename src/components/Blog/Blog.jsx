@@ -5,7 +5,7 @@ import styles from './blog.module.scss';
 import DOMPurify from "dompurify";
 import { Button } from 'bootstrap';
 import { readyException } from 'jquery';
-
+import {BlogLanding} from '../BlogLanding/BlogLanding.jsx';
 
 
 export class Blog extends Component {
@@ -23,7 +23,7 @@ export class Blog extends Component {
             fetch('http://localhost:5001/api/blogposts', {
                 method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 }
             })
             .then(res => {
@@ -50,9 +50,12 @@ export class Blog extends Component {
             blogPosts.map((blog) => {
                 return (
                     <Card key={blog._id} className={styles.blogCard}>
-                        <Card.Header>{blog.title}</Card.Header>
                         <Card.Body className={styles.cardBody}>
-                            <Card.Text dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.body)}}></Card.Text>
+                            <Card.Title>{blog.title}</Card.Title>
+                            <Card.Text 
+                                dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.body)}}
+                                className={styles.cardText}
+                            ></Card.Text>
                         </Card.Body>
                         <Card.Footer>
                             <button value={blog._id} onClick={this.handleClick}>
@@ -70,16 +73,19 @@ export class Blog extends Component {
 
     render() {          
         return (
-            <div className={styles.bkg}>
-                {
-                    this.state.isFetching ? 
-                    <Spinner animation="border" />
-                    :
-                    <CardColumns>
-                        {this.displayBlogPosts(this.state.blogPosts)}
-                    </CardColumns>
-                }
-            </div>
+            <>
+                <BlogLanding></BlogLanding>
+                <div className={styles.bkg}>
+                    {
+                        this.state.isFetching ? 
+                        <Spinner animation="border" />
+                        :
+                        <CardColumns>
+                            {this.displayBlogPosts(this.state.blogPosts)}
+                        </CardColumns>
+                    }
+                </div>
+            </>
         )
     }
 }
