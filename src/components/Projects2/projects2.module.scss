@@ -1,0 +1,139 @@
+@use  '../../App.scss';
+
+.bkg{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.gridCard{
+    width: 90%;
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1rem;
+    overflow: hidden;
+    justify-items: center;
+    text-align: center;
+    box-shadow: 1px 4px 9px 4px rgba(0, 0, 0, 0.3), -4px -4px 9px 5px rgba(255, 255, 255, 0.74);
+}
+.gridTopShape{
+    grid-column: 1/5;
+    grid-row: 1/3;
+    width: 100%;
+}
+.gridDevices{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    align-self: center;
+}
+.gridTitle,.gridSkills, .gridViewBtn{
+    align-self: center;
+}
+.gridTitle{
+    grid-column: 1/-1;
+    grid-row: 3/4;
+}
+.gridSkills{
+    grid-column: 1/-1;
+    grid-row: 4/5;
+}
+.gridViewBtn{
+    grid-column: 1/-1;
+    grid-row: 5/6;
+    width: 100%;
+}
+.gridBottomShapes{
+    grid-column: 1/-1;
+    grid-row: 6/7;
+    width: 100%;
+    align-self: flex-end;
+}
+@media(min-width: 320px){
+ .gridCard{
+     width: 80%;
+ }   
+ .gridBottomShapes{
+     grid-column: 1/10;
+ }
+ .gridSkills, .gridTitle, .gridViewBtn{
+     grid-column: 2/12;
+ }
+}
+@media(min-width: 768px){
+    .gridCard{
+        text-align: left;
+        max-width: 650px;
+    }
+    .gridTitle, .gridSkills, .gridViewBtn{
+        grid-column: 2/6;
+    }
+    .gridTitle{
+        grid-row: 1/2;
+        align-self: flex-end;
+    }
+    .gridSkills{
+        grid-row:2/3;
+    }
+    .gridViewBtn{
+        grid-row: 3/4;
+        align-self: flex-start;
+    }
+    .gridDevices{
+        grid-column: 6/13;
+        grid-row:1/4;
+    }
+    .gridBottomShapes{
+        grid-column: 1/7;
+        grid-row: 3/4;
+        padding-top: 2rem;
+    }
+    .gridCard{
+        row-gap: 0;
+        height: 410px;
+        max-height: 550px;
+        max-width: 800px;
+    }
+}
+
+// Images
+.topTriangle, .deviceImg, .bottomShapes{ 
+    width: 100%;
+}
+@media(min-width: 768px){
+    .topTriangle, .bottomShapes{
+        width: 80%;
+    }
+}
+
+// Skills 
+.skill{
+    border: 2px solid App.$darkPurple;
+    border-radius: 30px;
+    color: App.$darkPurple;
+    display: inline-block;
+    padding: 0px 4px;
+    margin: 3px;
+}
+
+
+// Text
+.projTitle{
+    @include App.heading;
+    font-size: 28px;
+}
+
+//Button
+.viewBtn{
+    border-radius: 30px;
+    background-color: App.$lightPurple;
+    padding: 5px 9px;
+    border: none;
+}
+.btnText{
+    color: App.$darkPurple;
+    font-weight: 900;
+    text-transform: uppercase;
+}
