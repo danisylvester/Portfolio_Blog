@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
 import {Skills} from '../Skills/Skills.jsx';
+import {Projects2} from '../Projects2/Projects2.jsx'
 import { Element } from 'react-scroll'
 
 
@@ -17,30 +18,31 @@ export const Home = () => {
 
     return (
     <div>
-        <div className={styles.gridWrapper}>
-            <div className={styles.gridSquare}>
-                <div className={styles.squareWrapper}>
-                    <img 
-                        className={styles.squareImg} 
-                        style={{ transform : `translateY(${offsetY * 0.8}px)`}}
-                        src='/src/assets/square.png'
-                    ></img>
-                </div>
-            </div>
-            <div className={styles.gridOneText}>
+        <div className={styles.grid}>
+            <div className={styles.gridText}>
                     <div className={styles.textWrapper}>
                         <div>
-                            <div className={styles.headingWrapper}>
-                                <h2 className={`${styles.heading} ${styles.typewriterText}`}>Hello,</h2>
-                                <h2 className={styles.heading}>I am Dani <br></br>Sylvester</h2>
+                            <div className={styles.textRowOne}>
+                                <p>I'm <span className={styles.dani}>Dani</span>, I create</p>
                             </div>
-                            <p className={styles.text}>I'm a website developer with a passion for creative problem solving and 
-                                building beautiful things for the web.
-                            </p>
+                            <div className={styles.textRowTwo}>
+                                <h2 className={styles.rowTwoHeading}>user-centric web applications</h2>
+                            </div>
+                            <div className={styles.textRowThree}>
+                                <p>I'm a website developer with a passion for creative 
+                                    problem solving and building beautiful 
+                                    things for the web.
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles.viewBtnWrapper}>
+                            <button className={styles.viewBtn}>
+                                <span className={styles.btnText}>View Projects</span>
+                            </button>
                         </div>
                     </div>
             </div>
-            <div className={styles.gridTwoImg} style={{ transform : `translateY(${offsetY * 0.1}px)`}}>
+            <div className={styles.gridComputerBkg} style={{ transform : `translateY(${offsetY * 0.1}px)`}}>
                     <div className={styles.computerWrapper}>
                         <img 
                             className={styles.computerImg}
@@ -50,9 +52,13 @@ export const Home = () => {
                     </div>
             </div>
         </div>
+        <div id='projects' className={styles.projects}>
+            <Projects2></Projects2>
+        </div>
         <div id='skills'>
                 <Skills></Skills>
         </div>
+
         
     </div>
     )

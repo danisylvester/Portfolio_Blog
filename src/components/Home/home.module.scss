@@ -1,54 +1,53 @@
 @use '../../App.scss';
 
 //GRID LEVEL
-.gridWrapper{
-    height: 90vh;
-    width: 100vw;
+.grid{
+    min-height: 100vh;
+    width: 100%;
     background-color: white;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     overflow:hidden;
-    grid-template-rows: 15vh 85vh;
-    padding-top: 1.5rem;
 }
-.gridOneText, .gridSquare{
-    grid-row: 2/3;
-}
-.gridOneText{
+.gridText{
     grid-column: 2/12;
     z-index: 1;
+    grid-row: 1/2;
+    padding-top: 6rem;
 }
-.gridTwoImg{
+.gridComputerBkg{
     grid-column: 1/-1;
     grid-row: 1/2;
 }
-.gridSquare{
-    grid-column: 1/4;
+
+@media(min-width:375px){
+    .gridText{
+        padding-top: 8rem;
+    }
 }
 
 @media(min-width: 768px){
-    .gridWrapper{
+    .grid{
         grid-template-rows: auto;
         height: auto;
         min-height: 100vh;
-        padding-top: 56px;
     }
-    .gridOneText, .gridSquare, .gridTwoImg{
+    .gridText, .gridComputerBkg{
         grid-row: 1/2;
     }
-    .gridTwoImg{
+    .gridComputerBkg{
         grid-column: 5/-1;
         height: 100vh;
         grid-row: 1/2;
     }
-    .gridOneText{
+    .gridText{
         grid-column: 2/6;
         height: 100vh;
     }
 }
 
 @media(min-width: 1200px){
-    .gridOneText{
+    .gridText{
         grid-column: 2/7;
     }
 
@@ -56,123 +55,83 @@
 
 //INNER GRID
 
-//Typewriting effect
+// //Typewriting effect
 
-/* Hello Typewriter Animation */
-.typewriterText{
-    border-right: 4px solid transparent;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 6ch;
-    letter-spacing: 1.5px;
-    animation: type 2000ms steps(6) 500ms,
-    blink-caret 1200ms step-end 4;
-  }
-  @keyframes type{
-    0% {
-        width: 0ch;
-    }
-    90%, 100%{
-        width:6ch;
-    }
-  }
-  @keyframes blink-caret {
-    0% { 
-        border-color: orange 
-    }
-    85%, 90%, 100% { 
-        border-color: transparent; 
-    }
-  }
+// /* Hello Typewriter Animation */
+// .typewriterText{
+//     border-right: 4px solid transparent;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     width: 6ch;
+//     letter-spacing: 1.5px;
+//     animation: type 2000ms steps(6) 500ms,
+//     blink-caret 1200ms step-end 4;
+//   }
+//   @keyframes type{
+//     0%, 10% {
+//         width: 0ch;
+//     }
+//     90%, 100%{
+//         width:6ch;
+//     }
+//   }
+//   @keyframes blink-caret {
+//     0% { 
+//         border-color: orange 
+//     }
+//     85%, 90%, 100% { 
+//         border-color: transparent; 
+//     }
+//   }
  
-  
-//Grid One Text Styling
-.textWrapper{
-    padding-top: 4rem;
-    @include App.centerDiv;
+
+//Text Styling
+.textRowOne, .textRowTwo{
+    text-transform: uppercase;
 }
-.headingWrapper{
-    margin-bottom: 2rem;
+.textRowOne, .textRowThree{
+    font-family: App.$textFont;
+    font-weight: 500;
+    color: App.$black;
+    letter-spacing: 0.03em;
 }
-.heading{
+.textRowOne{
+    margin-bottom: 0.5rem;
+}
+.textRowTwo{
+    margin-bottom: 1.5rem;
+}
+.rowTwoHeading{
     font-family: App.$headingFont;
-    font-weight: 900;
-    font-size: 40px;
+    font-weight: 800 !important;
+    color: #333333;
 }
-.text{
-    font-size: 22px;
+.textRowThree{
+    margin-bottom: 2.5rem;
 }
-@media(min-width: 375px){
-    .textWrapper{
-        @include App.centerDiv;
-    }
-    .headingWrapper{
-        margin-bottom: 1rem;
-    }
-    .heading{
-        font-size: 48px;
-    }
-    .text{
-        font-size: 25px;
-    }
+.dani{
+    color: #FF4770;
 }
-@media(min-width: 768px){
-    .textWrapper{
-        height: 100%;
-    }
-    .headingWrapper{
-        margin-bottom: 2rem;
-    }
-    .heading{
-        font-size: 45px;
-    }
-    .text{
-        font-size: 24px;
-    }
+
+//Button
+.viewBtn{
+    border-radius: 30px;
+    background-color: App.$darkPurple;
+    padding: 5px 9px;
+    border: none;
 }
-@media(min-width: 1024px){
-    .textWrapper{
-        padding-bottom: 4rem;
-    }
-    .headingWrapper{
-        margin-bottom: 2rem;
-    }
-    .heading{
-        font-size: 52px;
-    }
-    .text{
-        font-size: 25px;
-    }
-}
-@media(min-width: 1400px){
-    .headingWrapper{
-        margin-bottom: 3rem;
-    }
-    .heading{
-        font-size: 60px;
-    }
-    .textWrapper{
-        padding-left: 2.5rem;
-    }
-}
-@media(min-width: 1700px){
-    .headingWrapper{
-        margin-bottom: 3rem;
-    }
-    .heading{
-        font-size: 65px;
-    }
-    .textWrapper{
-        padding-left: 4rem;
-    }
+.btnText{
+    color: white;
+    @include App.buttonText;
 }
 
 //Grid Two Computer Styling
 .computerWrapper{
     height: 100%;
-    background: url('../../assets/homeShape.jpg') no-repeat top right;
+    background: url('../../assets/landing-bkg.png') no-repeat top right;
     background-size: 100% 80%;
     @include App.centerDiv;
+    display: none;
 }
 .computerImg{
     width: 350px;
@@ -182,10 +141,11 @@
 @media(min-width: 768px){
     .computerWrapper{
         background-size: 90% 73%;
+        display: flex;
     }
     .computerImg{
         display: block;
-        animation: slideIn 1000ms;
+        animation: slideIn 1200ms;
     }
 }
 @media(min-width: 900px){
@@ -223,64 +183,18 @@
 }
 // Computer Slide In Animation
 @keyframes slideIn {
-    0% {
+    0%, 10% {
         transform: translateY(-1000px);
     }
-    100%{
+    95%, 100%{
         transform: translateY(0);
     }
 }
 
 
-// Grid Square Styling
-.squareWrapper{
-    padding-left: 0.5rem;
-}
-.squareImg{
-    width: 150px;
-}
-@media(min-width: 375px){
-    .squareWrapper{
-        padding-top: 0rem;
-        padding-left: 1.5rem;
-    }
-    .squareImg{
-        width: 225px;
-    }
-}
-@media(min-width: 768px){
-    .squareWrapper{
-        padding-top: 3rem;
-        padding-left: 1.5rem;
-    }
-    .squareImg{
-        width: 200px;
-    }
-}
-@media(min-width: 900px){
-    .squareWrapper{
-        padding-top: 3rem;
-        padding-left: 2rem;
-    }
-    .squareImg{
-        width: 225px;
-    }
-}
-@media(min-width: 1400px){
-    .squareWrapper{
-        padding-top: 2rem;
-        padding-left: 3rem;
-    }
-    .squareImg{
-        width: 275px;
-    }
-}
-@media(min-width: 1550px){
-    .squareWrapper{
-        padding-top: 2rem;
-        padding-left: 5rem;
-    }
-    .squareImg{
-        width: 350px;
-    }
+
+.projects{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
