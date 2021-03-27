@@ -58,11 +58,19 @@ const userResourceOptions = {
   }
 };
 
-//Setting up blogpost body to be a quill editor instance.
+//Setting up blogpost title & body properties to be a quill editor instances.
 //Gives body a toolbar editor in the admin portal.
 const blogPostResourceOptions = {
   properties: {
     body: {
+      type: 'richtext',
+      custom: {
+        modules: {
+          toolbar: [['bold', 'italic'], ['link', 'image']]
+        }
+      }
+    },
+    title: {
       type: 'richtext',
       custom: {
         modules: {
