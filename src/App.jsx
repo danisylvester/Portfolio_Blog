@@ -11,7 +11,7 @@ import { Contact } from './components/Contact/Contact.jsx';
 const App = () => {
   return (
     <>
-        <Menu></Menu>
+        {/* <Menu></Menu> */}
         <Switch>
           <Route exact path='/' component={Home}></Route>
           <Route path='/projects' component={Projects}></Route>

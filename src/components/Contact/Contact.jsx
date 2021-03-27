@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './contact.module.scss';
 import { ContactForm } from '../ContactForm/ContactForm.jsx';
+import Overlay from 'react-bootstrap/Overlay'
 
 export class Contact extends Component {
     render() {

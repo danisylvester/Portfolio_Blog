@@ -1,103 +1,185 @@
-@use '../../App.scss';
+@use  '../../App.scss';
 
-//GRID STYLES
-.grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    overflow:hidden;
-    height: 100vh;
+.bkg{
     width: 100vw;
-    background-color: white;
+    max-width: 1000px;
+    min-height: 100vh;
+    padding: 4rem 1.2rem;
 }
-.gridImg{
-    grid-column: 1/-1;
-    width: 100%;
-    height: 100%;
-}
-.gridHeader{
-    grid-column: 1/-1;
-    height: 100%;
-    width: 100%;
-}
-
-@media(min-width: 768px){
-    
-    .gridImg, .gridHeader{
-        grid-row: 1/2;
-    }
-    .gridImg{
-        grid-column: 1/6;
-    }
-    .gridHeader{
-        grid-column: 6/-1;
-    }
-}
-@media(min-width: 1400px){
-    .gridHeader{
-        grid-column: 7/-1;
-    }
-    .gridImg{
-        grid-column: 2/7;
-    }
-}
-
-//INNER GRID STYLES
-
-//Image
-.ladyImg{
-    width: 90%;
-    max-width: 425px;
-}
-.imgWrapper{
-    height: 100%;
-    @include App.centerDiv;
-    align-items: flex-end;
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-}
-@media(min-width: 768px){
-    .ladyImg{
-        width: 350px;
-    }
-    .imgWrapper{
-        align-items: center;
-        padding-left: 4rem;
-    }
-}
-@media(min-width: 1024px){
-    .ladyImg{
-        width: 500px;
-    }
-}
-
-//Header
-.header{
-    @include App.heading;
-    margin: 0 auto;
-}
-.headingWrapper{
+.projectWrapper{
     display: flex;
     justify-content: center;
-    height: 100%;
+    padding: 2rem 0rem;
 }
-@media(min-width: 540px){
-    .header{
-        font-size: 50px;
-    }
+.gridCard{
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.5rem;
+    overflow: hidden;
+    justify-items: center;
+    text-align: center;
+    border-radius: 28px;
+    box-shadow: 1px 4px 9px 4px rgba(0, 0, 0, 0.3), 
+        -4px -4px 9px 5px rgb(255, 255, 255);
+}
+.gridDevices{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    align-self: center;
+    z-index: 1;
+    padding-top: 1rem;
+    
+}
+.gridTitle,.gridSkills, .gridViewBtn{
+    align-self: center;
+}
+.gridTitle{
+    grid-column: 1/-1;
+    grid-row: 3/4;
+}
+.gridSkills{
+    grid-column: 1/-1;
+    grid-row: 4/5;
+}
+.gridViewBtn{
+    grid-column: 1/-1;
+    grid-row: 5/6;
+    width: 100%;
+}
+// SNS Specific
+.gridTopShape{
+    grid-column: 1/5;
+    grid-row: 1/3;
+    width: 100%;
+}
+.gridBtmSNSShapes{
+    grid-column: 1/-1;
+    grid-row: 6/7;
+    width: 100%;
+    align-self: flex-end;
+}
+// UAI Specific
+.gridBtmUAIShapes{
+    grid-column: 1/9;
+    grid-row: 6/7;
+    width: 100%;
+    align-self: flex-end;
+}
+.gridUAITriangle{
+    grid-column: 9/-1;
+    grid-row: 6/7;
+    width: 100%;
+    align-self: flex-end;
+    text-align: right;
+}
+@media(min-width: 320px){
+ .gridCard{
+     width: 100%;
+ }   
+ .gridBtmSNSShapes{
+     grid-column: 1/10;
+ }
+ .gridBtmUAIShapes{
+    grid-column: 1/7;
+ }
+ .gridUAITriangle{
+     grid-column: 10/-1;
+ }
+ .gridSkills, .gridTitle, .gridViewBtn{
+     grid-column: 2/12;
+ }
 }
 @media(min-width: 768px){
-    .headingWrapper{
-        align-items: center;
-        padding-bottom: 0;
+    .bkg{
+        padding:4rem 3rem;
+    }
+    .projectWrapper{
+        padding: 3rem 0rem;
+    }
+    .gridCard{
+        text-align: left;
+        max-width: 650px;
+        row-gap: 0;
+        height: 410px;
+        max-height: 550px;
+        max-width: 1000px;
+    }
+    .gridTitle, .gridSkills, .gridViewBtn{
+        grid-column: 2/6;
+    }
+    .gridTitle{
+        grid-row: 1/2;
+        align-self: flex-end;
+        justify-self: flex-start;
+    }
+    .gridSkills{
+        grid-row:2/3;
+    }
+    .gridViewBtn{
+        grid-row: 3/4;
+        align-self: flex-start;
+    }
+    .gridDevices{
+        grid-column: 6/13;
+        grid-row:1/4;
+    }
+    .gridTopShape{
+        grid-column: 1/4;
+    }
+    .gridBtmSNSShapes{
+        grid-column: 1/6;
+        grid-row: 3/4;
+        padding-top: 2rem;
+    }
+    .gridBtmUAIShapes, .gridUAITriangle{
+        grid-row: 3/4;
+    }
+    .gridBtmUAIShapes{
+        grid-column: 1/5;
+    }
+    .gridUAITriangle{
+        grid-column: 11/-1;
     }
 }
-@media(min-width: 1024px){
-    .header{
-        font-size: 60px;
+
+// Images
+.triangles, .deviceImg, .bottomShapes{ 
+    width: 100%;
+}
+@media(min-width: 768px){
+    .triangles, .bottomShapes{
+        width: 80%;
     }
 }
-@media(min-width: 1400px){
-    .headingWrapper{
-        justify-content: flex-start;
-    }
+
+// Skills 
+.skill{
+    border: 2px solid App.$darkPurple;
+    border-radius: 30px;
+    color: App.$darkPurple;
+    color:App.$darkPurple;
+    display: inline-block;
+    padding: 0px 4px;
+    margin: 3px;
+    font-size: 0.9em
+}
+
+
+// Text
+.projTitle{
+    @include App.heading;
+    font-size: 1.8em;
+}
+
+//Button
+.viewBtn{
+    border-radius: 30px;
+    background-color: App.$lightPurple;
+    padding: 5px 9px;
+    border: none;
+}
+.btnText{
+    color: App.$darkPurple;
+    @include App.buttonText;
 }

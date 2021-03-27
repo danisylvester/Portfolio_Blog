@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
 import {Skills} from '../Skills/Skills.jsx';
-import {Projects2} from '../Projects2/Projects2.jsx'
+import {Projects} from '../Projects/Projects.jsx'
 import { Element } from 'react-scroll'
 
 
@@ -53,7 +53,7 @@ export const Home = () => {
             </div>
         </div>
         <div id='projects' className={styles.projects}>
-            <Projects2></Projects2>
+            <Projects></Projects>
         </div>
         <div id='skills'>
                 <Skills></Skills>

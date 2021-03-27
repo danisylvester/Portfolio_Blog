@@ -1,1 +1,20 @@
 @use '../../App.scss';
+
+.bkg{
+    min-height:  100vh;
+    min-width: 100vw;
+    overflow: hidden;
+    padding: 1rem;
+    padding-top: 56px;
+    background-color: App.$navy;
+}
+.blogCard{
+    overflow:hidden;
+    margin: 1rem;
+    border-radius: 0px;
+    font-size: 16px;
+}
+.cardBody{
+    overflow: hidden;
+}
+

@@ -5,7 +5,6 @@ import styles from './blog.module.scss';
 import DOMPurify from "dompurify";
 import { Button } from 'bootstrap';
 import { readyException } from 'jquery';
-import {BlogLanding} from '../BlogLanding/BlogLanding.jsx';
 
 
 export class Blog extends Component {
@@ -74,7 +73,6 @@ export class Blog extends Component {
     render() {          
         return (
             <>
-                <BlogLanding></BlogLanding>
                 <div className={styles.bkg}>
                     {
                         this.state.isFetching ? 

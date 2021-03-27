@@ -9,7 +9,7 @@ import Scroll from "react-scroll";
 export const Menu = () => {
   const logo = "<DS/>";
   return (
-    <div>
+    <Container>
       <Navbar collapseOnSelect fixed="top" expand="md" bg="light">
         <Navbar.Brand>
           <NavLink to="/" className={styles.logoStyle}>
@@ -66,6 +66,6 @@ export const Menu = () => {
           </Navbar.Collapse>
         </div>
       </Navbar>
-    </div>
+    </Container>
   );
 };

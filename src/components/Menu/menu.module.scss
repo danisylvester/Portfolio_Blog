@@ -1,11 +1,17 @@
 @use '../../App.scss';
 
 
+
 @media(min-width: 768px){
     .navWrapper{
-        width: 100%;
+        width: 90%;
         justify-content:space-evenly;
         position: absolute;
+    }
+}
+@media(min-width: 1024px){
+    .navWrapper{
+        width: 100%;
     }
 }
 
