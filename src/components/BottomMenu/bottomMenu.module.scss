@@ -1,0 +1,46 @@
+@use '../../App.scss';
+
+.bkg{
+    width: 100%;
+    background-color: App.$darkPurple;
+    overflow: hidden;
+    position: sticky;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    padding:0.75rem 0rem;
+}
+.link{
+    color: App.$lightPurple;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-weight: 600;
+    margin: auto;
+    font-size: 0.85em;
+    height: 100%;
+}
+.homeIcon{
+    display: inline-block;
+    width: 20px;
+}
+@media(min-width: 320px){
+    .link{
+        font-size: 0.95em;
+    }
+}
+@media(min-width: 411px){
+    .homeIcon{
+        width: 22px;
+    }
+}
+@media(min-width: 768px){
+    .bkg{
+        display: none;
+    }
+}
