@@ -1,0 +1,46 @@
+@use '../../App.scss';
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    overflow: hidden;
+    background: #FAFAFF;
+    border-radius: 90px 0px 0px 0px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.gridHeading, .gridIconsOne, .gridIconsTwo, .gridIconsThree{
+    grid-column: 2/12;
+    text-align: center;
+}
+.gridHeading{
+    grid-row: 1/2;
+    padding-bottom: 1rem;
+}
+.gridIconsOne{
+    grid-row: 2/3;
+}
+.gridIconsTwo{
+    grid-row: 3/4;
+}
+.gridIconsThree{
+    grid-row: 4/5;
+}
+
+// Title 
+.purpleText{
+    color: App.$darkPurple;
+    font-weight: 400;
+}
+.heading{
+    font-weight: 800;
+}
+
+// Icons
+.iconWrap{
+    display: inline-block;
+    margin: 1rem;
+}
+.icon{
+   font-size: 2rem;
+}
