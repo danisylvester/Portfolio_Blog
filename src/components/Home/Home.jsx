@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
-import {Skills} from '../Skills/Skills.jsx';
 import {Projects} from '../Projects/Projects.jsx'
 import { Element } from 'react-scroll'
 
@@ -56,7 +55,6 @@ export const Home = () => {
             <Projects></Projects>
         </div>
         <div id='skills'>
-                <Skills></Skills>
         </div>
 
         

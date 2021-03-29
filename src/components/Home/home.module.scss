@@ -2,7 +2,6 @@
 
 //GRID LEVEL
 .grid{
-    min-height: 100vh;
     width: 100%;
     background-color: white;
     display: grid;
@@ -18,6 +17,7 @@
 .gridComputerBkg{
     grid-column: 1/-1;
     grid-row: 1/2;
+    height: 100%;
 }
 
 @media(min-width:375px){
@@ -54,36 +54,6 @@
 
 //INNER GRID
 
-// //Typewriting effect
-
-// /* Hello Typewriter Animation */
-// .typewriterText{
-//     border-right: 4px solid transparent;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     width: 6ch;
-//     letter-spacing: 1.5px;
-//     animation: type 2000ms steps(6) 500ms,
-//     blink-caret 1200ms step-end 4;
-//   }
-//   @keyframes type{
-//     0%, 10% {
-//         width: 0ch;
-//     }
-//     90%, 100%{
-//         width:6ch;
-//     }
-//   }
-//   @keyframes blink-caret {
-//     0% { 
-//         border-color: orange 
-//     }
-//     85%, 90%, 100% { 
-//         border-color: transparent; 
-//     }
-//   }
- 
-
 //Text Styling
 .textRowOne, .textRowTwo{
     text-transform: uppercase;
@@ -93,6 +63,7 @@
     font-weight: 500;
     color: App.$black;
     letter-spacing: 0.03em;
+    font-size: 1.1em;
 }
 .textRowOne{
     margin-bottom: 0.5rem;
@@ -123,7 +94,7 @@
 .viewBtn{
     border-radius: 30px;
     background-color: App.$darkPurple;
-    padding: 5px 9px;
+    padding: 6px 10px;
     border: none;
 }
 .btnText{
@@ -131,11 +102,21 @@
     @include App.buttonText;
 }
 
+// Computer Slide In Animation
+@keyframes slideIn {
+    0%, 10% {
+        transform: translateY(-1000px);
+    }
+    95%, 100%{
+        transform: translateY(0);
+    }
+}
+
 //Grid Two Computer Styling
 .computerWrapper{
     height: 100%;
     background: url('../../assets/landing-bkg.png') no-repeat top right;
-    background-size: 100% 60%;
+    background-size: 100% 95%;
     display: none;
 }
 .computerImg{
@@ -154,13 +135,12 @@
         animation: slideIn 1200ms;
     }
 }
-
 @media(min-width: 1020px){
     .computerImg{
         width:375px
     }
     .computerWrapper{
-        background-size: 100% 65%;
+        background-size: 100% 100%;
     }
 }
 @media(min-width:1200px){
@@ -168,7 +148,6 @@
         width: 410px
     }
     .computerWrapper{
-        background-size: 100% 70%;
         padding-top: 9rem;
         padding-right: 6rem;
     }
@@ -180,20 +159,11 @@
 }
 
 
-// Computer Slide In Animation
-@keyframes slideIn {
-    0%, 10% {
-        transform: translateY(-1000px);
-    }
-    95%, 100%{
-        transform: translateY(0);
-    }
-}
-
-
-
+// Child Components
 .projects{
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }

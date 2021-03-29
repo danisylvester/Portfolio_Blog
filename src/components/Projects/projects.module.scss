@@ -1,12 +1,15 @@
 @use  '../../App.scss';
 
-.bkg{
+.gridContainer{
     width: 100vw;
-    max-width: 1000px;
-    min-height: 100vh;
-    padding: 4rem 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    overflow:hidden;
 }
-.projectWrapper{
+.bkg{
+    grid-column: 2/12;
+}
+.projectWrapper, .verticalWrap{
     display: flex;
     justify-content: center;
     padding: 2rem 0rem;
@@ -15,7 +18,6 @@
     max-width: 450px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    row-gap: 1.5rem;
     overflow: hidden;
     justify-items: center;
     text-align: center;
@@ -28,8 +30,8 @@
     grid-row: 2/3;
     align-self: center;
     z-index: 1;
-    padding-top: 1rem;
-    
+    height: 100%;
+    width: 100%;
 }
 .gridTitle,.gridSkills, .gridViewBtn{
     align-self: center;
@@ -37,119 +39,127 @@
 .gridTitle{
     grid-column: 1/-1;
     grid-row: 3/4;
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
 }
 .gridSkills{
     grid-column: 1/-1;
     grid-row: 4/5;
+    padding-bottom:1rem;
 }
 .gridViewBtn{
     grid-column: 1/-1;
     grid-row: 5/6;
     width: 100%;
+    padding-bottom: 2rem;
 }
-// SNS Specific
-.gridTopShape{
-    grid-column: 1/5;
-    grid-row: 1/3;
-    width: 100%;
-}
-.gridBtmSNSShapes{
-    grid-column: 1/-1;
-    grid-row: 6/7;
-    width: 100%;
-    align-self: flex-end;
-}
-// UAI Specific
-.gridBtmUAIShapes{
-    grid-column: 1/9;
-    grid-row: 6/7;
-    width: 100%;
-    align-self: flex-end;
-}
-.gridUAITriangle{
-    grid-column: 9/-1;
-    grid-row: 6/7;
-    width: 100%;
-    align-self: flex-end;
-    text-align: right;
-}
+
 @media(min-width: 320px){
  .gridCard{
      width: 100%;
  }   
- .gridBtmSNSShapes{
-     grid-column: 1/10;
- }
- .gridBtmUAIShapes{
-    grid-column: 1/7;
- }
- .gridUAITriangle{
-     grid-column: 10/-1;
- }
  .gridSkills, .gridTitle, .gridViewBtn{
      grid-column: 2/12;
  }
 }
 @media(min-width: 768px){
-    .bkg{
-        padding:4rem 3rem;
+    .gridCard{
+        transform: translateZ(50px);
     }
     .projectWrapper{
         padding: 3rem 0rem;
     }
-    .gridCard{
+    .verticalWrap{
+        display: inline-flex;
+        width: 45%;
+        height: 575px;
+    }
+    .horizGridCard{
         text-align: left;
-        max-width: 650px;
         row-gap: 0;
         height: 410px;
         max-height: 550px;
         max-width: 1000px;
     }
-    .gridTitle, .gridSkills, .gridViewBtn{
-        grid-column: 2/6;
+    .horizGridTitle, .horizGridSkills, .horizGridViewBtn{
+        grid-column: 2/5;
     }
-    .gridTitle{
+    .horizGridTitle{
         grid-row: 1/2;
         align-self: flex-end;
         justify-self: flex-start;
     }
-    .gridSkills{
+    .horizGridSkills{
         grid-row:2/3;
     }
-    .gridViewBtn{
+    .horizGridViewBtn{
         grid-row: 3/4;
         align-self: flex-start;
     }
-    .gridDevices{
+    .horizGridDevices{
         grid-column: 6/13;
         grid-row:1/4;
     }
-    .gridTopShape{
-        grid-column: 1/4;
+}
+@media(min-width: 1024px){
+    .bkg{
+        padding-left: 2rem;
     }
-    .gridBtmSNSShapes{
-        grid-column: 1/6;
-        grid-row: 3/4;
-        padding-top: 2rem;
-    }
-    .gridBtmUAIShapes, .gridUAITriangle{
-        grid-row: 3/4;
-    }
-    .gridBtmUAIShapes{
-        grid-column: 1/5;
-    }
-    .gridUAITriangle{
-        grid-column: 11/-1;
+}
+@media(min-width:1400px){
+    .bkg{
+        grid-column: 3/11;
+        padding-left: 0;
     }
 }
 
-// Images
-.triangles, .deviceImg, .bottomShapes{ 
+// Headings
+.mainHeading, .headingParagraph{
+    display: inline-block;
+}
+.purpleText{
+    color: App.$darkPurple;
+    font-weight: 400;
+}
+.projHeader{
+    font-weight: 800;
+}
+.headingParagraph{
+    letter-spacing: 0.03em;
+    font-size: 1.1em;
+}
+
+// Gradients
+.gradientColorOne, .gradientColorTwo, .gradientColorThree{
+    width: 101%;
+    height: 100%;
+}
+.gradientColorOne{
+    background: linear-gradient(180deg, #C99FFF 0%, rgba(255, 255, 255, 0) 100%), #4A4EFF;
+}
+.gradientColorTwo{
+    background: linear-gradient(180deg, #0ABAC2 0%, rgba(255, 255, 255, 0) 100%), #B2DE94;
+}
+.gradientColorThree{
+    background: linear-gradient(180deg, #FBD786 0%, rgba(255, 255, 255, 0) 100%), #F7797D;
+}
+.bkgPattern{
     width: 100%;
+    background: url('../../assets/bkg-pattern.png') no-repeat;
+    height: 100%;
+    display: flex;
+    align-content: center;
+}
+
+// Images
+.deviceImg{ 
+    width: 100%;
+    margin: 1rem auto;
 }
 @media(min-width: 768px){
-    .triangles, .bottomShapes{
-        width: 80%;
+    .deviceImg{
+        width:90%;
+        margin: auto;
     }
 }
 
@@ -164,22 +174,44 @@
     margin: 3px;
     font-size: 0.9em
 }
-
+.skillsOne{
+    color: #4e52ff;
+    border-color: #4e52ff;
+}
+.skillsTwo{
+    color: #23c0c2;
+    border-color: #23c0c2;
+}
+.skillsThree{
+    color: #f77b7f;
+    border-color: #f77b7f;
+}
 
 // Text
 .projTitle{
-    @include App.heading;
-    font-size: 1.8em;
+    font-family: App.$headingFont;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 //Button
 .viewBtn{
     border-radius: 30px;
     background-color: App.$lightPurple;
-    padding: 5px 9px;
+    padding: 6px 12px;
     border: none;
 }
+.btnOne{
+    background: linear-gradient(90deg, #C99FFF 0%, rgba(255, 255, 255, 0) 100%), rgba(74, 78, 255, 0.59);
+}
+.btnTwo{
+    background: linear-gradient(90deg, #abd192 0%, rgba(255, 255, 255, 0) 100%), rgba(10, 186, 194, 0.59);
+}
+.btnThree{
+    background: linear-gradient(90deg, #eccb7e 0%, rgba(255, 255, 255, 0) 100%), #F7797D;
+}
 .btnText{
-    color: App.$darkPurple;
+    color: white;
     @include App.buttonText;
 }
