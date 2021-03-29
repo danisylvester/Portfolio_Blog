@@ -1,7 +1,9 @@
 @use '../../App.scss';
 
-//GRID LEVEL
+// Grid Level
 .grid{
+    min-height: 100vh;
+    align-content: center;
     width: 100%;
     background-color: white;
     display: grid;
@@ -12,7 +14,6 @@
     grid-column: 2/12;
     z-index: 1;
     grid-row: 1/2;
-    padding-top: 6rem;
 }
 .gridComputerBkg{
     grid-column: 1/-1;
@@ -20,13 +21,11 @@
     height: 100%;
 }
 
-@media(min-width:375px){
-    .gridText{
-        padding-top: 8rem;
-    }
-}
-
 @media(min-width: 768px){
+    .grid{
+        align-content: flex-start;
+        min-height: 85vh;
+    }
     .gridComputerBkg{
         grid-column: 6/-1;
     }
@@ -47,8 +46,10 @@
         grid-column: 3/6;
         padding-left: 0;
     }
-    .gridComputerBkg{
-        grid-column: 5/-1;
+}
+@media(min-width: 1800px){
+    .gridText{
+        padding-left: 2rem;
     }
 }
 
@@ -145,16 +146,19 @@
 }
 @media(min-width:1200px){
     .computerImg{
-        width: 410px
+        width: 375px;
     }
     .computerWrapper{
         padding-top: 9rem;
-        padding-right: 6rem;
     }
 }
 @media(min-width: 1800px){
+    .computerImg{
+        width: 400px;
+    }
     .computerWrapper{
-        padding-right: 8rem;
+        padding-top: 8.5rem;
+        padding-right: 2rem;
     }
 }
 
@@ -164,6 +168,5 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 6rem;
     padding-bottom: 6rem;
 }
