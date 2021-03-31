@@ -1,5 +1,5 @@
 @use  '../../App.scss';
-
+// Background
 .gridContainer{
     width: 100vw;
     display: grid;
@@ -12,9 +12,11 @@
 .projectWrapper, .verticalWrap{
     display: flex;
     justify-content: center;
-    padding: 2rem 0rem;
+    padding: 1.5rem 0rem;
 }
+// Projects Grid
 .gridCard{
+    height: 100%;
     max-width: 450px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -53,7 +55,6 @@
     width: 100%;
     padding-bottom: 2rem;
 }
-
 @media(min-width: 320px){
  .gridCard{
      width: 100%;
@@ -63,16 +64,23 @@
  }
 }
 @media(min-width: 768px){
-    .gridCard{
-        transform: translateZ(50px);
-    }
     .projectWrapper{
         padding: 3rem 0rem;
+    }
+    .polyglot{
+        float: right;
+    }
+    .gridDevices{
+        grid-row: 1/2;
+    }
+    .gridCard{
+        transform: translateZ(50px);
+        height: 550px;
     }
     .verticalWrap{
         display: inline-flex;
         width: 45%;
-        height: 575px;
+        height: 600px;
     }
     .horizGridCard{
         text-align: left;
@@ -112,11 +120,42 @@
         padding-left: 0;
     }
 }
-
-// Headings
-.mainHeading, .headingParagraph{
-    display: inline-block;
+@media(min-width: 1800px){
+    .headingWrapper{
+        padding-left: 2rem;
+    }
 }
+
+// Text Grid
+.gridTextContainer{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.gridTextTitle{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+.gridTextParagraph{
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    padding-top: 1rem;
+}
+@media(min-width: 768px){
+    .gridTextTitle{
+        grid-column: 1/4;
+    }
+    .gridTextParagraph{
+        grid-row: 1/2;
+        grid-column: 4/-1;
+    }
+}
+
+@media(min-width: 1800px){
+    .gridTextTitle{
+        padding-left: 2rem;
+    }
+}
+// Headings
 .purpleText{
     color: App.$darkPurple;
     font-weight: 400;
@@ -124,10 +163,7 @@
 .projHeader{
     font-weight: 800;
 }
-.headingParagraph{
-    letter-spacing: 0.03em;
-    font-size: 1.1em;
-}
+
 
 // Gradients
 .gradientColorOne, .gradientColorTwo, .gradientColorThree{
@@ -193,6 +229,9 @@
     font-size: 1.7em;
     text-transform: uppercase;
     font-weight: 600;
+}
+.headingParagraph{
+    margin-top: 1rem;
 }
 
 //Button

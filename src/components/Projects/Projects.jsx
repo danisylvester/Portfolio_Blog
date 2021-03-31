@@ -21,12 +21,12 @@ export const Projects = () => {
         <div className={styles.gridContainer}>
 
         <div className={styles.bkg}>
-            <div className={styles.headingWrapper}>
-                <div className={styles.mainHeading}>
+            <div className={styles.gridTextContainer}>
+                <div className={styles.gridTextTitle}>
                     <h3 className={styles.purpleText}>Recent</h3>
                     <h3 className={styles.projHeader}>Projects</h3>
                 </div>
-                <div className={styles.headingParagraph}>
+                <div className={styles.gridTextParagraph}>
                     <p>Check out some of my featured work. If you’re interested in seeing more, reach out and say hello!</p>
                 </div>
             </div>
@@ -117,7 +117,7 @@ export const Projects = () => {
                     </div> 
                 </div>
             </div>
-            <div className={`${styles.verticalWrap}`}>
+            <div className={`${styles.verticalWrap} ${styles.polyglot}`}>
                 <div className='tilt'>
                     <div className={styles.gridCard}>
                         <div className={styles.gridDevices}>
