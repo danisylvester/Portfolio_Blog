@@ -1,99 +1,145 @@
 @use '../../App.scss';
 
-.bkg{
-    min-height: 100vh;
-    width: 100vw;
-    background: url('../../assets/contactShape.png') no-repeat top center;
-    background-size: 100% 100%;
-    @include App.centerDiv;
-    padding: 6rem 1rem;
-}
 .grid{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     overflow:hidden;
-    width: 95%;
-    max-width: 950px;
-    height: 75%;
-    background-color: white;
-    box-shadow: 0 0 .25em .25em rgba(0, 0, 0, 0.25);
-    border-radius: 60px 0px;
+    background-color: App.$darkPurple;
 }
-.gridLeftInfo{
+.bkgColor{
     grid-column: 1/-1;
-    width: 100%;
-    padding: 3rem 1rem 1rem 1rem;
+    background-color: #231E41;
+    border-radius: 0px 90px 0px 0px;
+    grid-row: 1/5;
+}
+.gridTextTitle, .gridTextParagraph, .gridIcons{
+    grid-column: 2/12;
+}
+.gridTextTitle{
+    grid-row: 1/2;
+    padding-top: 3rem;
+}
+.gridTextParagraph{
+    padding-top: 1rem;
+    grid-row: 2/3;
+    padding-top: 2rem;
+}
+.gridIcons{
+    grid-row: 3/4;
 
 }
-.gridRightForm{
-    grid-column: 1/-1;
+.gridForm{
+    padding-top: 2rem;
+    grid-row: 4/5;
+    grid-column: 2/12;
     width: 100%;
-    padding: 1rem;
     padding-bottom: 3rem;
 }
-
+@media(min-width: 500px){
+    .gridIcons{
+        grid-column: 3/11;
+    }
+}
+@media(min-width: 640px){
+    .gridIcons{
+        padding-top: 2rem;
+    }
+}
 @media(min-width: 768px){
-    .gridLeftInfo, .gridRightForm{
-        padding: 3rem 2rem;
+    .bkgColor{
+        grid-row: 1/3;
+        width: 97vw;
     }
-    .gridLeftInfo{
-        grid-column: 1/7;
+    .gridTextTitle{
+        grid-column: 2/5;
     }
-    .gridRightForm{
-        grid-column: 7/-1;
+    .gridIcons{
+        grid-column: 2/5;
+        grid-row: 2/3;
+    }
+    .gridTextParagraph{
+        grid-row: 1/2;
+    }
+    .gridTextParagraph, .gridForm{
+        grid-column: 7/12;
+    }
+    .gridForm{
+        grid-row: 2/3;
+    }
+}
+@media(min-width:1024px){
+    .grid{
+        padding-right: 2rem;
+    }
+    .gridTextTitle, .gridIcons{
+        padding-left: 2rem;
     }
 }
 
 //INNER GRID STYLES
 
-//Icon images
-.iconImg{
-    width: 35px;
+// Icons
+.iconWrapper{
+    text-align: center;
 }
-.iconsWrapper{
+.icon, .iconLabel{
+    color: white;
+}
+.icon{
+    font-size: 2rem;
+    width: 2rem;
+}
+.iconLabel{
+    letter-spacing: 0.03em;
+    font-size: 0.85em;
+}
+.iconContainer{
     display: flex;
-    justify-content: space-evenly;
-}
-@media(min-width: 375px){
-    .iconImg{
-        width: 40px;
-    }
+    flex-direction: row;
+    justify-content: space-between;
 }
 @media(min-width: 768px){
-    .iconImg{
-        width: 46px;
-    }
-    .iconsWrapper{
-        display: block;
-        padding-top: 1rem;
-    }
     .iconContainer{
-        margin-top: 1rem;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 65%;
+        padding-top: 2rem;
+    }
+    .iconLabel, .icon{
+        display: inline-block;
+    }
+    .iconLabel{
+        padding-left: 1rem;
+        font-size: 1em;
+    }
+    .iconWrapper{
+        text-align: left;
     }
 }
+@media(min-width: 1024px){
 
-//Text
-.leftHeading{
-    @include App.heading;
-    font-size: App.$subHeadingSize * 0.7;
-}
-.paragraphWrapper{
-    margin: 1rem 0rem 1.5rem 0rem;
-}
-.leftParagraph{
-    margin-top: 0.25rem;
 }
 
+// Text
+.purpleText{
+    font-family: App.$headingFont;
+    font-weight: 400;
+    color: App.$lightPurple;
+}
+.header{
+    color: white;
+    font-family: App.$headingFont;
+    font-weight: 800;
+}
+.hello{
+    color: App.$lightPurple;
+}
+.headerParagraph{
+    color: white;
+    letter-spacing: 0.03em;
+}
 @media(min-width: 768px){
-    .paragraphWrapper{
-        font-size: App.$textSize * 0.85;
-    }
-    .leftHeading{
-        font-size: App.$subHeadingSize * 0.8;
-    }
-}
-@media(min-width: 1750px){
-    .leftHeading{
-        font-size: App.$subHeadingSize * 0.8;
+    .headerParagraph{
+        padding-top: 2rem;
     }
 }

@@ -59,24 +59,24 @@ export class ContactForm extends Component {
                     <Form.Row>
                         <Col sm={12} md={6}>
                             <Form.Group controlId='firstNameGroup'>
-                                <Form.Label>First Name:</Form.Label>
-                                <Form.Control type='text' name='firstName' onChange={this.handleChange} />
+                                <Form.Label className={styles.label}>First Name:</Form.Label>
+                                <Form.Control className={styles.inputStyle} type='text' name='firstName' onChange={this.handleChange} />
                             </Form.Group>
                         </Col>
                         <Col sm={12} md={6}>
                             <Form.Group controlId='lastNameGroup'>
-                                <Form.Label>Last Name:</Form.Label>
-                                    <Form.Control type='text' name='lastName' onChange={this.handleChange} />
+                                <Form.Label className={styles.label}>Last Name:</Form.Label>
+                                    <Form.Control className={styles.inputStyle} type='text' name='lastName' onChange={this.handleChange} />
                             </Form.Group>
                         </Col>
                     </Form.Row>
                     <Form.Group controlId='emailGroup'>
-                        <Form.Label>Email:</Form.Label>
-                            <Form.Control type='email' name='email' onChange={this.handleChange} />
+                        <Form.Label className={styles.label}>Email:</Form.Label>
+                            <Form.Control className={styles.inputStyle} type='email' name='email' onChange={this.handleChange} />
                     </Form.Group>
                     <Form.Group controlId='messageGroup'>
-                        <Form.Label>Message:</Form.Label>
-                            <Form.Control as="textarea" rows={3} type='text' name='msg' onChange={this.handleChange} />
+                        <Form.Label className={styles.label}>Message:</Form.Label>
+                            <Form.Control className={styles.inputStyle} as="textarea" rows={3} type='text' name='msg' onChange={this.handleChange} />
                     </Form.Group>
                     <input type="submit" value="Submit" className={styles.submitBtn} />
                 </Form>

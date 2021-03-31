@@ -3,6 +3,17 @@
 .submitBtn{
     color: white;
     background-color: App.$darkPurple;
-    border-radius: 10%;
-    padding: 2px;
+    border-radius: 30px;
+    padding: 6px 10px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.label{
+    color: white;
+    letter-spacing: 0.03em;
+}
+.inputStyle{
+    opacity: 0.54;
 }
