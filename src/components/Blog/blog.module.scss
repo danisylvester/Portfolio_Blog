@@ -1,20 +1,60 @@
 @use '../../App.scss';
 
 .bkg{
-    min-height:  100vh;
     min-width: 100vw;
+    background-color: App.$darkPurple;
+    border-radius: 90px 0px 0px 0px;
     overflow: hidden;
-    padding: 1rem;
-    padding-top: 56px;
-    background-color: App.$navy;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
+.spinnerWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .blogCard{
     overflow:hidden;
-    margin: 1rem;
+    margin: auto;
     border-radius: 0px;
-    font-size: 16px;
+    height: 400px;
+    width: 300px;
 }
 .cardBody{
     overflow: hidden;
 }
 
+.sliderContainer{
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.slider{
+    transition-duration: 500ms;
+}
+.sliderItem{
+    width: 50%;
+    display: inline-block;
+    white-space: normal;
+}
+
+// left and right arrows
+.leftArrow, .rightArrow{
+    margin-top: auto;
+    margin-bottom: auto;
+    position:absolute;
+    top: 50%; 
+}
+.arrowIcon{
+    width: 50px;
+}
+
+.rightArrow{
+    right: 0;
+}
+.leftArrow{
+    left: 0;
+}

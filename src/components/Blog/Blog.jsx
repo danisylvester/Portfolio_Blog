@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
-import { Card, CardColumns} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Card} from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner'
 import styles from './blog.module.scss';
 import DOMPurify from "dompurify";
-import { Button } from 'bootstrap';
-import { readyException } from 'jquery';
+import Carousel from 'react-bootstrap/Carousel'
 
 
 export class Blog extends Component {
@@ -13,9 +12,12 @@ export class Blog extends Component {
         this.state = {
             isFetching: true,
             blogPosts: [],
+            xOffset: 0
         };
+        this.handleLeftClick = this.handleLeftClick.bind(this);
+        this.handleRightClick = this.handleRightClick.bind(this);
     }
-
+    
     // Fetching blog data and storing it in blogPosts state array
     componentDidMount(){
         try{
@@ -40,7 +42,8 @@ export class Blog extends Component {
         }
     }
 
-    handleClick(event){
+    // Handle Read Me click
+    handleReadMeClick(event){
         console.log(event.target.value);
     }
 
@@ -48,16 +51,17 @@ export class Blog extends Component {
         return (
             blogPosts.map((blog) => {
                 return (
-                    <Card key={blog._id} className={styles.blogCard}>
+                    <div className={styles.sliderItem} key={blog._id}>
+                    <Card key={blog._id} className={`${styles.blogCard}`}>
                         <Card.Body className={styles.cardBody}>
                             <Card.Title>{blog.title}</Card.Title>
                             <Card.Text 
                                 dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.body)}}
                                 className={styles.cardText}
-                            ></Card.Text>
+                                ></Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <button value={blog._id} onClick={this.handleClick}>
+                            <button value={blog._id} onClick={this.handleReadMeClick}>
                                 Read Me
                             </button>
                             <small className='text-muted'>
@@ -65,28 +69,53 @@ export class Blog extends Component {
                             </small>
                         </Card.Footer>
                     </Card>
+                    </div>
                 )
             })                   
         )
     }
+    handleLeftClick(){
+        console.log(`xOffset start: ${this.state.xOffset}`);
+        if(this.state.xOffset < 0){
+            this.state.xOffset += 50;
+            let slider = document.getElementById('slider');
+            slider.style.transform = `translateX(${this.state.xOffset}%)`;
+            console.log(`new offset: ${this.state.xOffset}`)
+        }
+    }
+    handleRightClick(){
+        let max = Math.floor(this.state.blogPosts.length / 2) * -100;
+        console.log(`max: ${max}`);
+        console.log(`xOffset start: ${this.state.xOffset}`);
 
-    render() {          
+        if(this.state.xOffset > max){
+            this.state.xOffset -= 50;
+            console.log(`new xOffset: ${this.state.xOffset}`)
+            let slider = document.getElementById('slider');
+            slider.style.transform = `translateX(${this.state.xOffset}%)`;    
+        } 
+    }
+
+    render() { 
         return (
             <>
                 <div className={styles.bkg}>
                     {
                         this.state.isFetching ? 
-                        <Spinner animation="border" />
+                        <div className={styles.spinnerWrapper}>
+                            <Spinner animation="border" />
+                        </div>
                         :
-                        <CardColumns>
+                        <div className={styles.sliderContainer}>
+                            <div id='slider' className={styles.slider}>
                             {this.displayBlogPosts(this.state.blogPosts)}
-                        </CardColumns>
+                            </div>
+                            <a onClick={this.handleLeftClick} className={styles.leftArrow} id='left'>LEFT</a>
+                            <a onClick={this.handleRightClick} className={styles.rightArrow} id='right'>RIGHT</a>
+                        </div>
                     }
                 </div>
             </>
         )
     }
 }
-
-export default Blog
-
