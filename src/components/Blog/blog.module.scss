@@ -8,12 +8,14 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+// Loading spinner 
 .spinnerWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+// Project card
 .blogCard{
     overflow:hidden;
     margin: auto;
@@ -25,6 +27,7 @@
     overflow: hidden;
 }
 
+// Slider 
 .sliderContainer{
     width: 70%;
     margin: auto;
@@ -35,10 +38,16 @@
 .slider{
     transition-duration: 500ms;
 }
+
 .sliderItem{
-    width: 50%;
+    width: 100%;
     display: inline-block;
     white-space: normal;
+}
+@media(min-width: 768px){
+    .sliderItem{
+        width: 50%;
+    }
 }
 
 // left and right arrows

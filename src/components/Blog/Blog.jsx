@@ -3,7 +3,6 @@ import { Card} from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner'
 import styles from './blog.module.scss';
 import DOMPurify from "dompurify";
-import Carousel from 'react-bootstrap/Carousel'
 
 
 export class Blog extends Component {
@@ -75,25 +74,39 @@ export class Blog extends Component {
         )
     }
     handleLeftClick(){
-        console.log(`xOffset start: ${this.state.xOffset}`);
+        let slider = document.getElementById('slider');
         if(this.state.xOffset < 0){
-            this.state.xOffset += 50;
-            let slider = document.getElementById('slider');
-            slider.style.transform = `translateX(${this.state.xOffset}%)`;
-            console.log(`new offset: ${this.state.xOffset}`)
+            if(window.innerWidth < 768){
+                this.state.xOffset += 100;
+                slider.style.transform = `translateX(${this.state.xOffset}%)`;
+            } else {
+                this.state.xOffset += 50;
+                slider.style.transform = `translateX(${this.state.xOffset}%)`;
+            }
         }
     }
     handleRightClick(){
-        let max = Math.floor(this.state.blogPosts.length / 2) * -100;
-        console.log(`max: ${max}`);
-        console.log(`xOffset start: ${this.state.xOffset}`);
-
-        if(this.state.xOffset > max){
-            this.state.xOffset -= 50;
-            console.log(`new xOffset: ${this.state.xOffset}`)
-            let slider = document.getElementById('slider');
-            slider.style.transform = `translateX(${this.state.xOffset}%)`;    
-        } 
+        let slider = document.getElementById('slider');
+        if(window.innerWidth < 768){
+            let max = (Math.floor(this.state.blogPosts.length) * -100) +100;
+            console.log(`max: ${max}`)
+            console.log(`x start: ${this.state.xOffset}`)
+            if(this.state.xOffset > max){
+                this.state.xOffset -= 100;
+                slider.style.transform = `translateX(${this.state.xOffset}%)`;  
+                console.log(`x new: ${this.state.xOffset}`)
+            }
+        }
+        else{
+            let maxMobile = Math.floor(this.state.blogPosts.length / 2) * -100;
+            console.log(`max: ${maxMobile}`)
+            console.log(`x start: ${this.state.xOffset}`)
+            if(this.state.xOffset > maxMobile){
+                this.state.xOffset -= 50;    
+                slider.style.transform = `translateX(${this.state.xOffset}%)`;  
+                console.log(`x new: ${this.state.xOffset}`)  
+            } 
+        }
     }
 
     render() { 
