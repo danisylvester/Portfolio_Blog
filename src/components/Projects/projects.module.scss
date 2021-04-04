@@ -64,9 +64,11 @@
  }
 }
 @media(min-width: 768px){
-    .projectWrapper{
-        padding: 3rem 0rem;
+    .projectWrapper:hover .deviceImg{
+        width: 95%;
+        transition-duration: 1000ms;
     }
+
     .polyglot{
         float: right;
     }
@@ -240,6 +242,7 @@
     background-color: App.$lightPurple;
     padding: 6px 12px;
     border: none;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 .btnOne{
     background: linear-gradient(90deg, #C99FFF 0%, rgba(255, 255, 255, 0) 100%), rgba(74, 78, 255, 0.59);

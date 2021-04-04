@@ -4,19 +4,18 @@ import VanillaTilt from 'vanilla-tilt';
 
 export const Projects = () => {
 
-    // Mouse over tilt effect on tablet and computer views.
+    // Hover tilt effect on tablet and computer views.
     useEffect(() => {
         if(window.innerWidth >= 768){
             VanillaTilt.init(document.querySelectorAll('.tilt'),{
-                max: 5,
+                max: 3,
                 speed: 100,
                 transition: true,
                 reset: true,
                 easing: "cubic-bezier(.03,.98,.52,.99)",
-                axis: 'x'
             });
         }
-    })
+    },[]);
      return (
         <div className={styles.gridContainer}>
 
