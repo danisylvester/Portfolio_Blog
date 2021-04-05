@@ -3,6 +3,7 @@ import { Card} from 'react-bootstrap';
 import Spinner from 'react-bootstrap/Spinner'
 import styles from './blog.module.scss';
 import DOMPurify from "dompurify";
+import { Link } from 'react-router-dom';
 
 
 export class Blog extends Component {
@@ -13,6 +14,7 @@ export class Blog extends Component {
             blogPosts: [],
             xOffset: 0
         };
+        // Left and right arrow controls for slider
         this.handleLeftClick = this.handleLeftClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
     }
@@ -41,30 +43,39 @@ export class Blog extends Component {
         }
     }
 
-    // Handle Read Me click
+    // Handle Read Me click on blog post card
     handleReadMeClick(event){
         console.log(event.target.value);
     }
 
+    // Formatting blogposts into cards
     displayBlogPosts(blogPosts){
         return (
             blogPosts.map((blog) => {
+                let date = blog.date.substring(0,10).replace(/-/g, '/');
+                let blogID = blog._id;
                 return (
                     <div className={styles.sliderItem} key={blog._id}>
                     <Card key={blog._id} className={`${styles.blogCard}`}>
                         <Card.Body className={styles.cardBody}>
-                            <Card.Title>{blog.title}</Card.Title>
+                            <Card.Title
+                                dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.title)}}
+                            >
+                            </Card.Title>
                             <Card.Text 
                                 dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(blog.body)}}
                                 className={styles.cardText}
-                                ></Card.Text>
+                            >
+                            </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                            <button value={blog._id} onClick={this.handleReadMeClick}>
-                                Read Me
-                            </button>
-                            <small className='text-muted'>
-                                {blog.date}
+                        <Card.Footer className={styles.cardFooter}>
+                            <Link to={`/blogpost/${blogID}`}>
+                                <button className={styles.readBtn}>
+                                    Read Me
+                                </button>
+                            </Link>
+                            <small className={`text-muted ${styles.date}`}>
+                                {date}
                             </small>
                         </Card.Footer>
                     </Card>
@@ -73,6 +84,7 @@ export class Blog extends Component {
             })                   
         )
     }
+    // Handle slider left arrow click
     handleLeftClick(){
         let slider = document.getElementById('slider');
         if(this.state.xOffset < 0){
@@ -85,6 +97,7 @@ export class Blog extends Component {
             }
         }
     }
+    // Handle slider right arrow click
     handleRightClick(){
         let slider = document.getElementById('slider');
         if(window.innerWidth < 768){
@@ -113,6 +126,15 @@ export class Blog extends Component {
         return (
             <>
                 <div className={styles.bkg}>
+                    <div className={styles.headerContainer}>
+                        <div className={styles.titleWrapper}>
+                            <h3 className={styles.purpleText}>Recent</h3>
+                            <h3 className={styles.header}>BLOG POSTS</h3>
+                        </div>
+                        <div className={styles.textWrapper}>
+                            <p className={styles.text}>Learn more about the new technologies I’m learning through my blog posts!</p>
+                        </div>
+                    </div>
                     {
                         this.state.isFetching ? 
                         <div className={styles.spinnerWrapper}>
@@ -123,8 +145,12 @@ export class Blog extends Component {
                             <div id='slider' className={styles.slider}>
                             {this.displayBlogPosts(this.state.blogPosts)}
                             </div>
-                            <a onClick={this.handleLeftClick} className={styles.leftArrow} id='left'>LEFT</a>
-                            <a onClick={this.handleRightClick} className={styles.rightArrow} id='right'>RIGHT</a>
+                            <a onClick={this.handleLeftClick} className={styles.leftArrow} id='left'>
+                                <img className={styles.arrow} src='/src/assets/leftArrow.png'></img>
+                            </a>
+                            <a onClick={this.handleRightClick} className={styles.rightArrow} id='right'>
+                                <img className={styles.arrow} src='/src/assets/rightArrow.png'></img>
+                            </a>
                         </div>
                     }
                 </div>
