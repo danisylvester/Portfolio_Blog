@@ -1,6 +1,44 @@
 @use '../../App.scss';
 
-.bkg{
+.grid{
     min-height: 100vh;
-    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 7rem 0rem 2rem 0rem;
+}
+.gridTitle{
+    grid-column: 2/12;
+    grid-row: 1/2;
+}
+.gridBody{
+    grid-column: 2/12;
+    grid-row: 2/3;
+}
+
+@media (min-width: 1024px) {
+    .grid{
+        padding:4rem 2rem;
+    }
+}
+@media (min-width: 1400px) {
+    .gridTitle,.gridBody{
+        grid-column: 3/11;
+    }
+    .grid{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media (min-width:1800px) {
+    .grid{
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+// Inner-grid
+.title{
+    display: flex;
+    height: 100%;
+    align-items: center;
 }
