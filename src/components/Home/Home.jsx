@@ -5,12 +5,26 @@ import { Element } from 'react-scroll'
 import { Skills } from '../Skills/Skills.jsx';
 import { Contact} from '../Contact/Contact.jsx';
 import { Blog } from '../Blog/Blog.jsx'
+import { useParams } from 'react-router';
 
-export const Home = () => {
+export const Home = (props) => {
     // Parallax scrolling effect
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(window.pageYOffset);
+    const { id } = useParams();
 
+    function scrollToSection(sectionId){
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth'});
+    }
+
+    useEffect(() => {
+        console.log('running use effect!')
+        if(id != undefined){
+            scrollToSection(id);
+        }
+    },[id])
+
+    // Listener for computer parallax scroll effect
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         // Removing listener on component unmount
@@ -19,7 +33,7 @@ export const Home = () => {
 
     return (
     <div>
-        <div className={styles.grid}>
+        <div id='home' className={styles.grid}>
             <div className={styles.gridText}>
                     <div className={styles.textWrapper}>
                         <div>

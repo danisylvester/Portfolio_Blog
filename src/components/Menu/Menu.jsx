@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./menu.module.scss";
 import Scroll from "react-scroll";
+import { Nav } from "react-bootstrap";
 
 export const Menu = () => {
   const logo = "</>";
@@ -9,7 +10,7 @@ export const Menu = () => {
     <div className={styles.grid}>
       <div className={styles.gridLogo}>
 
-          <NavLink to="/" className={styles.logoStyle}>
+          <NavLink to="/home" className={styles.logoStyle}>
             {logo}
           </NavLink>
           </div>
@@ -17,7 +18,7 @@ export const Menu = () => {
         <div className={styles.linksWrap}>
             <div className={styles.linkContainer}>
 
-              <NavLink to='/' 
+              <NavLink to='/home' 
                   className={styles.inactive}
                   activeClassName={styles.active}
                   exact={true}
@@ -27,7 +28,7 @@ export const Menu = () => {
             </div>
             <div className={styles.linkContainer}>
               <NavLink
-                  to='/#skills'
+                  to='/skills'
                   className={styles.inactive}
                   activeClassName={styles.active}
                   >
@@ -36,7 +37,7 @@ export const Menu = () => {
             </div>
             <div className={styles.linkContainer}>
               <NavLink 
-                  to='/#projects'
+                  to='/projects'
                   className={styles.inactive}
                   activeClassName={styles.active}
                   >
@@ -45,7 +46,7 @@ export const Menu = () => {
             </div>
             <div className={styles.linkContainer}>
               <NavLink 
-                  to='/blogposts'
+                  to='/blog'
                   className={styles.inactive}
                   activeClassName={styles.active}
                   >
@@ -54,7 +55,7 @@ export const Menu = () => {
             </div>
             <div className={styles.linkContainer}>
               <NavLink
-                  to='/#contact'
+                  to='/contact'
                   className={styles.inactive}
                   activeClassName={styles.active}
                   >
@@ -64,9 +65,11 @@ export const Menu = () => {
           </div>
         </div>
         <div className={styles.gridContact}>
-          <button className={styles.contactBtn}>
-            <span className={styles.btnText}>Say Hello!</span>
-          </button>
+          <NavLink to="/contact">
+            <button className={styles.contactBtn}>
+              <span className={styles.btnText}>Say Hello!</span>
+            </button>
+          </NavLink>
         </div>
     </div>
   );

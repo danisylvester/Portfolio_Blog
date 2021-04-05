@@ -8,7 +8,7 @@ export const BottomMenu = () => {
         <div className={styles.bkg}>
             <div className={styles.linkContainer}>
 
-            <NavLink to='/' 
+            <NavLink to='/home' 
                 className={styles.link}
                 exact={true}
                 >
@@ -17,7 +17,7 @@ export const BottomMenu = () => {
             </div>
             <div className={styles.linkContainer}>
             <NavLink
-                to='/#skills'
+                to='/skills'
                 className={styles.link}
             >
                 Skills
@@ -25,7 +25,7 @@ export const BottomMenu = () => {
             </div>
             <div className={styles.linkContainer}>
             <NavLink 
-                to='/#projects'
+                to='/projects'
                 className={styles.link}
             >
                 Projects
@@ -33,7 +33,7 @@ export const BottomMenu = () => {
             </div>
             <div className={styles.linkContainer}>
             <NavLink 
-                to='/blogposts'
+                to='/blog'
                 className={styles.link}
             >
                 Blog
@@ -41,7 +41,7 @@ export const BottomMenu = () => {
             </div>
             <div className={styles.linkContainer}>
             <NavLink
-                to='/#contact'
+                to='/contact'
                 className={styles.link}
             >
                 Contact

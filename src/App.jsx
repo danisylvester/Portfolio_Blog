@@ -11,8 +11,9 @@ const App = () => {
     <>
         <Menu></Menu>
         <Switch>
-          <Route exact path='/' component={Home}></Route>
           <Route path='/blogpost/:blogID' component={BlogPost}></Route>
+          <Route exact path='/' component={Home}></Route>
+          <Route path='/:id' component={Home}></Route>
         </Switch>
         <BottomMenu></BottomMenu>
     </>
