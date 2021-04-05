@@ -10,7 +10,7 @@
     padding-bottom: 3rem;
 }
 .gridHeading, .gridIconsOne, .gridIconsTwo, .gridIconsThree{
-    grid-column: 2/12;
+    grid-column: 1/-1;
     text-align: center;
 }
 .gridHeading{
@@ -26,6 +26,41 @@
 .gridIconsThree{
     grid-row: 4/5;
 }
+@media(min-width: 768px){
+    .gridIconsOne, .gridIconsTwo, .gridIconsThree{
+        grid-row: 2/3;
+    }
+    .gridIconsOne{
+        grid-column: 2/5;
+        border-right: 1px solid rgba(0, 0, 0, 0.35);
+    }
+    .gridIconsTwo{
+        grid-column: 5/9;
+        border-right: 1px solid rgba(0, 0, 0, 0.35);
+    }
+    .gridIconsThree{
+        grid-column: 9/12;
+    }
+}
+@media(min-width: 940px){
+    .gridIconsTwo{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media(min-width: 1400px){
+    .gridIconsOne{
+        grid-column: 3/5;
+    }
+    .gridIconsTwo{
+        grid-column: 5/9;
+    } 
+    .gridIconsThree{
+        grid-column: 9/11;
+    }
+        
+}
+
 
 // Title 
 .purpleText{
@@ -37,10 +72,41 @@
 }
 
 // Icons
-.iconWrap{
-    display: inline-block;
-    margin: 1rem;
-}
 .icon{
    font-size: 2rem;
+}
+.iconWrap{
+    display: inline-block;
+    width: 85px;
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media(min-width: 320px){
+    .iconWrap{
+        margin: 1rem 0.5rem;
+    }
+}
+@media(min-width: 411px){
+    .iconWrap{
+        margin: 1rem;
+    }
+}
+@media(min-width: 500px){
+    .iconWrap{
+        margin: 1rem 2rem;
+    }
+}
+@media(min-width: 768px){
+    .iconWrap{
+        margin: 1rem 0.25rem;
+    }
+    .icon{
+        font-size: 2.5rem;
+     }
+}
+@media(min-width: 840px){
+    .iconWrap{
+        margin: 1rem 0.6rem;
+    }
 }
