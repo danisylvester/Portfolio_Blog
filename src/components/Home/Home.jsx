@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import styles from './home.module.scss';
-import {Projects} from '../Projects/Projects.jsx'
+import { Projects } from '../Projects/Projects.jsx'
 import { Element } from 'react-scroll'
-
+import { Skills } from '../Skills/Skills.jsx';
+import { Contact} from '../Contact/Contact.jsx';
+import { Blog } from '../Blog/Blog.jsx'
 
 export const Home = () => {
     // Parallax scrolling effect
@@ -11,7 +13,7 @@ export const Home = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
+        // Removing listener on component unmount
         return() => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -51,10 +53,17 @@ export const Home = () => {
                     </div>
             </div>
         </div>
+        <div id='skills' className={styles.skills}>
+            <Skills></Skills>
+        </div>
         <div id='projects' className={styles.projects}>
             <Projects></Projects>
         </div>
-        <div id='skills'>
+        <div id='blog' className={styles.blog}>
+            <Blog></Blog>
+        </div>
+        <div id='contact' className={styles.contact}>
+            <Contact></Contact>
         </div>
 
         
