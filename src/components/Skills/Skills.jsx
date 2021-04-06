@@ -6,8 +6,8 @@ export const Skills = () => {
         <div className={styles.grid}>
             <div className={styles.gridHeading}>
                 <h3>
-                    <span className={styles.purpleText}>My </span>
-                    <span className={styles.heading}>Tools</span>
+                    <span className='darkPurpleText'>My </span>
+                    <span className='title'>Tools</span>
                 </h3>
             </div>
             <div className={styles.gridIconsOne}>

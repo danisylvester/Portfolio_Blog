@@ -126,13 +126,13 @@ export class Blog extends Component {
         return (
             <>
                 <div className={styles.bkg}>
-                    <div className={styles.headerContainer}>
-                        <div className={styles.titleWrapper}>
-                            <h3 className={styles.purpleText}>Recent</h3>
-                            <h3 className={styles.header}>BLOG POSTS</h3>
+                    <div className={styles.gridHeading}>
+                        <div className='gridTitle'>
+                            <h3 className='purpleText'>Recent</h3>
+                            <h3 className='whiteTitle'>BLOG POSTS</h3>
                         </div>
-                        <div className={styles.textWrapper}>
-                            <p className={styles.text}>Learn more about the new technologies I’m learning through my blog posts!</p>
+                        <div className='gridDescription'>
+                            <p className='whiteDescription'>Learn more about the new technologies I’m learning through my blog posts!</p>
                         </div>
                     </div>
                     {

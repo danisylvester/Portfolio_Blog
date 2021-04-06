@@ -21,12 +21,12 @@ export const Projects = () => {
 
         <div className={styles.bkg}>
             <div className={styles.gridTextContainer}>
-                <div className={styles.gridTextTitle}>
-                    <h3 className={styles.purpleText}>Recent</h3>
-                    <h3 className={styles.projHeader}>Projects</h3>
+                <div className='gridTitle'>
+                    <h3 className='darkPurpleText'>Recent</h3>
+                    <h3 className='title'>Projects</h3>
                 </div>
-                <div className={styles.gridTextParagraph}>
-                    <p>Check out some of my featured work. If you’re interested in seeing more, reach out and say hello!</p>
+                <div className='gridDescription'>
+                    <p className='description'>Check out some of my featured work. If you’re interested in seeing more, reach out and say hello!</p>
                 </div>
             </div>
             <div className={styles.projectWrapper}>

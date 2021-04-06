@@ -12,21 +12,10 @@
     border-radius: 0px 90px 0px 0px;
     grid-row: 1/5;
 }
-.gridTextTitle, .gridTextParagraph, .gridIcons{
-    grid-column: 2/12;
-}
-.gridTextTitle{
-    grid-row: 1/2;
-    padding-top: 3rem;
-}
-.gridTextParagraph{
-    padding-top: 1rem;
-    grid-row: 2/3;
-    padding-top: 2rem;
-}
 .gridIcons{
+    grid-column: 2/12;
+    padding-top: 2rem;
     grid-row: 3/4;
-
 }
 .gridForm{
     padding-top: 2rem;
@@ -50,20 +39,12 @@
         grid-row: 1/3;
         width: 97vw;
     }
-    .gridTextTitle{
-        grid-column: 2/5;
-    }
     .gridIcons{
         grid-column: 2/5;
         grid-row: 2/3;
     }
-    .gridTextParagraph{
-        grid-row: 1/2;
-    }
-    .gridTextParagraph, .gridForm{
-        grid-column: 7/12;
-    }
     .gridForm{
+        grid-column: 7/12;
         grid-row: 2/3;
     }
 }
@@ -71,8 +52,20 @@
     .grid{
         padding-right: 2rem;
     }
-    .gridTextTitle, .gridIcons{
+    .gridIcons{
         padding-left: 2rem;
+    }
+}
+@media(min-width: 1400px){
+    .grid{
+        padding: 0rem;
+    }
+    .gridIcons{
+        grid-column: 3/5;
+        padding-left: 0rem;
+    }
+    .gridForm{
+        grid-column: 6/11;
     }
 }
 
@@ -122,13 +115,11 @@
 
 // Text
 .purpleText{
-    font-family: App.$headingFont;
     font-weight: 400;
     color: App.$lightPurple;
 }
 .header{
     color: white;
-    font-family: App.$headingFont;
     font-weight: 800;
 }
 .hello{

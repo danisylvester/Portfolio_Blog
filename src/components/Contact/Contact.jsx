@@ -7,12 +7,12 @@ export class Contact extends Component {
         return (
             <div className={styles.grid}>
                 <div className={styles.bkgColor}></div>
-                    <div className={styles.gridTextTitle}>
-                        <h3 className={styles.purpleText}>Contact</h3>
-                        <h3 className={styles.header}>Me</h3>
+                    <div className='gridTitle'>
+                        <h3 className='purpleText'>Contact</h3>
+                        <h3 className='whiteTitle'>Me</h3>
                     </div>
-                    <div className={styles.gridTextParagraph}>
-                        <p className={styles.headerParagraph}>I’m open to new opportunities. Please reach out if you’d like to hire me!</p>
+                    <div className='gridDescription'>
+                        <p className='whiteDescription'>I’m open to new opportunities. Please reach out if you’d like to hire me!</p>
                     </div>
                     <div className={styles.gridIcons}>
                         <div className={styles.iconContainer}>
