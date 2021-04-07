@@ -1,12 +1,21 @@
 @use '../../App.scss';
 
+// Loading spinner 
+.spinnerWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+// Blog grid
 .grid{
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     padding: 7rem 0rem 2rem 0rem;
 }
-.gridTitle{
+.gridTitleContainer{
     grid-column: 2/12;
     grid-row: 1/2;
 }
@@ -21,7 +30,7 @@
     }
 }
 @media (min-width: 1400px) {
-    .gridTitle,.gridBody{
+    .gridTitleContainer,.gridBody{
         grid-column: 3/11;
     }
     .grid{
@@ -37,7 +46,7 @@
 }
 
 // Inner-grid
-.title{
+.blogTitle{
     display: flex;
     height: 100%;
     align-items: center;

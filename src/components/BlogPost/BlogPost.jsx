@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './blogPost.module.scss';
 import DOMPurify from "dompurify";
-
+import Spinner from 'react-bootstrap/Spinner'
 
 export default class BlogPost extends Component {
     constructor(props){
@@ -38,21 +38,30 @@ export default class BlogPost extends Component {
     
     render() {
         return (
-            <div className={styles.grid}>
-                <div className={styles.gridTitle}>
-                    <div className={styles.title} 
-                        dangerouslySetInnerHTML={{
-                            __html: DOMPurify.sanitize(this.state.blog.title)
-                        }}
-                    ></div>
-                </div>
-                <div className={styles.gridBody}>
-                    <div className={styles.blogBody}
-                        dangerouslySetInnerHTML={{
-                            __html: DOMPurify.sanitize(this.state.blog.body)
-                        }}
-                    ></div>
-                </div>
+            <div className={styles.bkg}>
+            {
+                this.state.isFetching ?
+                    <div className={styles.spinnerWrapper}>
+                        <Spinner animation="border" />
+                    </div>
+                :
+                    <div className={styles.grid}>
+                        <div className={styles.gridTitleContainer}>
+                            <div className={styles.blogTitle} 
+                                dangerouslySetInnerHTML={{
+                                    __html: DOMPurify.sanitize(this.state.blog.title)
+                                }}
+                            ></div>
+                        </div>
+                        <div className={styles.gridBody}>
+                            <div className={styles.blogBody}
+                                dangerouslySetInnerHTML={{
+                                    __html: DOMPurify.sanitize(this.state.blog.body)
+                                }}
+                            ></div>
+                        </div>
+                    </div>
+            }
             </div>
         )
     }
