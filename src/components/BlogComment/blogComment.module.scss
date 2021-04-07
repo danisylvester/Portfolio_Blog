@@ -1,0 +1,14 @@
+@use '../../App.scss';
+
+.addCommentSection{
+    margin-top: 2rem;
+}
+.submitBtn{
+    border-radius: 30px;
+    padding: 2px 10px;
+    border: none;
+    background-color: App.$lightPurple;
+    color:white;
+    @include App.buttonText;
+    font-weight: 400;
+}
