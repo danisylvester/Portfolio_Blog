@@ -3,7 +3,7 @@ import styles from './blogPost.module.scss';
 import DOMPurify from "dompurify";
 import Spinner from 'react-bootstrap/Spinner';
 import { BlogComment } from '../BlogComment/BlogComment.jsx';
-
+import { Card} from 'react-bootstrap';
 
 export default class BlogPost extends Component {
     constructor(props){
@@ -12,9 +12,12 @@ export default class BlogPost extends Component {
             isFetching: true,
             id: this.props.match.params.blogID,
             blog: {},
-            isHidden: true
+            isHidden: true, 
+            hasLiked: false
         }
         this.handleShowAddComment= this.handleShowAddComment.bind(this);
+        this.handleLike= this.handleLike.bind(this);
+        this.handleCopyLink = this.handleCopyLink.bind(this);
     }
 
     componentDidMount(){
@@ -40,10 +43,71 @@ export default class BlogPost extends Component {
         }
     }
 
+    // Display comments
+    displayComments(commentsArr){
+        return(
+            commentsArr.map((comment) => {
+                return(
+                    <Card key={comment._id} className={styles.commentCard}>
+                        <Card.Body className={styles.cardBody}>
+                            {comment.commentBody}
+                        </Card.Body>
+                        <Card.Footer className={styles.cardFooter}>
+                            <div className={styles.cardUserName}>
+                                - {comment.name}
+                            </div>
+                            <div className={styles.cardDate}>
+                                {comment.commentDate}
+                            </div>
+                        </Card.Footer>
+                    </Card>
+                )
+            })
+        )
+    }
+
+    // Toggle BlogComment component when add comment button is pressed
     handleShowAddComment(){
         this.setState({
             isHidden: !this.state.isHidden
         })
+    }
+
+    // Update likes count 
+    handleLike(){
+        console.log(`start hasLiked status: ${this.state.hasLiked}`)
+        const prevCount = this.state.blog.likes;
+        const count = this.state.hasLiked ? parseInt(prevCount) - 1 : parseInt(prevCount) + 1;
+
+        const data = {
+            newCount : count
+        }
+        try {
+            fetch(`http://localhost:5001/api/blogposts/${this.state.id}/likes`, {
+              method: "PUT",
+              headers: {
+                "Content-type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            this.setState({
+                hasLiked: !this.state.hasLiked
+            })
+            console.log(`new hasLiked status: ${this.state.hasLiked}`)
+        } catch (err) {
+            console.log(err);
+            throw err;
+          }
+    }
+
+    // Copy url to user's clipboard
+    handleCopyLink(){
+        const currentUrl = document.createElement('input'), text = window.location.href;
+        document.body.appendChild(currentUrl);
+        currentUrl.value = text;
+        currentUrl.select();
+        document.execCommand('Copy');
+        document.body.removeChild(currentUrl);
     }
     
     render() {
@@ -71,11 +135,23 @@ export default class BlogPost extends Component {
                             ></div>
                         </div>
                         <div className={styles.gridComments}>
-                            <div className={styles.commentCount}>
-                                <p>Comments({this.state.blog.comments.length})</p>
+                            <div className={styles.iconWrapper}>
+                                <button onClick={this.handleLike} className={styles.likeBtn}><img className={styles.icon} src='/src/assets/like.png'></img>({this.state.blog.likes})</button>
                             </div>
-                            <button onClick={this.handleShowAddComment} className={styles.addCommentBtn}>Add Comment</button>
-                            {!this.state.isHidden && <BlogComment blogId={this.state.id}></BlogComment>} 
+                            <div className={styles.iconWrapper}>
+                                <span><img className={styles.icon} src='/src/assets/comment.png'></img> ({this.state.blog.comments.length})</span>
+                            </div>
+                            <div className={styles.iconWrapper}>
+                                <button onClick={this.handleCopyLink} className={styles.likeBtn}><img src='/src/assets/link.png' className={styles.icon}></img></button>
+                            </div>
+                            <div>
+                                <button onClick={this.handleShowAddComment} className={styles.addCommentBtn}>+ Comment</button>
+                            </div>
+
+                            {!this.state.isHidden && <BlogComment blogId={this.state.id}></BlogComment>}
+                            <div className={styles.commentsWrapper}>
+                                {this.displayComments(this.state.blog.comments)}
+                            </div> 
                         </div>
                     </div>
             }
