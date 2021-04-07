@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import styles from './blogPost.module.scss';
 import DOMPurify from "dompurify";
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
+import { BlogComment } from '../BlogComment/BlogComment.jsx';
+
 
 export default class BlogPost extends Component {
     constructor(props){
@@ -9,8 +11,10 @@ export default class BlogPost extends Component {
         this.state = {
             isFetching: true,
             id: this.props.match.params.blogID,
-            blog: {}
+            blog: {},
+            isHidden: true
         }
+        this.handleShowAddComment= this.handleShowAddComment.bind(this);
     }
 
     componentDidMount(){
@@ -34,6 +38,12 @@ export default class BlogPost extends Component {
         } catch(err){
             console.log(err);
         }
+    }
+
+    handleShowAddComment(){
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
     }
     
     render() {
@@ -59,6 +69,13 @@ export default class BlogPost extends Component {
                                     __html: DOMPurify.sanitize(this.state.blog.body)
                                 }}
                             ></div>
+                        </div>
+                        <div className={styles.gridComments}>
+                            <div className={styles.commentCount}>
+                                <p>Comments({this.state.blog.comments.length})</p>
+                            </div>
+                            <button onClick={this.handleShowAddComment} className={styles.addCommentBtn}>Add Comment</button>
+                            {!this.state.isHidden && <BlogComment blogId={this.state.id}></BlogComment>} 
                         </div>
                     </div>
             }

@@ -23,6 +23,10 @@
     grid-column: 2/12;
     grid-row: 2/3;
 }
+.gridComments{
+    grid-column: 2/12;
+    grid-row: 3/4;
+}
 
 @media (min-width: 1024px) {
     .grid{
@@ -30,7 +34,7 @@
     }
 }
 @media (min-width: 1400px) {
-    .gridTitleContainer,.gridBody{
+    .gridTitleContainer,.gridBody, .gridComments{
         grid-column: 3/11;
     }
     .grid{
