@@ -36,11 +36,9 @@ router.get("/", (req, res) => {
 // @desc ADD A NEW COMMENT TO BLOG POST
 // @route PUT /blogposts/:id
 router.put("/:id/comments", (req, res) => {
-  console.log("made it to backend");
-  console.log(`req body: ${req.body.name}`);
   const blogID = req.params.id;
 
-  var newComment = {
+  const newComment = {
     name: req.body.name,
     email: req.body.email,
     commentBody: req.body.commentBody,
@@ -69,11 +67,13 @@ router.put("/:id/comments", (req, res) => {
 // @route PUT /blogpost/:id
 router.put("/:id/likes", (req, res) => {
   const blogId = req.params.id;
+  const likesCount = req.body.newCount;
+  console.log(`likesCount from backend: ${likesCount}`);
   BlogPost.findByIdAndUpdate(
     blogId,
     {
       $set: {
-        likes: req.body.likes,
+        likes: likesCount,
       },
     },
     { new: true }

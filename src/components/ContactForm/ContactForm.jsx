@@ -22,8 +22,6 @@ export class ContactForm extends Component {
     }
     
     async handleSubmit(event) {
-        event.preventDefault(); // prevents page refresh
-
         const _email = event.target.email.value;
         const _subject = `Website Message from ${event.target.firstName.value} ${event.target.lastName.value}`;
         const _msg = event.target.msg.value;
