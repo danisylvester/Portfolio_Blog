@@ -1,19 +1,56 @@
 @use  '../../App.scss';
-// Background
-.gridContainer{
-    width: 100vw;
+
+.bkg{
+    width: 100%;
+}
+// Text Grid
+.gridTextContainer{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    overflow:hidden;
 }
-.bkg{
-    grid-column: 2/12;
+// Project Containers
+.projectSection{
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
 }
 .projectWrapper, .verticalWrap{
     display: flex;
     justify-content: center;
     padding: 1.5rem 0rem;
 }
+@media (min-width: 360px) {
+    .projectSection{
+        padding: 1rem 2rem;
+    }
+}
+@media (min-width: 500px) {
+    .projectSection{
+        padding: 1rem 3rem;
+    }
+}
+@media(min-width: 768px){
+    .projectWrapper:hover .deviceImg{
+        width: 95%;
+        transition-duration: 1000ms;
+    }
+    .polyglot{
+        float: right;
+    }
+    .verticalWrap{
+        display: inline-flex;
+        width: 45%;
+        height: 600px;
+    }
+}
+@media (min-width: 1111px) {
+    .projectSection{
+        padding-left:calc(50% - 500px);
+        padding-right: calc(50% - 500px);
+    }
+}
+
+
 // Projects Grid
 .gridCard{
     height: 100%;
@@ -35,10 +72,10 @@
     height: 100%;
     width: 100%;
 }
-.gridTitle,.gridSkills, .gridViewBtn{
+.gridProjectTitle,.gridSkills, .gridViewBtn{
     align-self: center;
 }
-.gridTitle{
+.gridProjectTitle{
     grid-column: 1/-1;
     grid-row: 3/4;
     padding-top: 2rem;
@@ -59,19 +96,11 @@
  .gridCard{
      width: 100%;
  }   
- .gridSkills, .gridTitle, .gridViewBtn{
+ .gridSkills, .gridProjectTitle, .gridViewBtn{
      grid-column: 2/12;
  }
 }
-@media(min-width: 768px){
-    .projectWrapper:hover .deviceImg{
-        width: 95%;
-        transition-duration: 1000ms;
-    }
-
-    .polyglot{
-        float: right;
-    }
+@media (min-width: 768px) {
     .gridDevices{
         grid-row: 1/2;
     }
@@ -79,11 +108,7 @@
         transform: translateZ(50px);
         height: 550px;
     }
-    .verticalWrap{
-        display: inline-flex;
-        width: 45%;
-        height: 600px;
-    }
+    
     .horizGridCard{
         text-align: left;
         row-gap: 0;
@@ -111,28 +136,9 @@
         grid-row:1/4;
     }
 }
-@media(min-width: 1024px){
-    .bkg{
-        padding-left: 2rem;
-    }
-}
-@media (min-width: 1250px) {
-    .bkg{
-        max-width: 1030px;
-        align-self: center;
-    }   
-}
 
 
-
-// Text Grid
-.gridTextContainer{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-}
-
-
-// Gradients
+// Gradient Backgrounds
 .gradientColorOne, .gradientColorTwo, .gradientColorThree{
     width: 101%;
     height: 100%;
@@ -163,6 +169,15 @@
     .deviceImg{
         width:90%;
         margin: auto;
+    }
+    .polyImg{ 
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+@media (min-width: 1200px) {
+    .polyImg{
+        padding-bottom: 0.8rem;
     }
 }
 

@@ -52,7 +52,7 @@ export const Home = (props) => {
                         </div>
                         <div className={styles.viewBtnWrapper}>
                             <button className={styles.viewBtn}>
-                                <span className={styles.btnText}>View Projects</span>
+                                <a href='projects'><span className={styles.btnText}>View Projects</span></a>
                             </button>
                         </div>
                     </div>

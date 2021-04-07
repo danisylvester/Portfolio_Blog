@@ -128,8 +128,8 @@ export class Blog extends Component {
                 <div className={styles.bkg}>
                     <div className={styles.gridHeading}>
                         <div className='gridTitle'>
-                            <h3 className='purpleText'>Recent</h3>
-                            <h3 className='whiteTitle'>BLOG POSTS</h3>
+                            <h3 className='purpleText'>Blog</h3>
+                            <h3 className='whiteTitle'>POSTS</h3>
                         </div>
                         <div className='gridDescription'>
                             <p className='whiteDescription'>Learn more about the new technologies I’m learning through my blog posts!</p>

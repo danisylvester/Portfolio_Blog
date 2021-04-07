@@ -24,20 +24,20 @@
 @media(min-width: 768px){
     .grid{
         align-content: flex-start;
-        min-height: 95vh;
+        min-height: unset;
+        padding-bottom: 14rem;
     }
     .gridComputerBkg{
         grid-column: 6/-1;
     }
     .gridText{
         grid-column: 2/6;
-        padding-top: 10rem;
+        padding-top: 13rem;
     }
 }
 
 @media(min-width: 1024px){
     .gridText{
-        padding-top: 11rem;
         padding-left: 2rem;
     }
 }
@@ -98,6 +98,10 @@
     padding: 6px 10px;
     border: none;
 }
+.viewBtn a{
+    text-decoration: none;
+    color: white;
+}
 .btnText{
     color: white;
     @include App.buttonText;
@@ -129,7 +133,7 @@
 @media(min-width: 768px){
     .computerWrapper{
         display: block;
-        padding-top: 10rem;
+        padding-top: 13rem;
     }
     .computerImg{
         display: block;
@@ -168,9 +172,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
 }
 .skills{
     width: 100%;
-    padding-bottom: 6rem;
 }

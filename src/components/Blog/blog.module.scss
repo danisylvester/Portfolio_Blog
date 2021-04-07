@@ -5,7 +5,7 @@
     background-color: App.$darkPurple;
     border-radius: 90px 0px 0px 0px;
     overflow: hidden;
-    padding: 4rem 1rem;
+    padding-bottom: 4rem;
 }
 
 // Grid for section title
@@ -19,6 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 400px;
+    margin-top: 2rem;
 }
 
 // Project card
@@ -68,6 +70,8 @@
     white-space: nowrap;
     position: relative;
     margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .slider{
     transition-duration: 500ms;
@@ -77,20 +81,38 @@
     display: inline-block;
     white-space: normal;
 }
+@media (min-width: 411px) {
+    .sliderContainer{
+        padding: 0rem;
+    }
+}
 @media(min-width:540px){
     .sliderContainer{
         width: 75%
     }
 }
 @media(min-width: 768px){
+    .sliderContainer{
+        width: 80%;
+    }
     .sliderItem{
         width: 50%;
     }
 
 }
-@media(min-width: 1300px){
+@media (min-width: 1024px) {
     .sliderContainer{
-        width: 60%;
+        width: 75%
+    }
+}
+@media (min-width: 1400px) {
+    .sliderContainer{
+        width: 60%
+    }
+}
+@media(min-width: 1700px){
+    .sliderContainer{
+        width: 55%;
     }
 }
 
@@ -103,13 +125,22 @@
     top: 50%; 
     cursor: pointer;
 }
+.leftArrow{
+    padding-left: 1rem;
+    left: 0;
+}
+.rightArrow{
+    padding-right: 1rem;
+    right: 0;
+}
 .arrow{
     width: 18px;
 }
-
-.rightArrow{
-    right: 0;
-}
-.leftArrow{
-    left: 0;
+@media (min-width: 768px) {
+    .rightArrow{
+        padding-right: 0rem;
+    }
+    .leftArrow{
+        padding-left: 0rem;
+    }
 }

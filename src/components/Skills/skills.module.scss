@@ -48,15 +48,15 @@
         padding-right: 1rem;
     }
 }
-@media(min-width: 1400px){
+@media(min-width: 1600px){
     .gridIconsOne{
-        grid-column: 3/5;
+        grid-column: 4/6;
     }
     .gridIconsTwo{
-        grid-column: 5/9;
+        grid-column: 6/8;
     } 
     .gridIconsThree{
-        grid-column: 9/11;
+        grid-column: 8/10;
     }
         
 }
@@ -94,9 +94,13 @@
     .icon{
         font-size: 2.5rem;
      }
+     .wrapTo{
+        width:100%;
+        margin: 1rem auto;
+    }
 }
-@media(min-width: 840px){
+@media (min-width: 940px) {
     .iconWrap{
-        margin: 1rem 0.6rem;
+        margin: 1rem;
     }
 }

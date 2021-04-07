@@ -68,6 +68,29 @@
         grid-column: 6/11;
     }
 }
+@media (min-width: 1510px) {
+    .gridForm{
+        padding-right: 3rem;
+    }
+}
+@media (min-width: 1530px) {
+    .gridIcons{
+      padding-left: 2rem;
+    }
+  }
+  @media (min-width: 1640px) {
+    .gridIcons{
+      padding-left: 4rem;
+    }
+  }
+  @media (min-width: 1700px) {
+    .gridIcons{
+      padding-left: 5rem;
+    }
+    .gridForm{
+        padding-right: 5rem;
+    }
+  }
 
 //INNER GRID STYLES
 
@@ -108,9 +131,6 @@
     .iconWrapper{
         text-align: left;
     }
-}
-@media(min-width: 1024px){
-
 }
 
 // Text
