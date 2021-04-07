@@ -1,7 +1,7 @@
-const express = require('express');
-const { json, response } = require('express');
-const dotenv = require('dotenv').config();
-const mailgun = require('mailgun-js')
+const express = require("express");
+const { json, response } = require("express");
+const dotenv = require("dotenv").config();
+const mailgun = require("mailgun-js");
 
 const router = express.Router();
 
@@ -9,20 +9,20 @@ const router = express.Router();
 var DOMAIN = process.env.MAILGUN_DOMAIN;
 var API_KEY = process.env.MAILGUN_API_KEY;
 
-router.post('/', (req, res) => {
-    const mg = mailgun({apiKey: API_KEY, domain: DOMAIN});
-    const data = {
-        from: req.body.email,
-        to: 'maria.sylvester10@gmail.com',
-        subject: req.body.subject,
-        text: 'lol'
-    };
-    mg.messages().send(data, (err, body) => {
-            if(err){
-                res.status(500).send({error: err})
-            }
-            res.send('Message was sent successfully!');
-        })
+router.post("/", (req, res) => {
+  const mg = mailgun({ apiKey: API_KEY, domain: DOMAIN });
+  const data = {
+    from: req.body.email,
+    to: "maria.sylvester10@gmail.com",
+    subject: req.body.subject,
+    text: req.body.msg,
+  };
+  mg.messages().send(data, (err, body) => {
+    if (err) {
+      res.status(500).send({ error: err });
+    }
+    res.send("Message was sent successfully!");
+  });
 });
 
 module.exports = router;
