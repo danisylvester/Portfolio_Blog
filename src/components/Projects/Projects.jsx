@@ -34,7 +34,7 @@ export const Projects = () => {
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                             <div className={styles.gradientColorOne}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/src/assets/sns-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/src/assets/portfolio-devices.png'></img>
                                     </div>
                                 </div>
                             </div>
