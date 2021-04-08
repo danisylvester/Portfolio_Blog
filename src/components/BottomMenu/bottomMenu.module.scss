@@ -25,6 +25,10 @@
     font-size: 0.85em;
     height: 100%;
 }
+.link:link, .link:focus{
+    text-decoration: none;
+    color: App.$lightPurple;
+}
 .homeIcon{
     display: inline-block;
     width: 20px;
