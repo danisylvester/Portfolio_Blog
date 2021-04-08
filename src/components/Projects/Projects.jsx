@@ -52,9 +52,12 @@ export const Projects = () => {
                                 <div className={`${styles.skill} ${styles.skillsOne}`}>HTML</div>
                             </div>
                             <div className={`${styles.gridViewBtn} ${styles.horizGridViewBtn}`}>
-                                <button className={`${styles.viewBtn} ${styles.btnOne}`}>
-                                    <span className={styles.btnText}>View Project</span>
-                                </button>
+                                <a target='_blank' href='https://github.com/danisylvester/Portfolio_Blog' className={`${styles.viewBtn} ${styles.liveSiteMargin} ${styles.btnOne}`}>
+                                    <span className={styles.btnText}>Live Site</span>
+                                </a>
+                                <a target='_blank' href='https://github.com/danisylvester/Portfolio_Blog' className={`${styles.viewBtn} ${styles.btnOne}`}>
+                                    <span className={styles.btnText}>GitHub</span>
+                                </a>
                             </div>
                         </div> 
                     </div>
@@ -80,9 +83,12 @@ export const Projects = () => {
                                 <div className={`${styles.skill} ${styles.skillsTwo}`}>HTML</div>
                             </div>
                             <div className={`${styles.gridViewBtn} ${styles.horizGridViewBtn}`}>
-                                <button  className={`${styles.viewBtn} ${styles.btnTwo}`}>
-                                    <span className={styles.btnText}>View Project</span>
-                                </button>
+                                <a target='_blank' href='https://sns-virtual-solutions.herokuapp.com/' className={`${styles.viewBtn} ${styles.liveSiteMargin} ${styles.btnTwo}`}>
+                                    <span className={styles.btnText}>Live Site</span>
+                                </a>
+                                <a target='_blank' href='https://github.com/danisylvester/Synergy' className={`${styles.viewBtn} ${styles.btnTwo}`}>
+                                    <span className={styles.btnText}>GitHub</span>
+                                </a>
                             </div>
                         </div> 
                     </div>
@@ -109,9 +115,12 @@ export const Projects = () => {
                                 <div className={`${styles.skill} ${styles.skillsOne}`}>HTML</div>
                             </div>
                             <div className={styles.gridViewBtn}>
-                                <button  className={`${styles.viewBtn} ${styles.btnOne}`}>
-                                    <span className={styles.btnText}>View Project</span>
-                                </button>
+                                <a target='_blank' href='http://www.uaimiddleeast.com/' className={`${styles.viewBtn} ${styles.btnOne}`}>
+                                    <span className={styles.btnText}>Live Site</span>
+                                </a>
+                                <a target='_blank' href='https://github.com/danisylvester/UAI' className={`${styles.viewBtn} ${styles.btnOne}`}>
+                                    <span className={styles.btnText}>GitHub</span>
+                                </a>
                             </div>
                         </div> 
                     </div>
@@ -135,9 +144,12 @@ export const Projects = () => {
                                 <div className={`${styles.skill} ${styles.skillsThree}`}>HTML</div>
                             </div>
                             <div className={styles.gridViewBtn}>
-                                <button  className={`${styles.viewBtn} ${styles.btnThree}`}>
-                                    <span className={styles.btnText}>View Project</span>
-                                </button>
+                                <a target='_blank' href='https://chrome.google.com/webstore/detail/polyglot-translator/ieojcoiagpfojablgfmjchhfonelejam?hl=en&authuser=0' className={`${styles.viewBtn} ${styles.btnThree}`}>
+                                    <span className={styles.btnText}>Live Site</span>
+                                </a>
+                                <a target='_blank' href='https://github.com/danisylvester/Web-Scrapper-Chrome-Ext' className={`${styles.viewBtn} ${styles.btnThree}`}>
+                                    <span className={styles.btnText}>GitHub</span>
+                                </a>
                             </div>
                         </div> 
                     </div>

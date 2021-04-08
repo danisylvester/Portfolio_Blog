@@ -108,7 +108,6 @@
         transform: translateZ(50px);
         height: 550px;
     }
-    
     .horizGridCard{
         text-align: left;
         row-gap: 0;
@@ -116,8 +115,11 @@
         max-height: 550px;
         max-width: 1000px;
     }
-    .horizGridTitle, .horizGridSkills, .horizGridViewBtn{
+    .horizGridTitle, .horizGridSkills{
         grid-column: 2/5;
+    }
+    .horizGridViewBtn{
+        grid-column: 2/6;
     }
     .horizGridTitle{
         grid-row: 1/2;
@@ -220,6 +222,12 @@
     padding: 6px 12px;
     border: none;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+.viewBtn:focus, .viewBtn:link{
+    text-decoration: none;
 }
 .btnOne{
     background: linear-gradient(90deg, #C99FFF 0%, rgba(255, 255, 255, 0) 100%), rgba(74, 78, 255, 0.59);
@@ -233,4 +241,9 @@
 .btnText{
     color: white;
     @include App.buttonText;
+}
+@media (min-width: 768px) {
+    .liveSiteMargin{
+        margin-left: 0;
+    }
 }
