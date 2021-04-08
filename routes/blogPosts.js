@@ -52,7 +52,10 @@ router.put("/:id/comments", (req, res) => {
         comments: newComment,
       },
     },
-    { new: true }
+    { 
+      new: true,
+      select: 'comments' 
+    }
   ) //Changes default, so function returns updated doc - not original
     .exec()
     .then((doc) => {
@@ -76,7 +79,10 @@ router.put("/:id/likes", (req, res) => {
         likes: likesCount,
       },
     },
-    { new: true }
+    { 
+      new: true,
+      select: 'likes' 
+    }
   ) //Changes default, so function returns updated doc - not original
     .exec()
     .then((doc) => {

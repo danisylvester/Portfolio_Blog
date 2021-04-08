@@ -44,9 +44,11 @@ export class BlogComment extends Component {
           "Content-type": "application/json",
         },
         body: JSON.stringify(comment),
-      });
-      console.log("submitted comment");
-
+      })
+      .then(res => res.json()
+      .then(data => {
+        this.props.handleToUpdate(data)
+      }));
       this.setState({ name: "", email: "", commentBody: "" }); //reset inputs to empty
     } catch (err) {
       console.log(err);
@@ -67,6 +69,7 @@ export class BlogComment extends Component {
                   type="text"
                   name="name"
                   onChange={this.handleChange}
+                  required
                 />
               </Form.Group>
             </Col>
@@ -78,6 +81,7 @@ export class BlogComment extends Component {
                   type="email"
                   name="email"
                   onChange={this.handleChange}
+                  required
                 />
               </Form.Group>
             </Col>
@@ -91,6 +95,7 @@ export class BlogComment extends Component {
               type="text"
               name="comment"
               onChange={this.handleChange}
+              required
             />
           </Form.Group>
           <input

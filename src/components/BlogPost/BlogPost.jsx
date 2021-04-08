@@ -4,6 +4,7 @@ import DOMPurify from "dompurify";
 import Spinner from 'react-bootstrap/Spinner';
 import { BlogComment } from '../BlogComment/BlogComment.jsx';
 import { Card} from 'react-bootstrap';
+import Tooltip from 'react-bootstrap/Tooltip'
 
 export default class BlogPost extends Component {
     constructor(props){
@@ -13,16 +14,21 @@ export default class BlogPost extends Component {
             id: this.props.match.params.blogID,
             blog: {},
             isHidden: true, 
-            hasLiked: false
+            hasLiked: false, 
         }
         this.handleShowAddComment= this.handleShowAddComment.bind(this);
         this.handleLike= this.handleLike.bind(this);
         this.handleCopyLink = this.handleCopyLink.bind(this);
+        this.handleToUpdate = this.handleToUpdate.bind(this);
     }
 
     componentDidMount(){
+        this.getBlogPost(this.state.id)
+    }
+
+    getBlogPost(blogId){
         try{
-            fetch(`http://localhost:5001/api/blogposts/${this.state.id}`,{
+            fetch(`http://localhost:5001/api/blogposts/${blogId}`,{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -73,8 +79,16 @@ export default class BlogPost extends Component {
         })
     }
 
+    // Handle update when a comment is submitted
+    handleToUpdate(arg){
+        this.setState({
+            blog: {...arg},
+            isHidden: true
+        });
+    }
+
     // Update likes count 
-    handleLike(){
+    handleLike(blogId){
         console.log(`start hasLiked status: ${this.state.hasLiked}`)
         const prevCount = this.state.blog.likes;
         const count = this.state.hasLiked ? parseInt(prevCount) - 1 : parseInt(prevCount) + 1;
@@ -83,13 +97,19 @@ export default class BlogPost extends Component {
             newCount : count
         }
         try {
-            fetch(`http://localhost:5001/api/blogposts/${this.state.id}/likes`, {
+            fetch(`http://localhost:5001/api/blogposts/${blogId}/likes`, {
               method: "PUT",
               headers: {
                 "Content-type": "application/json",
               },
               body: JSON.stringify(data),
-            });
+            })
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    blog: {...data}
+                })
+            })
             this.setState({
                 hasLiked: !this.state.hasLiked
             })
@@ -97,7 +117,7 @@ export default class BlogPost extends Component {
         } catch (err) {
             console.log(err);
             throw err;
-          }
+        }     
     }
 
     // Copy url to user's clipboard
@@ -136,7 +156,7 @@ export default class BlogPost extends Component {
                         </div>
                         <div className={styles.gridComments}>
                             <div className={styles.iconWrapper}>
-                                <button onClick={this.handleLike} className={styles.likeBtn}><img className={styles.icon} src='/src/assets/like.png'></img>({this.state.blog.likes})</button>
+                                <button onClick={()=>this.handleLike(this.state.id)} className={styles.likeBtn}><img className={styles.icon} src='/src/assets/like.png'></img>({this.state.blog.likes})</button>
                             </div>
                             <div className={styles.iconWrapper}>
                                 <span><img className={styles.icon} src='/src/assets/comment.png'></img> ({this.state.blog.comments.length})</span>
@@ -148,7 +168,7 @@ export default class BlogPost extends Component {
                                 <button onClick={this.handleShowAddComment} className={styles.addCommentBtn}>+ Comment</button>
                             </div>
 
-                            {!this.state.isHidden && <BlogComment blogId={this.state.id}></BlogComment>}
+                            {!this.state.isHidden && <BlogComment blogId={this.state.id} handleToUpdate={this.handleToUpdate}></BlogComment>}
                             <div className={styles.commentsWrapper}>
                                 {this.displayComments(this.state.blog.comments)}
                             </div> 
