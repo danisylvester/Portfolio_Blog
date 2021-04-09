@@ -38,7 +38,7 @@ export class BlogComment extends Component {
     };
 
     try {
-      fetch(`http://localhost:5001/api/blogposts/${this.state.id}/comments`, {
+      fetch(`/api/blogposts/${this.state.id}/comments`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

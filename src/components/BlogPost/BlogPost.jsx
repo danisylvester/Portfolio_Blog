@@ -28,7 +28,7 @@ export default class BlogPost extends Component {
 
     getBlogPost(blogId){
         try{
-            fetch(`http://localhost:5001/api/blogposts/${blogId}`,{
+            fetch(`/api/blogposts/${blogId}`,{
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -97,7 +97,7 @@ export default class BlogPost extends Component {
             newCount : count
         }
         try {
-            fetch(`http://localhost:5001/api/blogposts/${blogId}/likes`, {
+            fetch(`/api/blogposts/${blogId}/likes`, {
               method: "PUT",
               headers: {
                 "Content-type": "application/json",

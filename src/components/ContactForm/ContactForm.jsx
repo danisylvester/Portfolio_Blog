@@ -34,7 +34,7 @@ export class ContactForm extends Component {
                 msg : _msg
             }
         
-            fetch('http://localhost:5001/api/contact', {
+            fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'

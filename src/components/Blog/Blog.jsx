@@ -22,7 +22,7 @@ export class Blog extends Component {
     // Fetching blog data and storing it in blogPosts state array
     componentDidMount(){
         try{
-            fetch('http://localhost:5001/api/blogposts', {
+            fetch('/api/blogposts', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
