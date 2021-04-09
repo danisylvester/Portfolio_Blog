@@ -11,18 +11,24 @@ export const Home = (props) => {
     // Parallax scrolling effect
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(window.pageYOffset);
-    const { id } = useParams();
+    let { id } = useParams();
 
     function scrollToSection(sectionId){
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth'});
     }
+    function resetID(){
+        id = null;
+        console.log(`new id value: ${id}`)
+    }
 
     useEffect(() => {
         console.log('running use effect!')
-        if(id != undefined){
+        if(id != undefined || id != null){
             scrollToSection(id);
+            resetID();
         }
-    },[id])
+    },[id]);
+
 
     // Listener for computer parallax scroll effect
     useEffect(() => {
@@ -51,8 +57,8 @@ export const Home = (props) => {
                             </div>
                         </div>
                         <div className={styles.viewBtnWrapper}>
-                            <button className={styles.viewBtn}>
-                                <a href='projects'><span className={styles.btnText}>View Projects</span></a>
+                            <button className={styles.viewBtn} onClick={()=>{scrollToSection('projects')}}>
+                                <span className={styles.btnText}>View Projects</span>
                             </button>
                         </div>
                     </div>

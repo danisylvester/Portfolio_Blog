@@ -17,17 +17,21 @@ export class Contact extends Component {
                     <div className={styles.gridIcons}>
                         <div className={styles.iconContainer}>
                             <div className={styles.iconWrapper}>
-                                <i className={`devicon-github-original ${styles.icon}`}></i>
-                                <p className={styles.iconLabel}>GitHub</p>
+                                <a target='_blank' href='https://github.com/danisylvester' style={{textDecoration: 'none'}}>
+                                    <i className={`devicon-github-original ${styles.icon}`}></i>
+                                    <p className={styles.iconLabel}>GitHub</p>
+                                </a>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <i className={`devicon-linkedin-plain ${styles.icon}`}></i>
-                                <p className={styles.iconLabel}>LinkedIn</p>
+                                <a target='_blank' href='https://www.linkedin.com/in/dani-sylvester/' style={{textDecoration: 'none'}}>
+                                    <i className={`devicon-linkedin-plain ${styles.icon}`}></i>
+                                    <p className={styles.iconLabel}>LinkedIn</p>
+                                </a>
                             </div>
                             <div className={styles.iconWrapper}>
                                 <img className={styles.icon} src='/src/assets/resume.png'></img>
                                 <p className={styles.iconLabel}>Resume</p>
-                        </div>
+                            </div>
                         </div>
                     </div>
                     <div className={styles.gridForm}>

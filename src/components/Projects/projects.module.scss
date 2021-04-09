@@ -32,7 +32,7 @@
 @media(min-width: 768px){
     .projectWrapper:hover .deviceImg{
         width: 95%;
-        transition-duration: 1000ms;
+        transition-duration: 500ms;
     }
     .polyglot{
         float: right;
@@ -171,6 +171,7 @@
     .deviceImg{
         width:90%;
         margin: auto;
+        transition-duration: 500ms;
     }
     .polyImg{ 
         padding-top: 0.5rem;

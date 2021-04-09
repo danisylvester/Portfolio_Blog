@@ -9,10 +9,18 @@ export const Projects = () => {
         if(window.innerWidth >= 768){
             VanillaTilt.init(document.querySelectorAll('.tilt'),{
                 max: 3,
-                speed: 100,
+                speed: 150,
+                transition: true,
+                reset: true,
+                easing: "cubic-bezier(.03,.98,.52,.99)"
+            });
+            VanillaTilt.init(document.querySelectorAll('.horizontalTilt'),{
+                max: 3,
+                speed: 150,
                 transition: true,
                 reset: true,
                 easing: "cubic-bezier(.03,.98,.52,.99)",
+                axis: 'x'
             });
         }
     },[]);
@@ -29,7 +37,7 @@ export const Projects = () => {
             </div>
             <div className={styles.projectSection}>
                 <div className={styles.projectWrapper}>
-                    <div className='tilt'>
+                    <div className='horizontalTilt'>
                         <div className={`${styles.gridCard} ${styles.horizGridCard}`}>
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                             <div className={styles.gradientColorOne}>
@@ -63,7 +71,7 @@ export const Projects = () => {
                     </div>
                 </div>
                 <div className={styles.projectWrapper}>
-                    <div className='tilt'>
+                    <div className='horizontalTilt'>
                         <div className={`${styles.gridCard} ${styles.horizGridCard}`}>
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                                 <div className={styles.gradientColorTwo}>
