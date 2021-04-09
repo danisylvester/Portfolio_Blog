@@ -2,4 +2,3 @@ node_modules
 .env
 adminPortal/node_modules
 adminPortal/.env
-dist/
