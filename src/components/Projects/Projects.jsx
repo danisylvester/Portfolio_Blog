@@ -42,7 +42,7 @@ export const Projects = () => {
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                             <div className={styles.gradientColorOne}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/src/assets/portfolio-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/assets/portfolio-devices.png'></img>
                                     </div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ export const Projects = () => {
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                                 <div className={styles.gradientColorTwo}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/src/assets/sns-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/assets/sns-devices.png'></img>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ export const Projects = () => {
                             <div className={styles.gridDevices}>
                                 <div className={styles.gradientColorOne}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/src/assets/uai-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/assets/uai-devices.png'></img>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ export const Projects = () => {
                             <div className={styles.gridDevices}>
                                 <div className={styles.gradientColorThree}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={`${styles.deviceImg} ${styles.polyImg}`} src='/src/assets/polyglot.png'></img>
+                                        <img className={`${styles.deviceImg} ${styles.polyImg}`} src='/assets/polyglot.png'></img>
                                     </div>
                                 </div>
                             </div>

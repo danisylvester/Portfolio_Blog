@@ -29,7 +29,7 @@ export class Contact extends Component {
                                 </a>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <img className={styles.icon} src='/src/assets/resume.png'></img>
+                                <img className={styles.icon} src='/assets/resume.png'></img>
                                 <p className={styles.iconLabel}>Resume</p>
                             </div>
                         </div>

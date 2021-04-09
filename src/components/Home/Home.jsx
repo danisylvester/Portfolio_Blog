@@ -68,7 +68,7 @@ export const Home = (props) => {
                         <img 
                             className={styles.computerImg}
                             style={{ transform : `translateY(-${offsetY * 0.7}px)`}} 
-                            src='/src/assets/computer.png'
+                            src='/assets/computer.png'
                         ></img>
                     </div>
             </div>

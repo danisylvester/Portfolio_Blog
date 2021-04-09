@@ -146,10 +146,10 @@ export class Blog extends Component {
                             {this.displayBlogPosts(this.state.blogPosts)}
                             </div>
                             <a onClick={this.handleLeftClick} className={styles.leftArrow} id='left'>
-                                <img className={styles.arrow} src='/src/assets/leftArrow.png'></img>
+                                <img className={styles.arrow} src='/assets/leftArrow.png'></img>
                             </a>
                             <a onClick={this.handleRightClick} className={styles.rightArrow} id='right'>
-                                <img className={styles.arrow} src='/src/assets/rightArrow.png'></img>
+                                <img className={styles.arrow} src='/assets/rightArrow.png'></img>
                             </a>
                         </div>
                     }

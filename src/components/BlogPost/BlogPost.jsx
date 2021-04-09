@@ -156,13 +156,13 @@ export default class BlogPost extends Component {
                         </div>
                         <div className={styles.gridComments}>
                             <div className={styles.iconWrapper}>
-                                <button onClick={()=>this.handleLike(this.state.id)} className={styles.likeBtn}><img className={styles.icon} src='/src/assets/like.png'></img>({this.state.blog.likes})</button>
+                                <button onClick={()=>this.handleLike(this.state.id)} className={styles.likeBtn}><img className={styles.icon} src='/assets/like.png'></img>({this.state.blog.likes})</button>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <span><img className={styles.icon} src='/src/assets/comment.png'></img> ({this.state.blog.comments.length})</span>
+                                <span><img className={styles.icon} src='/assets/comment.png'></img> ({this.state.blog.comments.length})</span>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <button onClick={this.handleCopyLink} className={styles.likeBtn}><img src='/src/assets/link.png' className={styles.icon}></img></button>
+                                <button onClick={this.handleCopyLink} className={styles.likeBtn}><img src='/assets/link.png' className={styles.icon}></img></button>
                             </div>
                             <div>
                                 <button onClick={this.handleShowAddComment} className={styles.addCommentBtn}>+ Comment</button>

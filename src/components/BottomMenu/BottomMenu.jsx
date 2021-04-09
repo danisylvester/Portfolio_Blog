@@ -12,7 +12,7 @@ export const BottomMenu = () => {
                 className={styles.link}
                 exact={true}
                 >
-                <img className={styles.homeIcon} src='/src/assets/home-icon.png'></img>
+                <img className={styles.homeIcon} src='/assets/home-icon.png'></img>
             </NavLink>
             </div>
             <div className={styles.linkContainer}>
