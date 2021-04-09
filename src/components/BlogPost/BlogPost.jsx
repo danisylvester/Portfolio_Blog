@@ -12,7 +12,9 @@ export default class BlogPost extends Component {
         this.state = {
             isFetching: true,
             id: this.props.match.params.blogID,
-            blog: {},
+            blog: {
+                comments:[]
+            },
             isHidden: true, 
             hasLiked: false, 
         }
@@ -159,7 +161,7 @@ export default class BlogPost extends Component {
                                 <button onClick={()=>this.handleLike(this.state.id)} className={styles.likeBtn}><img className={styles.icon} src='/assets/like.png'></img>({this.state.blog.likes})</button>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <span><img className={styles.icon} src='/assets/comment.png'></img> ({this.state.blog.comments?.length})</span>
+                                <span><img className={styles.icon} src='/assets/comment.png'></img> ({this.state.blog.comments.length})</span>
                             </div>
                             <div className={styles.iconWrapper}>
                                 <button onClick={this.handleCopyLink} className={styles.likeBtn}><img src='/assets/link.png' className={styles.icon}></img></button>
