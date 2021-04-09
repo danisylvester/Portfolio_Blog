@@ -70,6 +70,7 @@ router.put("/:id/comments", (req, res) => {
 // @route PUT /blogpost/:id
 router.put("/:id/likes", (req, res) => {
   const blogId = req.params.id;
+  console.log(`blog id from backend: ${blogId}`)
   const likesCount = req.body.newCount;
   console.log(`likesCount from backend: ${likesCount}`);
   BlogPost.findByIdAndUpdate(
@@ -80,12 +81,12 @@ router.put("/:id/likes", (req, res) => {
       },
     },
     { 
-      new: true,
-      select: 'likes' 
+      new: true
     }
   ) //Changes default, so function returns updated doc - not original
     .exec()
     .then((doc) => {
+      console.log(doc);
       res.status(200).json(doc);
     })
     .catch((err) => {

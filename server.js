@@ -36,21 +36,40 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:8080");
-  res.header("Access-Control-Allow-Methods", 'GET, POST, PUT');
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
-app.use(express.static(path.join(__dirname,'dist')));
+app.use(express.static(path.join(__dirname, "dist")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.resolve('./dist','index.html'));
 });
+
+app.get("/home", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/about", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/skills", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/projects", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/blog", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/contact", (req, res) => {
+  res.sendFile(path.resolve('./dist','index.html'));
+});
+
+app.get("/blogpost/*", (req, res) => {
+  res.redirect('/');
+});
+
 // Middleware
 app.use("/api/blogposts", blogPostsRoutes);
 app.use("/api/contact", contactFormRoutes);
