@@ -13,6 +13,7 @@ export default class BlogPost extends Component {
       isFetching: true,
       id: this.props.match.params.blogID,
       blog: {},
+      comments: [],
       likes: 0,
       isHidden: true,
       hasLiked: false,
@@ -22,7 +23,6 @@ export default class BlogPost extends Component {
     this.handleCopyLink = this.handleCopyLink.bind(this);
     this.handleToUpdate = this.handleToUpdate.bind(this);
   }
-
 
   componentDidMount() {
     try {
@@ -43,6 +43,7 @@ export default class BlogPost extends Component {
           this.setState({
             isFetching: false,
             likes: this.state.blog.likes,
+            comments: this.state.blog.comments,
           });
         });
     } catch (err) {
@@ -77,7 +78,7 @@ export default class BlogPost extends Component {
   // Handle update when a comment is submitted
   handleToUpdate(arg) {
     this.setState({
-      blog: { ...arg },
+      comments: [...arg.comments],
       isHidden: true,
     });
   }
@@ -165,7 +166,8 @@ export default class BlogPost extends Component {
               </div>
               <div className={styles.iconWrapper}>
                 <span>
-                  <img className={styles.icon} src="/assets/comment.png"></img>{" "}
+                  <img className={styles.icon} src="/assets/comment.png"></img>(
+                  {this.state.comments.length})
                 </span>
               </div>
               <div className={styles.iconWrapper}>
@@ -192,7 +194,7 @@ export default class BlogPost extends Component {
                 ></BlogComment>
               )}
               <div className={styles.commentsWrapper}>
-                {this.displayComments(this.state.blog.comments)}
+                {this.displayComments(this.state.comments)}
               </div>
             </div>
           </div>
