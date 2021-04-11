@@ -10,7 +10,7 @@ export const Menu = () => {
     <div className={styles.grid}>
       <div className={styles.gridLogo}>
 
-          <NavLink to="/home" className={styles.logoStyle}>
+          <NavLink to="/home" className={styles.logoStyle} activeClassName={styles.active}>
             {logo}
           </NavLink>
           </div>

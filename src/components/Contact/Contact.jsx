@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './contact.module.scss';
 import { ContactForm } from '../ContactForm/ContactForm.jsx';
 
+
 export class Contact extends Component {
     render() {
         return (
@@ -29,8 +30,10 @@ export class Contact extends Component {
                                 </a>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <img className={styles.icon} src='/assets/resume.png'></img>
-                                <p className={styles.iconLabel}>Resume</p>
+                                <a>
+                                    <img className={styles.icon} src='/assets/resume.png'></img>
+                                    <p className={styles.iconLabel}>Resume</p>
+                                </a>
                             </div>
                         </div>
                     </div>

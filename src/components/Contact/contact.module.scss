@@ -3,9 +3,8 @@
 .grid{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    overflow:hidden;
+    overflow-x: hidden;
     background-color: App.$darkPurple;
-    width: 100vw;
 }
 .bkgColor{
     grid-column: 1/-1;

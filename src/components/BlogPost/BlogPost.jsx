@@ -160,7 +160,7 @@ export default class BlogPost extends Component {
                   onClick={() => this.handleLike(this.state.id)}
                   className={styles.likeBtn}
                 >
-                  <img className={styles.icon} src="/assets/like.png"></img>(
+                  <img className={`${styles.icon} ${styles.iconClickable}`} src="/assets/like.png"></img>(
                   {this.state.likes})
                 </button>
               </div>
@@ -175,7 +175,7 @@ export default class BlogPost extends Component {
                   onClick={this.handleCopyLink}
                   className={styles.likeBtn}
                 >
-                  <img src="/assets/link.png" className={styles.icon}></img>
+                  <img src="/assets/link.png" className={`${styles.icon} ${styles.iconClickable}`}></img>
                 </button>
               </div>
               <div>

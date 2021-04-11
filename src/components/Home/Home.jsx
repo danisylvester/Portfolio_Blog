@@ -16,16 +16,10 @@ export const Home = (props) => {
     function scrollToSection(sectionId){
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth'});
     }
-    function resetID(){
-        id = null;
-        // console.log(`new id value: ${id}`)
-    }
 
     useEffect(() => {
-        // console.log('running use effect!')
         if(id != undefined || id != null){
             scrollToSection(id);
-            resetID();
         }
     },[id]);
 
