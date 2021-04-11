@@ -5,7 +5,6 @@ const dotenv = require("dotenv").config();
 const path = require("path");
 const blogPostsRoutes = require("./routes/blogPosts");
 const contactFormRoutes = require("./routes/contact");
-const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -34,7 +33,6 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(cors());
 
 app.use(express.static(path.join(__dirname, "dist")));
 

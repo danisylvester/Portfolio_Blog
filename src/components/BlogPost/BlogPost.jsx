@@ -20,7 +20,6 @@ export default class BlogPost extends Component {
     };
     this.handleShowAddComment = this.handleShowAddComment.bind(this);
     this.handleLike = this.handleLike.bind(this);
-    this.handleCopyLink = this.handleCopyLink.bind(this);
     this.handleToUpdate = this.handleToUpdate.bind(this);
   }
 
@@ -118,17 +117,6 @@ export default class BlogPost extends Component {
     }
   }
 
-  // Copy url to user's clipboard
-  handleCopyLink() {
-    const currentUrl = document.createElement("input"),
-      text = window.location.href;
-    document.body.appendChild(currentUrl);
-    currentUrl.value = text;
-    currentUrl.select();
-    document.execCommand("Copy");
-    document.body.removeChild(currentUrl);
-  }
-
   render() {
     return (
       <div className={styles.bkg}>
@@ -169,14 +157,6 @@ export default class BlogPost extends Component {
                   <img className={styles.icon} src="/assets/comment.png"></img>(
                   {this.state.comments.length})
                 </span>
-              </div>
-              <div className={styles.iconWrapper}>
-                <button
-                  onClick={this.handleCopyLink}
-                  className={styles.likeBtn}
-                >
-                  <img src="/assets/link.png" className={`${styles.icon} ${styles.iconClickable}`}></img>
-                </button>
               </div>
               <div>
                 <button

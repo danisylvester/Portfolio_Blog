@@ -76,7 +76,7 @@ export const Projects = () => {
                             <div className={`${styles.gridDevices} ${styles.horizGridDevices}`}>
                                 <div className={styles.gradientColorTwo}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/assets/sns-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/assets/sns-devices-530.png'></img>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ export const Projects = () => {
                             <div className={styles.gridDevices}>
                                 <div className={styles.gradientColorOne}>
                                     <div className={styles.bkgPattern}>
-                                        <img className={styles.deviceImg} src='/assets/uai-devices.png'></img>
+                                        <img className={styles.deviceImg} src='/assets/uai-devices-530.png'></img>
                                     </div>
                                 </div>
                             </div>
