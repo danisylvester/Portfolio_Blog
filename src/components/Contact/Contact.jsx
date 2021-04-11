@@ -30,7 +30,7 @@ export class Contact extends Component {
                                 </a>
                             </div>
                             <div className={styles.iconWrapper}>
-                                <a>
+                                <a target='_blank' href='https://drive.google.com/file/d/10GCsir29MTsQG3LTx7K4b8ZjlpfVVLJ8/view?usp=sharing' style={{textDecoration: 'none'}}>
                                     <img className={styles.icon} src='/assets/resume.png'></img>
                                     <p className={styles.iconLabel}>Resume</p>
                                 </a>
