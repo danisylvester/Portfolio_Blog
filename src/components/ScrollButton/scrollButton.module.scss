@@ -10,10 +10,12 @@
     font-weight: 700;
     position: fixed;
     right:  5px;
-    bottom: 10px;
+    bottom: 20px;
     width: 40px;
     height: 40px;
     border: none;
+    transition-delay: 500ms;
+    animation: popup 500ms;
 }
 
 @media (min-width: 768px) {
@@ -24,6 +26,14 @@
 @media (min-width: 1130px) {
     .scrollBtn{
         right:  20px;
-        bottom: 20px;
+    }
+}
+
+@keyframes popup {
+    from {
+        bottom: 0px
+    }
+    to {
+        bottom:20px
     }
 }

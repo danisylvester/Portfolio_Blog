@@ -1,44 +1,39 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./scrollButton.module.scss";
 
-export default class ScrollButton extends Component {
-  constructor(props) {
-    super(props);
+export const ScrollButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 10) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  // componentDidMount(){
-  //     window.addEventListener(scroll, this.displayButton);
-  // }
-
-  // displayButton() {
-  //   const scrollBtn = document.getElementById("scrollBtn");
-  //   if (document.body.scrollTop > 10) {
-  //     scrollBtn.style.display = "block";
-  //   } else {
-  //     scrollBtn.style.display = "none";
-  //   }
-  // }
-
-  handleClick() {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  }
+  };
 
-  render() {
-    return (
-      <div>
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll");
+  }, []);
+
+  return (
+    <div>
+      {isVisible && (
         <button
           id="scrollBtn"
-          onClick={this.handleClick}
+          onClick={scrollToTop}
           className={styles.scrollBtn}
         >
           ^
         </button>
-      </div>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
