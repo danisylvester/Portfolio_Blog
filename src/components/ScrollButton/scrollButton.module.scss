@@ -1,0 +1,29 @@
+@use '../../App.scss';
+
+.scrollBtn{
+    display: none;
+    background: #3dc5b6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: 700;
+    position: fixed;
+    right:  5px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .scrollBtn{
+        display: block;
+    }
+}
+@media (min-width: 1130px) {
+    .scrollBtn{
+        right:  20px;
+        bottom: 20px;
+    }
+}

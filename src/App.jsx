@@ -4,6 +4,7 @@ import "./App.scss";
 import { Menu } from "./components/Menu/Menu.jsx";
 import { BottomMenu } from "./components/BottomMenu/BottomMenu.jsx";
 import { Home } from "./components/Home/Home.jsx";
+import ScrollButton from "./components/ScrollButton/ScrollButton.jsx";
 import BlogPost from "./components/BlogPost/BlogPost.jsx";
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/:id" component={Home}></Route>
         <Route exact path="/" component={Home}></Route>
       </Switch>
+      <ScrollButton></ScrollButton>
       <BottomMenu></BottomMenu>
     </>
   );
