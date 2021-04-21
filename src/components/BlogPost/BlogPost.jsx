@@ -24,6 +24,7 @@ export default class BlogPost extends Component {
   }
 
   componentDidMount() {
+    this.scrollToTop();
     try {
       console.log(`id: ${this.state.id}`);
       fetch(`/api/blogposts/${this.state.id}`, {
@@ -48,6 +49,14 @@ export default class BlogPost extends Component {
     } catch (err) {
       console.log(err);
     }
+  }
+
+  // Scroll to top
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   }
 
   // Display comments
