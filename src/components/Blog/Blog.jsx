@@ -101,7 +101,7 @@ export class Blog extends Component {
         console.log(`x new: ${this.state.xOffset}`);
       }
     } else {
-      let maxMobile = Math.floor(this.state.blogPosts.length / 2) * -100;
+      let maxMobile = Math.floor(this.state.blogPosts.length / 2) * -50;
       console.log(`max: ${maxMobile}`);
       console.log(`x start: ${this.state.xOffset}`);
       if (this.state.xOffset > maxMobile) {
