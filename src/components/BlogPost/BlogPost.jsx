@@ -4,7 +4,6 @@ import DOMPurify from "dompurify";
 import Spinner from "react-bootstrap/Spinner";
 import { BlogComment } from "../BlogComment/BlogComment.jsx";
 import { Card } from "react-bootstrap";
-import Tooltip from "react-bootstrap/Tooltip";
 
 export default class BlogPost extends Component {
   constructor(props) {

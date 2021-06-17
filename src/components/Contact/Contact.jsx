@@ -42,7 +42,7 @@ export class Contact extends Component {
             <div className={styles.iconWrapper}>
               <a
                 target="_blank"
-                href="https://drive.google.com/file/d/1cJ_9k-6Ovu9C2JhLp6X3zLNYbBLRCgRd/view?usp=sharing"
+                href="https://drive.google.com/file/d/1rSEQyPTv8IQxKgpqjQch43BaPyoTs9xb/view?usp=sharing"
                 style={{ textDecoration: "none" }}
               >
                 <img className={styles.icon} src="/assets/resume.png"></img>
