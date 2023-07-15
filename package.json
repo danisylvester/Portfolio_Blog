@@ -1,6 +1,9 @@
 {
   "name": "blog_portfolio",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.18.0"
+  },
   "description": "",
   "main": "index.jsx",
   "scripts": {
